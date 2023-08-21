@@ -1,0 +1,46 @@
+:root {
+  --color-primary-50: 239 246 255;
+  --color-primary-100: 219 234 254;
+  --color-primary-200: 191 219 254;
+  --color-primary-300: 147 197 253;
+  --color-primary-400: 96 165 250;
+  --color-primary-500: 59 130 246;
+  --color-primary-600: 37 99 235;
+  --color-primary-700: 29 78 216;
+  --color-primary-800: 30 64 175;
+  --color-primary-900: 30 58 138;
+
+  --color-secondary-50: 254 235 243;
+  --color-secondary-100: 253 216 231;
+  --color-secondary-200: 251 172 204;
+  --color-secondary-300: 250 133 180;
+  --color-secondary-400: 248 89 152;
+  --color-secondary-500: 246 49 128;
+  --color-secondary-600: 225 10 96;
+  --color-secondary-700: 171 7 73;
+  --color-secondary-800: 112 5 48;
+  --color-secondary-900: 59 3 25;
+
+  --color-tertiary-50: 243 254 235;
+  --color-tertiary-100: 231 253 216;
+  --color-tertiary-200: 204 251 172;
+  --color-tertiary-300: 180 250 133;
+  --color-tertiary-400: 152 248 89;
+  --color-tertiary-500: 128 246 49;
+  --color-tertiary-600: 96 225 10;
+  --color-tertiary-700: 73 171 7;
+  --color-tertiary-800: 48 112 5;
+  --color-tertiary-900: 25 59 3;
+
+  --rounded-base: 4px;
+	--rounded-container: 8px;
+	--border-base: 1px;
+
+  --on-primary: #FFF;
+	--on-secondary: #FFF;
+	--on-tertiary: #000;
+}
+
+html {  
+  font-family: var(--font-family, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+}

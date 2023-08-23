@@ -124,7 +124,12 @@ onDestroy(() => {
     .label {
     display: flex;
     flex-direction: column;
-    align-items: flex-start
+    align-items: flex-start;
+    font-weight: 500
+}
+    .require {
+    --tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity))
 }
     .require {
     --tw-text-opacity: 1;
@@ -135,6 +140,7 @@ onDestroy(() => {
     width: 100%;
     flex-direction: column;
     border-radius: 0px !important;
+    background-color: transparent;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 0.25rem;
@@ -143,7 +149,7 @@ onDestroy(() => {
     .inputi.borderBottom {
     border-bottom-width: 2px;
     border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4);
-    background-image: none;
+    background-color: transparent;
     font-weight: 300;
     color: var(--on-tertiary-900)
 }

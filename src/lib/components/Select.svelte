@@ -84,9 +84,9 @@
         @apply text-red-500;
     }
     .selecti {
-        @apply w-full flex flex-col !rounded-none py-[13px];
+        @apply w-full flex flex-col !rounded-none py-[14px]  bg-transparent;
     }
     .selecti.borderBottom {
-        @apply border-b-2 border-primary-900/40;
+        @apply border-b-2 border-secondary-900/40;
     }
 </style>

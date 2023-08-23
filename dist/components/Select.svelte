@@ -72,11 +72,12 @@ const select = cva([], {
     width: 100%;
     flex-direction: column;
     border-radius: 0px !important;
-    padding-top: 13px;
-    padding-bottom: 13px
+    background-color: transparent;
+    padding-top: 14px;
+    padding-bottom: 14px
 }
     .selecti.borderBottom {
     border-bottom-width: 2px;
-    border-color: rgb(var(--color-primary-900, 30 58 138) / 0.4)
+    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4)
 }
 </style>

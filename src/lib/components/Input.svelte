@@ -144,15 +144,15 @@
 
 <style lang="postcss">
     .label {
-        @apply flex flex-col items-start;
+        @apply flex flex-col items-start font-medium;
     }
     .require {
         @apply text-red-500;
     }
     .inputi {
-        @apply w-full flex flex-col !rounded-none py-3 px-1;
+        @apply w-full flex flex-col !rounded-none py-3 px-1 bg-transparent;
     }
     .inputi.borderBottom {
-        @apply border-b-2 border-secondary-900/40 bg-none font-light text-[--on-tertiary-900];
+        @apply border-b-2 border-secondary-900/40 bg-transparent font-light text-[--on-tertiary-900];
     }
 </style>

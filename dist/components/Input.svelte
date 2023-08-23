@@ -131,6 +131,10 @@ onDestroy(() => {
     --tw-text-opacity: 1;
     color: rgb(239 68 68 / var(--tw-text-opacity))
 }
+    .require {
+    --tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity))
+}
     .inputi {
     display: flex;
     width: 100%;

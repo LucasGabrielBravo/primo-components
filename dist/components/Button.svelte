@@ -31,13 +31,13 @@ export let color = "default";
 export let size = "md";
 </script>
 
-<svelte:element 
-	this={(href) ? "a" : "button"}
+<svelte:element
+	this={href ? "a" : "button"}
 	{href}
 	{...$$props}
 	class={`button ${button({ size, color, class: $$props.class })}`}
 >
-	<slot />	
+	<slot />
 </svelte:element>
 
 <style>
@@ -65,16 +65,16 @@ export let size = "md";
     --tw-scale-x: .95;
     --tw-scale-y: .95;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}		
-	
+}
+
 	.button.primary {
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity));
     color: var(--on-primary,#FFF)
-}		
-	
+}
+
 	.button.primary:hover {
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-primary-700, 29 78 216) / var(--tw-border-opacity));
@@ -221,7 +221,7 @@ export let size = "md";
     padding-bottom: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.25rem
-}	
+}
 
 	.button.lg {
     font-size: 1.125rem;
@@ -236,5 +236,4 @@ export let size = "md";
     font-size: 1.25rem;
     line-height: 1.75rem
 }
-
 </style>

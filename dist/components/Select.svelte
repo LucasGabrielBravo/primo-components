@@ -35,7 +35,7 @@ const select = cva([], {
         <span class="text-surface-800">
             {label}
             {#if required}
-                <span class="text-red-500">*</span>
+                <span class="require">*</span>
             {/if}
         </span>
     {/if}
@@ -63,16 +63,21 @@ const select = cva([], {
     flex-direction: column;
     align-items: flex-start
 }
+    .require {
+    --tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity))
+}
     .selecti {
     display: flex;
     width: 100%;
     flex-direction: column;
     border-radius: 0px !important;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem
+    background-color: transparent;
+    padding-top: 14px;
+    padding-bottom: 14px
 }
     .selecti.borderBottom {
     border-bottom-width: 2px;
-    border-color: rgb(var(--color-primary-900, 30 58 138) / 0.4)
+    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4)
 }
 </style>

@@ -35,4 +35,5 @@ $:
 
 <Hst.Story {source} title="Select">
     <Select {placeholder} {label} {color} {border} {options} />
+    <Select {placeholder} {label} {color} {border} {options} required />
 </Hst.Story>

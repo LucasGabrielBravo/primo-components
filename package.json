@@ -34,8 +34,11 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@sveltejs/package": "^2.0.0",
+		"@types/inputmask": "^5.0.3",
+		"@types/js-cookie": "^3.0.3",
 		"autoprefixer": "^10.4.15",
 		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.0.0",
 		"daisyui": "^3.5.1",
 		"histoire": "^0.16.5",
 		"postcss": "^8.4.28",
@@ -50,5 +53,9 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"inputmask": "^5.0.8",
+		"js-cookie": "^3.0.5"
+	}
 }

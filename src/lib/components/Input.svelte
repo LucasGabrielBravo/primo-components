@@ -53,7 +53,7 @@
         if (typeof window !== undefined) {
             const { default: InputMask } = await import("inputmask");
 
-            const inputMask = new Inputmask({
+            inputMask = new Inputmask({
                 mask,
                 placeholder: " ",
             });
@@ -105,7 +105,7 @@
             <span class="text-surface-800"
                 >{label}
                 {#if $$restProps.required}
-                    <span class="text-red-500">*</span>
+                    <span class="require">*</span>
                 {/if}
             </span>
         {/if}
@@ -146,10 +146,13 @@
     .label {
         @apply flex flex-col items-start;
     }
+    .require {
+        @apply text-red-500;
+    }
     .inputi {
         @apply w-full flex flex-col !rounded-none py-3 px-1;
     }
     .inputi.borderBottom {
-        @apply border-b-2 border-primary-900/40;
+        @apply border-b-2 border-secondary-900/40 bg-none font-light text-[--on-tertiary-900];
     }
 </style>

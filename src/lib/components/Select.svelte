@@ -54,7 +54,7 @@
         <span class="text-surface-800">
             {label}
             {#if required}
-                <span class="text-red-500">*</span>
+                <span class="require">*</span>
             {/if}
         </span>
     {/if}
@@ -80,8 +80,11 @@
     .label {
         @apply flex flex-col items-start;
     }
+    .require {
+        @apply text-red-500;
+    }
     .selecti {
-        @apply w-full flex flex-col !rounded-none py-3;
+        @apply w-full flex flex-col !rounded-none py-[13px];
     }
     .selecti.borderBottom {
         @apply border-b-2 border-primary-900/40;

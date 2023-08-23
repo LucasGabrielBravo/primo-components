@@ -28,6 +28,14 @@
         placeholder="Nome Completo"
     />
 
+    <Input
+        name="Telefone"
+        label="Telefone"
+        color="primary"
+        border="borderBottom"
+        mask="(99)99999-9999"
+    />
+
     <svelte:fragment slot="controls">
         <Hst.Select
             bind:value={color}

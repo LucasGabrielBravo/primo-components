@@ -33,7 +33,7 @@ const autocomplete = "none";
 onMount(async () => {
   if (typeof window !== void 0) {
     const { default: InputMask } = await import("inputmask");
-    const inputMask2 = new Inputmask({
+    inputMask = new Inputmask({
       mask,
       placeholder: " "
     });
@@ -83,7 +83,7 @@ onDestroy(() => {
             <span class="text-surface-800"
                 >{label}
                 {#if $$restProps.required}
-                    <span class="text-red-500">*</span>
+                    <span class="require">*</span>
                 {/if}
             </span>
         {/if}
@@ -126,6 +126,10 @@ onDestroy(() => {
     flex-direction: column;
     align-items: flex-start
 }
+    .require {
+    --tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity))
+}
     .inputi {
     display: flex;
     width: 100%;
@@ -138,6 +142,9 @@ onDestroy(() => {
 }
     .inputi.borderBottom {
     border-bottom-width: 2px;
-    border-color: rgb(var(--color-primary-900, 30 58 138) / 0.4)
+    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4);
+    background-image: none;
+    font-weight: 300;
+    color: var(--on-tertiary-900)
 }
 </style>

@@ -35,6 +35,22 @@
         border="borderBottom"
         mask="(99)99999-9999"
     />
+    <Input
+        name="TextArea"
+        label="TextArea"
+        color="primary"
+        border="borderBottom"
+        type="textarea"
+        placeholder="Digite sua mensagem aqui..."
+    />
+    <Input
+        name="Checked"
+        label="Checked"
+        color="primary"
+        required
+        border="borderBottom"
+        type="checkbox"
+    />
 
     <svelte:fragment slot="controls">
         <Hst.Select

@@ -1,3 +1,25 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+
+    import inview from "$lib/utils/inview";
+    import { } from 'svelte/transition';
+
+</script>
+<div class="flex flex-col items-stretch">
+  <div class="bg-red-500 h-60" />
+  <div class="bg-blue-500 h-60" />
+  <div class="bg-green-500 h-60" />
+  <div class="bg-red-500 h-60" />
+  <div class="bg-blue-500 h-60" />
+  <div class="bg-green-500 h-60" />
+
+  <div use:inview={{direction: 'down'}} class="h-20" on:enterViewport={() => console.log("enter")}>
+    <h1>Ad ea proident ea mollit dolore pariatur esse reprehenderit eiusmod commodo ut proident labore irure.</h1>
+  </div>
+  
+  <div class="bg-red-500 h-60" />
+  <div class="bg-blue-500 h-60" />
+  <div class="bg-green-500 h-60" />
+  <div class="bg-red-500 h-60" />
+  <div class="bg-blue-500 h-60" />
+  <div class="bg-green-500 h-60" />
+</div>

@@ -39,7 +39,7 @@
     export let containerClass: string = "";
     export let value: any | undefined = undefined;
     // export let files: any | undefined = undefined;
-    // export let group: any | undefined = undefined;
+    export let group: any | undefined = undefined;
     export let color: $$Props["color"] = "default";
     export let border: $$Props["border"] = "borderBottom";
 
@@ -86,28 +86,35 @@
 	</label> -->
     <span>não montado</span>
 {:else if $$restProps["type"] === "checkbox"}
-    <!-- <label class={classnames('flex items-center gap-x-2', containerClass)}>
-		<input
-			type="checkbox"
-			bind:group
-			on:change
-			on:input
-			{value}
-			class={classnames(`variant-ringed-surface ${$$restProps['class']}`, $$restProps['type'])}
-			{...$$restProps}
-		/>
-		<p>{label || 'label'}</p>
-	</label> -->
-    <span>não montado</span>
-{:else}
-    <label class={classnames("label", containerClass)}>
+    <label class={classnames("checkbox ", containerClass)}>
+        <input
+            type="checkbox"
+            bind:group
+            on:change
+            on:input
+            {value}
+            class={classnames(` ${$$restProps["class"]}`, $$restProps["type"])}
+            {...$$restProps}
+        />
+
         {#if label}
-            <span class="text-surface-800"
-                >{label}
+            <span class="label-checkbox"
+                >{label || "label"}
                 {#if $$restProps.required}
                     <span class="require">*</span>
                 {/if}
             </span>
+        {/if}
+    </label>
+{:else}
+    <label class={classnames("label", containerClass)}>
+        {#if label}
+            <p class="">
+                {label}
+                {#if $$restProps.required}
+                    <p class="require">*</p>
+                {/if}
+            </p>
         {/if}
 
         {#if mask}
@@ -123,6 +130,20 @@
                     border,
                     class: $$props.class,
                 })}`}
+                {...$$restProps}
+            />
+        {:else if $$restProps["type"] === "textarea"}
+            <!-- Textarea -->
+            <textarea
+                rows="5"
+                class={`inputi text-area label' ${input({
+                    color,
+                    border,
+                    class: $$props.class,
+                })}`}
+                bind:value
+                on:change
+                on:input
                 {...$$restProps}
             />
         {:else}
@@ -146,6 +167,9 @@
     .label {
         @apply flex flex-col items-start font-medium;
     }
+    .label-checkbox {
+        @apply flex items-start font-medium gap-1;
+    }
     .require {
         @apply text-red-500;
     }
@@ -154,5 +178,11 @@
     }
     .inputi.borderBottom {
         @apply border-b-2 border-secondary-900/40 bg-transparent font-light text-[--on-tertiary-900];
+    }
+    .text-area {
+        @apply items-end;
+    }
+    .checkbox {
+        @apply flex items-center gap-x-2;
     }
 </style>

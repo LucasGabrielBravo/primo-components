@@ -88,12 +88,12 @@ onDestroy(() => {
 {:else}
     <label class={classnames("label", containerClass)}>
         {#if label}
-            <p class="">
-                {label}
+            <span class=""
+                >{label || "label"}
                 {#if $$restProps.required}
-                    <p class="require">*</p>
+                    <span class="require">*</span>
                 {/if}
-            </p>
+            </span>
         {/if}
 
         {#if mask}
@@ -115,7 +115,7 @@ onDestroy(() => {
             <!-- Textarea -->
             <textarea
                 rows="5"
-                class={`inputi text-area label' ${input({
+                class={`inputi label text-area' ${input({
                     color,
                     border,
                     class: $$props.class,
@@ -150,6 +150,12 @@ onDestroy(() => {
     font-weight: 500
 }
     .label-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-weight: 500
+}
+    .label-textaera {
     display: flex;
     align-items: flex-start;
     gap: 0.25rem;

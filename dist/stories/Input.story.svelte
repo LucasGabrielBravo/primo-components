@@ -32,6 +32,7 @@ $:
     <Input
         name="TextArea"
         label="TextArea"
+        required
         color="primary"
         border="borderBottom"
         type="textarea"

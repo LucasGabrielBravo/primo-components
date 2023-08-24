@@ -1,6 +1,6 @@
 {
 	"name": "@lgbravo/primo-components",
-	"version": "0.2.8",
+	"version": "0.2.16",
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",

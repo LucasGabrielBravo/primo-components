@@ -25,6 +25,7 @@ export let label = void 0;
 export let mask = void 0;
 export let containerClass = "";
 export let value = void 0;
+export let group = void 0;
 export let color = "default";
 export let border = "borderBottom";
 let inputElement;
@@ -64,28 +65,35 @@ onDestroy(() => {
 	</label> -->
     <span>não montado</span>
 {:else if $$restProps["type"] === "checkbox"}
-    <!-- <label class={classnames('flex items-center gap-x-2', containerClass)}>
-		<input
-			type="checkbox"
-			bind:group
-			on:change
-			on:input
-			{value}
-			class={classnames(`variant-ringed-surface ${$$restProps['class']}`, $$restProps['type'])}
-			{...$$restProps}
-		/>
-		<p>{label || 'label'}</p>
-	</label> -->
-    <span>não montado</span>
-{:else}
-    <label class={classnames("label", containerClass)}>
+    <label class={classnames("checkbox ", containerClass)}>
+        <input
+            type="checkbox"
+            bind:group
+            on:change
+            on:input
+            {value}
+            class={classnames(` ${$$restProps["class"]}`, $$restProps["type"])}
+            {...$$restProps}
+        />
+
         {#if label}
-            <span class="text-surface-800"
-                >{label}
+            <span class="label-checkbox"
+                >{label || "label"}
                 {#if $$restProps.required}
                     <span class="require">*</span>
                 {/if}
             </span>
+        {/if}
+    </label>
+{:else}
+    <label class={classnames("label", containerClass)}>
+        {#if label}
+            <p class="">
+                {label}
+                {#if $$restProps.required}
+                    <p class="require">*</p>
+                {/if}
+            </p>
         {/if}
 
         {#if mask}
@@ -101,6 +109,20 @@ onDestroy(() => {
                     border,
                     class: $$props.class,
                 })}`}
+                {...$$restProps}
+            />
+        {:else if $$restProps["type"] === "textarea"}
+            <!-- Textarea -->
+            <textarea
+                rows="5"
+                class={`inputi text-area label' ${input({
+                    color,
+                    border,
+                    class: $$props.class,
+                })}`}
+                bind:value
+                on:change
+                on:input
                 {...$$restProps}
             />
         {:else}
@@ -127,6 +149,12 @@ onDestroy(() => {
     align-items: flex-start;
     font-weight: 500
 }
+    .label-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-weight: 500
+}
     .require {
     --tw-text-opacity: 1;
     color: rgb(239 68 68 / var(--tw-text-opacity))
@@ -148,5 +176,14 @@ onDestroy(() => {
     background-color: transparent;
     font-weight: 300;
     color: var(--on-tertiary-900)
+}
+    .text-area {
+    align-items: flex-end
+}
+    .checkbox {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem
 }
 </style>

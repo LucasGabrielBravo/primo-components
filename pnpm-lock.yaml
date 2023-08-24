@@ -1,5 +1,13 @@
 lockfileVersion: '6.0'
 
+dependencies:
+  inputmask:
+    specifier: ^5.0.8
+    version: 5.0.8
+  js-cookie:
+    specifier: ^3.0.5
+    version: 3.0.5
+
 devDependencies:
   '@histoire/plugin-svelte':
     specifier: ^0.16.5
@@ -13,12 +21,21 @@ devDependencies:
   '@sveltejs/package':
     specifier: ^2.0.0
     version: 2.2.1(svelte@4.2.0)(typescript@5.1.6)
+  '@types/inputmask':
+    specifier: ^5.0.3
+    version: 5.0.3
+  '@types/js-cookie':
+    specifier: ^3.0.3
+    version: 3.0.3
   autoprefixer:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.28)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
+  clsx:
+    specifier: ^2.0.0
+    version: 2.0.0
   daisyui:
     specifier: ^3.5.1
     version: 3.5.1
@@ -608,6 +625,14 @@ packages:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
       '@types/node': 20.5.0
+    dev: true
+
+  /@types/inputmask@5.0.3:
+    resolution: {integrity: sha512-9aTXacRhf9D3+porVydLR28ll8/y3TQIrXEXv7ZWY0c3Lzl/1r4nHoaesZeh2Fd+UIefpWZrg2tkSnDn/dKUsw==}
+    dev: true
+
+  /@types/js-cookie@3.0.3:
+    resolution: {integrity: sha512-Xe7IImK09HP1sv2M/aI+48a20VX+TdRJucfq4vfRVy6nWN8PYPOEnlMRSgxJAgYQIXJVL8dZ4/ilAM7dWNaOww==}
     dev: true
 
   /@types/linkify-it@3.0.2:
@@ -1944,6 +1969,10 @@ packages:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
     dev: true
 
+  /inputmask@5.0.8:
+    resolution: {integrity: sha512-1WcbyudPTXP1B28ozWWyFa6QRIUG4KiLoyR6LFHlpT4OfTzRqFfWgHFadNvRuMN1S9XNVz9CdNvCGjJi+uAMqQ==}
+    dev: false
+
   /is-arrayish@0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
     dev: true
@@ -2023,6 +2052,11 @@ packages:
     resolution: {integrity: sha512-5eEbBDQT/jF1xg6l36P+mWGGoH9Spuy0PCdSr2dtWRDGC6ph/w9ZCL4lmESW8f8F7MwT3XKescfP0wnZWAKL9w==}
     hasBin: true
     dev: true
+
+  /js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
+    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

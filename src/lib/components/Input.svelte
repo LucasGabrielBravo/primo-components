@@ -109,12 +109,12 @@
 {:else}
     <label class={classnames("label", containerClass)}>
         {#if label}
-            <p class="">
-                {label}
+            <span class=""
+                >{label || "label"}
                 {#if $$restProps.required}
-                    <p class="require">*</p>
+                    <span class="require">*</span>
                 {/if}
-            </p>
+            </span>
         {/if}
 
         {#if mask}
@@ -136,7 +136,7 @@
             <!-- Textarea -->
             <textarea
                 rows="5"
-                class={`inputi text-area label' ${input({
+                class={`inputi label text-area' ${input({
                     color,
                     border,
                     class: $$props.class,
@@ -168,6 +168,9 @@
         @apply flex flex-col items-start font-medium;
     }
     .label-checkbox {
+        @apply flex items-start font-medium gap-1;
+    }
+    .label-textaera {
         @apply flex items-start font-medium gap-1;
     }
     .require {

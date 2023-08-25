@@ -1,6 +1,5 @@
 <script>import { cva } from "class-variance-authority";
 import clsx from "clsx";
-import Select from "svelte-select";
 export let label = void 0;
 export let placeholder = void 0;
 export let options = [];
@@ -41,7 +40,7 @@ const select = cva([], {
             {/if}
         </span>
     {/if}
-    <Select
+    <select
         {required}
         {placeholder}
         {...{ multiple }}
@@ -57,7 +56,7 @@ const select = cva([], {
         {#each options as option}
             <option value={option.value}> {option.label} </option>
         {/each}
-    </Select>
+    </select>
 </label>
 
 <style>

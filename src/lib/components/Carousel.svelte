@@ -17,11 +17,14 @@
   let carousel: HTMLDivElement
 
   function goTo(slideId: string) {        
-    const target = carousel.querySelector<HTMLDivElement>("#"+slideId)!;
-    const left = target.offsetLeft;
-    carousel.scrollTo({ left: left });
-
-    currentSlide = slides.find(s => s.id === slideId)!
+    try {
+      const target = carousel.querySelector<HTMLDivElement>("#"+slideId)!;
+      const left = target.offsetLeft;
+      carousel.scrollTo({ left: left });      
+      currentSlide = slides.find(s => s.id === slideId)!
+    } catch (error) {
+      
+    }
   }
 
   function getSlides(images: string[]): ISlide[] {

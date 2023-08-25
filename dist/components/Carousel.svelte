@@ -6,10 +6,13 @@ export let autoPlay = false;
 export let interval = 5e3;
 let carousel;
 function goTo(slideId) {
-  const target = carousel.querySelector("#" + slideId);
-  const left = target.offsetLeft;
-  carousel.scrollTo({ left });
-  currentSlide = slides.find((s) => s.id === slideId);
+  try {
+    const target = carousel.querySelector("#" + slideId);
+    const left = target.offsetLeft;
+    carousel.scrollTo({ left });
+    currentSlide = slides.find((s) => s.id === slideId);
+  } catch (error) {
+  }
 }
 function getSlides(images2) {
   const slides2 = [];

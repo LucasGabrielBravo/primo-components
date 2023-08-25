@@ -1,9 +1,11 @@
 <script>import { cva } from "class-variance-authority";
 import clsx from "clsx";
+import Select from "svelte-select";
 export let label = void 0;
 export let placeholder = void 0;
 export let options = [];
 export let required = void 0;
+export let multiple = false;
 export let color = "primary";
 export let border = "borderBottom";
 export let value = "";
@@ -39,9 +41,10 @@ const select = cva([], {
             {/if}
         </span>
     {/if}
-    <select
+    <Select
         {required}
         {placeholder}
+        {...{ multiple }}
         class={`selecti ${select({
             color,
             border,
@@ -54,7 +57,7 @@ const select = cva([], {
         {#each options as option}
             <option value={option.value}> {option.label} </option>
         {/each}
-    </select>
+    </Select>
 </label>
 
 <style>
@@ -68,16 +71,16 @@ const select = cva([], {
     color: rgb(239 68 68 / var(--tw-text-opacity))
 }
     .selecti {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+    display: flex !important;
+    width: 100% !important;
+    flex-direction: column !important;
     border-radius: 0px !important;
-    background-color: transparent;
-    padding-top: 14px;
-    padding-bottom: 14px
+    background-color: transparent !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important
 }
     .selecti.borderBottom {
-    border-bottom-width: 2px;
-    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4)
+    border-bottom-width: 2px !important;
+    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4) !important
 }
 </style>

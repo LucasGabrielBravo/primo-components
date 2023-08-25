@@ -1,7 +1,6 @@
 <script lang="ts">
     import { cva, type VariantProps } from "class-variance-authority";
     import clsx from "clsx";
-    import Select from "svelte-select";
 
     import type { HTMLSelectAttributes } from "svelte/elements";
 
@@ -62,7 +61,7 @@
             {/if}
         </span>
     {/if}
-    <Select
+    <select
         {required}
         {placeholder}
         {...{ multiple }}
@@ -78,7 +77,7 @@
         {#each options as option}
             <option value={option.value}> {option.label} </option>
         {/each}
-    </Select>
+    </select>
 </label>
 
 <style lang="postcss">

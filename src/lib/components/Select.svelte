@@ -1,6 +1,8 @@
 <script lang="ts">
     import { cva, type VariantProps } from "class-variance-authority";
     import clsx from "clsx";
+    import Select from "svelte-select";
+
     import type { HTMLSelectAttributes } from "svelte/elements";
 
     interface IOption {
@@ -14,12 +16,14 @@
         placeholder?: string | undefined;
         options?: IOption[] | undefined;
         required?: boolean | undefined;
+        multiple?: boolean | undefined;
     }
 
     export let label: string | undefined = undefined;
     export let placeholder: string | undefined = undefined;
     export let options: IOption[] = [];
     export let required: boolean | undefined = undefined;
+    export let multiple: boolean = false;
     export let color: $$Props["color"] = "primary";
     export let border: $$Props["border"] = "borderBottom";
     export let value: string | number | object = "";
@@ -58,9 +62,10 @@
             {/if}
         </span>
     {/if}
-    <select
+    <Select
         {required}
         {placeholder}
+        {...{ multiple }}
         class={`selecti ${select({
             color,
             border,
@@ -73,7 +78,7 @@
         {#each options as option}
             <option value={option.value}> {option.label} </option>
         {/each}
-    </select>
+    </Select>
 </label>
 
 <style lang="postcss">
@@ -84,9 +89,9 @@
         @apply text-red-500;
     }
     .selecti {
-        @apply w-full flex flex-col !rounded-none py-[14px]  bg-transparent;
+        @apply !w-full !flex !flex-col !rounded-none !py-[14px]  !bg-transparent;
     }
     .selecti.borderBottom {
-        @apply border-b-2 border-secondary-900/40;
+        @apply !border-b-2 !border-secondary-900/40;
     }
 </style>

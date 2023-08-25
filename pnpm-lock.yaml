@@ -7,6 +7,9 @@ dependencies:
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
+  svelte-select:
+    specifier: ^5.7.0
+    version: 5.7.0
 
 devDependencies:
   '@histoire/plugin-svelte':
@@ -365,6 +368,23 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@floating-ui/core@1.4.1:
+    resolution: {integrity: sha512-jk3WqquEJRlcyu7997NtR5PibI+y5bi+LS3hPmguVClypenMsCY3CBa3LAQnozRCtCrYWSEtAdiskpamuJRFOQ==}
+    dependencies:
+      '@floating-ui/utils': 0.1.1
+    dev: false
+
+  /@floating-ui/dom@1.5.1:
+    resolution: {integrity: sha512-KwvVcPSXg6mQygvA1TjbN/gh///36kKtllIF8SUm0qpFj8+rvYrpvlYdL1JoA71SHpDqgSSdGOSoQ0Mp3uY5aw==}
+    dependencies:
+      '@floating-ui/core': 1.4.1
+      '@floating-ui/utils': 0.1.1
+    dev: false
+
+  /@floating-ui/utils@0.1.1:
+    resolution: {integrity: sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==}
+    dev: false
 
   /@histoire/app@0.16.5(vite@4.4.9):
     resolution: {integrity: sha512-m+rCZnz6lnaIbVK1R9UBZFgU91/V1RnZqVaMq6KjUuatuxUUS1M4HgsFT5Y74Utltq0U3i0RuIb5h20z6M7nHg==}
@@ -3267,6 +3287,13 @@ packages:
       - sugarss
     dev: true
 
+  /svelte-floating-ui@1.2.8:
+    resolution: {integrity: sha512-8Ifi5CD2Ui7FX7NjJRmutFtXjrB8T/FMNoS2H8P81t5LHK4I9G4NIs007rLWG/nRl7y+zJUXa3tWuTjYXw/O5A==}
+    dependencies:
+      '@floating-ui/core': 1.4.1
+      '@floating-ui/dom': 1.5.1
+    dev: false
+
   /svelte-hmr@0.15.3(svelte@4.2.0):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -3323,6 +3350,13 @@ packages:
       svelte: 4.2.0
       typescript: 5.1.6
     dev: true
+
+  /svelte-select@5.7.0:
+    resolution: {integrity: sha512-oClK1exjcWDj2817+0djGhK04t5CSZbuP0oh7gz+3dEcn/G+QqRsfI2/dvIyOSHILqNzlj+Ztp2z1pMtE7Wf8Q==}
+    dependencies:
+      '@floating-ui/dom': 1.5.1
+      svelte-floating-ui: 1.2.8
+    dev: false
 
   /svelte2tsx@0.6.20(svelte@4.2.0)(typescript@5.1.6):
     resolution: {integrity: sha512-zaSnHSERYceKxugFbjiZ3YiNcC2fNbVjpQ9qaE5hrYI4tIOX9ZqHS+I30Hp2HF+MVXLOVWVErgn/6pAlQNnheA==}

@@ -71,7 +71,7 @@
     });
 </script>
 
-{#if $$restProps["type"] === "radio"}
+{#if $$props["type"] === "radio"}
     <!-- <label class={classnames('flex items-center gap-x-2', containerClass)}>
 		<input
 			type="radio"
@@ -85,7 +85,7 @@
 		<p>{label || 'label'}</p>
 	</label> -->
     <span>não montado</span>
-{:else if $$restProps["type"] === "checkbox"}
+{:else if $$props["type"] === "checkbox"}
     <label class={classnames("checkbox ", containerClass)}>
         <input
             type="checkbox"
@@ -94,13 +94,13 @@
             on:input
             {value}
             class={classnames(` ${$$restProps["class"]}`, $$restProps["type"])}
-            {...$$restProps}
+            {...$$props}
         />
 
         {#if label}
             <span class="label-checkbox"
                 >{label || "label"}
-                {#if $$restProps.required}
+                {#if $$props.required}
                     <span class="require">*</span>
                 {/if}
             </span>
@@ -111,7 +111,7 @@
         {#if label}
             <span class=""
                 >{label || "label"}
-                {#if $$restProps.required}
+                {#if $$props.required}
                     <span class="require">*</span>
                 {/if}
             </span>
@@ -132,7 +132,7 @@
                 })}`}
                 {...$$restProps}
             />
-        {:else if $$restProps["type"] === "textarea"}
+        {:else if $$props["type"] === "textarea"}
             <!-- Textarea -->
             <textarea
                 rows="5"
@@ -144,7 +144,7 @@
                 bind:value
                 on:change
                 on:input
-                {...$$restProps}
+                {...$$props}
             />
         {:else}
             <input
@@ -157,7 +157,7 @@
                     border,
                     class: $$props.class,
                 })}`}
-                {...$$restProps}
+                {...$$props}
             />
         {/if}
     </label>

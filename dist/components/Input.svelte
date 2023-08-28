@@ -50,7 +50,7 @@ onDestroy(() => {
 });
 </script>
 
-{#if $$restProps["type"] === "radio"}
+{#if $$props["type"] === "radio"}
     <!-- <label class={classnames('flex items-center gap-x-2', containerClass)}>
 		<input
 			type="radio"
@@ -64,7 +64,7 @@ onDestroy(() => {
 		<p>{label || 'label'}</p>
 	</label> -->
     <span>não montado</span>
-{:else if $$restProps["type"] === "checkbox"}
+{:else if $$props["type"] === "checkbox"}
     <label class={classnames("checkbox ", containerClass)}>
         <input
             type="checkbox"
@@ -73,13 +73,13 @@ onDestroy(() => {
             on:input
             {value}
             class={classnames(` ${$$restProps["class"]}`, $$restProps["type"])}
-            {...$$restProps}
+            {...$$props}
         />
 
         {#if label}
             <span class="label-checkbox"
                 >{label || "label"}
-                {#if $$restProps.required}
+                {#if $$props.required}
                     <span class="require">*</span>
                 {/if}
             </span>
@@ -90,7 +90,7 @@ onDestroy(() => {
         {#if label}
             <span class=""
                 >{label || "label"}
-                {#if $$restProps.required}
+                {#if $$props.required}
                     <span class="require">*</span>
                 {/if}
             </span>
@@ -111,7 +111,7 @@ onDestroy(() => {
                 })}`}
                 {...$$restProps}
             />
-        {:else if $$restProps["type"] === "textarea"}
+        {:else if $$props["type"] === "textarea"}
             <!-- Textarea -->
             <textarea
                 rows="5"
@@ -123,7 +123,7 @@ onDestroy(() => {
                 bind:value
                 on:change
                 on:input
-                {...$$restProps}
+                {...$$props}
             />
         {:else}
             <input
@@ -136,7 +136,7 @@ onDestroy(() => {
                     border,
                     class: $$props.class,
                 })}`}
-                {...$$restProps}
+                {...$$props}
             />
         {/if}
     </label>

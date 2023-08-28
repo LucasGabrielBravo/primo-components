@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.24](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.23...v0.2.24) (2023-08-28)
+
 ### [0.2.23](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.22...v0.2.23) (2023-08-25)
 
 ### [0.2.22](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.21...v0.2.22) (2023-08-25)

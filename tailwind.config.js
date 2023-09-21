@@ -41,6 +41,9 @@ export default {
           700: 'rgb(var(--color-tertiary-700, 73 171 7) / <alpha-value>)',
           800: 'rgb(var(--color-tertiary-800, 48 112 5) / <alpha-value>)',
           900: 'rgb(var(--color-tertiary-900, 25 59 3) / <alpha-value>)',
+        },
+        surface:{
+          50: 'rgb(var(--color-surface-50, 0 255 0) / <alpha-value>)'
         }
       }
     },

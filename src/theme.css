@@ -39,6 +39,8 @@
   --on-primary: #FFF;
 	--on-secondary: #FFF;
 	--on-tertiary: #000;
+
+  --color-surface-50: 0 255 0;
 }
 
 html {  

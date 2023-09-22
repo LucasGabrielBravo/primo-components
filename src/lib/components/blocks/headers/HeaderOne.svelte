@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { fade, slide } from "svelte/transition";
-  import Button from "../Button.svelte";
-  import ContainerPage from "../ContainerPage.svelte";
   import { quintOut } from "svelte/easing";
+  import { fade, slide } from "svelte/transition";
+  import Button from "../../Button.svelte";
+  import ContainerPage from "../../ContainerPage.svelte";
 
   interface IOrcamento {
     label: string;
@@ -103,10 +103,18 @@
 </div>
 
 {#if drawerState}
-  <div role="dialog" aria-modal="true">
+  <div>
+    <!-- TODO: validar -->
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <div
+      role="dialog"
+      aria-modal="true"
       class="drawer__unique13"
       transition:fade={{ delay: 250, duration: 300 }}
+      on:click={() => {
+        drawerclose();
+      }}
     />
     <div
       class="drawer__unique14"
@@ -226,7 +234,7 @@
 
 <style lang="postcss">
   .fundo {
-    @apply flex bg-gray-200 py-2 justify-center;
+    @apply flex  py-2 justify-center  backdrop-blur-lg border-b-[1px] border-surface-50 absolute top-0 w-full z-10;
   }
   .table {
     @apply flex w-full h-full;
@@ -241,7 +249,7 @@
     @apply grow-0 h-10 justify-center items-center;
   }
   .logo-img {
-    @apply object-contain h-full;
+    @apply object-contain h-full w-40;
   }
   .contato {
     @apply grow w-full items-center px-2;
@@ -265,10 +273,10 @@
     @apply flex flex-col;
   }
   .drawer__unique13 {
-    @apply fixed inset-0 z-0 opacity-10 bg-primary-600;
+    @apply fixed inset-0 z-0  bg-primary-700/30 backdrop-blur-sm;
   }
   .drawer__unique14 {
-    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6  from-surface-50 to-primary-500 bg-gradient-to-br sm:max-w-sm sm:shadow-lg;
+    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6  bg-surface-100 sm:max-w-sm sm:shadow-lg;
   }
   .drawer__unique15 {
     @apply flex items-center justify-between;

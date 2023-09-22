@@ -52,7 +52,7 @@
 
 <style lang="postcss">
 	.button {
-		@apply px-4 py-2 flex flex-row items-center border rounded-[--rounded-base];
+		@apply px-4 py-2 flex flex-row items-center justify-center border rounded-[--rounded-base];
 		@apply border-slate-400 bg-slate-100 text-slate-700;
 		@apply active:scale-95 transition-all;
 	}

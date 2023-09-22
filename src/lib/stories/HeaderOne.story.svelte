@@ -1,11 +1,11 @@
 <script lang="ts">
-  import HeaderOne from "$lib/components/blocks/HeaderOne.svelte";
+  import HeaderOne from "$lib/components/blocks/headers/HeaderOne.svelte";
   import type { Hst } from "@histoire/plugin-svelte";
   export let Hst: Hst;
 
   let logo = {
     alt: "teste",
-    url: "https://lh6.googleusercontent.com/nkf6yLuUySSqSzzQv556n2TJy_U7PtNEjMu-DSwnCB2kvB8S2flIt58teRc7kDQPXHlhQ5Y9tbGtt7wc74clLE8=w16383",
+    url: "https://lh5.googleusercontent.com/mna8YIThwr4JCqcMlujxZM3FPXG7Pe1RJqe2DgMagUID4X65ZmdC4XFd2YmMQE7r5Rj-szwWmq98g4-jpIEx9Cs=w16383",
   };
 
   let telefone: string = "+55 21 99369-6648";

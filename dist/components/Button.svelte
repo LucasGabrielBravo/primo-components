@@ -18,24 +18,31 @@ const button = cva([], {
       md: "",
       lg: "lg",
       xl: "xl"
+    },
+    variant: {
+      default: "",
+      ringed: "ringed",
+      filled: "filled"
     }
   },
   compoundVariants: [],
   defaultVariants: {
     size: "md",
-    color: "default"
+    color: "default",
+    variant: "default"
   }
 });
 export let href = void 0;
 export let color = "default";
 export let size = "md";
+export let variant = "default";
 </script>
 
 <svelte:element
 	this={href ? "a" : "button"}
 	{href}
 	{...$$props}
-	class={`button ${button({ size, color, class: $$props.class })}`}
+	class={`button ${button({ size, color, variant, class: $$props.class })}`}
 >
 	<slot />
 </svelte:element>
@@ -45,6 +52,7 @@ export let size = "md";
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     border-radius: var(--rounded-base);
     border-width: 1px;
     padding-left: 1rem;
@@ -52,11 +60,11 @@ export let size = "md";
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     --tw-border-opacity: 1;
-    border-color: rgb(148 163 184 / var(--tw-border-opacity));
+    border-color: rgb(var(--color-slate-400, 148 163 184) / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
-    background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+    background-color: rgb(var(--color-slate-100, 241 245 249) / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
-    color: rgb(51 65 85 / var(--tw-text-opacity));
+    color: rgb(var(--color-slate-700, 51 65 85) / var(--tw-text-opacity));
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
@@ -212,6 +220,23 @@ export let size = "md";
     --tw-gradient-to: rgb(var(--color-tertiary-600, 96 225 10) / 0) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     --tw-gradient-to: rgb(var(--color-primary-600, 37 99 235) / 1) var(--tw-gradient-to-position)
+}
+
+	.button.ringed {
+    min-width: -moz-max-content;
+    min-width: max-content;
+    border-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-border-opacity));
+    background-color: transparent;
+    color: var(--on-primary,#FFF) !important
+}
+
+	.button.ringed:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity))
 }
 
 	.button.sm {

@@ -35,7 +35,7 @@
                             <img
                                 src={parceiro.image.url}
                                 alt={parceiro.image.alt}
-                                class="object-cover h-full"
+                                class="logo-parceiro"
                             />
                         </div>
                         <div class="text-parceira">
@@ -89,5 +89,8 @@
     }
     .bg-parceira {
         @apply bg-secondary-500;
+    }
+    .logo-parceiro {
+        @apply object-cover h-full;
     }
 </style>

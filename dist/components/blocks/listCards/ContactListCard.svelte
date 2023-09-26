@@ -1,23 +1,7 @@
-<script lang="ts">
-    import ContainerPage from "$lib/components/ContainerPage.svelte";
-
-    interface IBotao {
-        label: string;
-        url: string;
-    }
-    interface Ipassos {
-        descricao: string;
-        img: {
-            url: string;
-            alt: string;
-        };
-    }
-
-    export let titulo: string;
-
-    export let botao: IBotao;
-
-    export let passos: Ipassos[];
+<script>import ContainerPage from "../../ContainerPage.svelte";
+export let titulo;
+export let botao;
+export let passos;
 </script>
 
 <div class="ajust">
@@ -94,41 +78,100 @@
     </ContainerPage>
 </div>
 
-<style lang="postcss">
+<style>
     .table {
-        @apply grid grid-cols-1 md:grid-cols-2 gap-2;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.5rem
+}
+@media (min-width: 768px) {
+    .table {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
     }
+}
     .info {
-        @apply w-full flex flex-col gap-10;
-    }
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 2.5rem
+}
     .titulo {
-        @apply text-5xl text-primary-500 max-w-xl font-bold;
-    }
+    max-width: 36rem;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+}
     .passo-passo {
-        @apply flex flex-col gap-4 max-w-md;
-    }
+    display: flex;
+    max-width: 28rem;
+    flex-direction: column;
+    gap: 1rem
+}
     .item {
-        @apply flex w-full items-center gap-2;
-    }
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem
+}
     .item-image-box {
-        @apply flex w-1/12 aspect-square rounded-full overflow-hidden items-center justify-center;
-    }
+    display: flex;
+    aspect-ratio: 1 / 1;
+    width: 8.333333%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9999px
+}
     .item-image {
-        @apply object-cover h-full w-full;
-    }
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover
+}
     .item-descricao {
-        @apply flex w-11/12 text-lg text-surface-700;
-    }
+    display: flex;
+    width: 91.666667%;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
+}
     .image-rigth-box {
-        @apply w-full p-8 overflow-hidden;
-    }
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem
+}
     .img {
-        @apply h-full w-full rounded-md object-cover  drop-shadow-md;
-    }
+    height: 100%;
+    width: 100%;
+    border-radius: 0.375rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
     .btn-solicite {
-        @apply flex w-full max-w-sm bg-[#07C21A] rounded-full text-surface-50 items-center justify-center py-2 text-xl font-medium;
-    }
+    display: flex;
+    width: 100%;
+    max-width: 24rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(7 194 26 / var(--tw-bg-opacity));
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
+}
     .text-btn {
-        @apply flex items-center gap-2;
-    }
+    display: flex;
+    align-items: center;
+    gap: 0.5rem
+}
 </style>

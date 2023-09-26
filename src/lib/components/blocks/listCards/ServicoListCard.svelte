@@ -27,6 +27,7 @@
                             <img
                                 src={servico.image.url}
                                 alt={servico.image.alt}
+                                class="image-servico"
                             />
                         </div>
                         <div class="servico-card-text-balao">
@@ -57,13 +58,16 @@
         @apply text-surface-700 text-base font-medium text-center max-w-4xl;
     }
     .servico-card {
-        @apply relative overflow-hidden rounded-md drop-shadow-sm;
+        @apply relative overflow-hidden rounded-sm drop-shadow-sm h-48;
+    }
+    .image-servico {
+        @apply object-cover w-full h-auto;
     }
     .servico-card-text-balao {
         @apply absolute bottom-2 w-full items-center justify-center flex;
     }
     .text-balao {
-        @apply bg-surface-50/80 px-24 py-6 text-primary-500 font-medium text-lg;
+        @apply bg-surface-50/80 px-8 py-6 text-primary-500 font-medium text-lg w-full max-w-[90%] text-center;
     }
     .ajust {
         @apply py-10;

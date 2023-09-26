@@ -40,10 +40,10 @@
 
 <style lang="postcss">
     .fundo-cards {
-        @apply bg-surface-600 p-2 rounded-md flex flex-col md:flex-row gap-2;
+        @apply bg-surface-300 p-2 rounded-md flex flex-col md:flex-row gap-2;
     }
     .card {
-        @apply bg-surface-500 rounded-md flex-1 items-center justify-center flex flex-col py-2;
+        @apply bg-surface-200 rounded-md flex-1 items-center justify-center flex flex-col py-2;
     }
     .img-card {
         @apply w-14 h-14 text-primary-500;

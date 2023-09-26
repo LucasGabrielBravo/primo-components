@@ -13,7 +13,8 @@
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
 		"story:preview": "histoire preview",
-		"release": "standard-version && git push origin master && npm publish"
+		"release": "standard-version && git push origin master && npm publish",
+		"package-watch": "svelte-kit sync && svelte-package -w && publint"
 	},
 	"exports": {
 		".": {

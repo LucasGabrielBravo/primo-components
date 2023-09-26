@@ -1,27 +1,12 @@
-<script lang="ts">
-    import Button from "$lib/components/Button.svelte";
-    import ContainerPage from "$lib/components/ContainerPage.svelte";
-    import Check from "$lib/components/icons/Check.svelte";
-
-    interface IImage {
-        alt: string;
-        url: string;
-    }
-    interface IBotao {
-        label: string;
-        url: string;
-    }
-
-    interface IListCuidados {
-        cuidado: string;
-    }
-
-    export let listCuidados: IListCuidados[];
-    export let titulo: string;
-    export let paragrafo: string;
-    export let imageGrande: IImage;
-    export let imagePequena: IImage;
-    export let botao1: IBotao;
+<script>import Button from "../../Button.svelte";
+import ContainerPage from "../../ContainerPage.svelte";
+import Check from "../../icons/Check.svelte";
+export let listCuidados;
+export let titulo;
+export let paragrafo;
+export let imageGrande;
+export let imagePequena;
+export let botao1;
 </script>
 
 <div class="ajust">
@@ -113,71 +98,228 @@
     </ContainerPage>
 </div>
 
-<style lang="postcss">
+<style>
     .ajust {
-        @apply py-10;
-    }
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem
+}
     .table {
-        @apply grid grid-cols-1 md:grid-cols-2;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr))
+}
+    @media (min-width: 768px) {
+    .table {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
     }
+}
     .conteudo-text {
-        @apply flex flex-col h-full;
-    }
+    display: flex;
+    height: 100%;
+    flex-direction: column
+}
     .box-chamada-text {
-        @apply flex flex-col w-full gap-8 mt-96 md:mt-0;
+    margin-top: 24rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem
+}
+    @media (min-width: 768px) {
+    .box-chamada-text {
+        margin-top: 0px
     }
+}
     .chamada-title {
-        @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-4xl  max-w-sm;
+    max-width: 24rem;
+    border-left-width: 4px;
+    --tw-border-opacity: 1;
+    border-color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-border-opacity));
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .chamada-title {
+        font-size: 2.25rem;
+        line-height: 2.5rem
     }
+}
     .chamda-text {
-        @apply text-primary-500 text-base md:text-lg font-medium max-w-sm;
+    max-width: 24rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .chamda-text {
+        font-size: 1.125rem;
+        line-height: 1.75rem
     }
+}
     .cuidados {
-        @apply flex flex-col gap-2;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
     .cuidado-icon {
-        @apply text-primary-500;
-    }
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+}
     .cuidado-texto {
-        @apply flex items-center gap-1;
-    }
+    display: flex;
+    align-items: center;
+    gap: 0.25rem
+}
     .chamada-botoes {
-        @apply flex flex-col md:flex-row gap-2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+    @media (min-width: 768px) {
+    .chamada-botoes {
+        flex-direction: row
     }
+}
     .box-images {
-        @apply grid grid-cols-1 sm:grid-cols-2 w-full items-center h-[600px] md:h-full;
+    display: grid;
+    height: 600px;
+    width: 100%;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    align-items: center
+}
+    @media (min-width: 640px) {
+    .box-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
     }
+}
+    @media (min-width: 768px) {
+    .box-images {
+        height: 100%
+    }
+}
     .image-grande {
-        @apply overflow-hidden w-full relative h-full  flex flex-col p-4;
-    }
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1rem
+}
     .circle {
-        @apply aspect-square w-[15%]  bg-primary-500 rounded-full absolute;
-    }
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    width: 15%;
+    border-radius: 9999px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity))
+}
     .svg {
-        @apply w-[30%] h-[40%] absolute left-[20%]  top-[10%];
-    }
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    height: 40%;
+    width: 30%
+}
     .bg-solid {
-        @apply bg-primary-500 rounded-sm w-[50%] h-[120%] md:h-[110%] absolute left-[25%] md:left-[25%];
+    position: absolute;
+    left: 25%;
+    height: 120%;
+    width: 50%;
+    border-radius: 0.125rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity))
+}
+    @media (min-width: 768px) {
+    .bg-solid {
+        left: 25%;
+        height: 110%
     }
+}
     .box-image-grande {
-        @apply h-[90%] md:h-[80%] flex w-[90%] absolute justify-center top-[10%];
+    position: absolute;
+    top: 10%;
+    display: flex;
+    height: 90%;
+    width: 90%;
+    justify-content: center
+}
+    @media (min-width: 768px) {
+    .box-image-grande {
+        height: 80%
     }
+}
     .box-position-image-grande {
-        @apply relative flex w-full top-[10%] h-[90%] items-center;
-    }
+    position: relative;
+    top: 10%;
+    display: flex;
+    height: 90%;
+    width: 100%;
+    align-items: center
+}
     .imagem {
-        @apply h-full absolute -right-[15%] md:-right-[30%] rounded-sm object-cover object-center;
+    position: absolute;
+    right: -15%;
+    height: 100%;
+    border-radius: 0.125rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center
+}
+    @media (min-width: 768px) {
+    .imagem {
+        right: -30%
     }
+}
     .image-pequena {
-        @apply overflow-hidden w-[60%] relative h-[60%] flex flex-col p-4  mx-auto;
-    }
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 60%;
+    width: 60%;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1rem
+}
     .box-position-image-pequena {
-        @apply relative flex w-full top-[15%] md:top-[10%] h-[90%] items-center;
+    position: relative;
+    top: 15%;
+    display: flex;
+    height: 90%;
+    width: 100%;
+    align-items: center
+}
+    @media (min-width: 768px) {
+    .box-position-image-pequena {
+        top: 10%
     }
+}
     .bg-solid-pequena {
-        @apply bg-primary-500 rounded-sm w-[50%] h-[110%] absolute left-[20%];
-    }
+    position: absolute;
+    left: 20%;
+    height: 110%;
+    width: 50%;
+    border-radius: 0.125rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity))
+}
     .svg-pequeno {
-        @apply w-[30%] h-[40%] absolute left-[20%] top-[15%] md:top-[11%];
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    height: 40%;
+    width: 30%
+}
+    @media (min-width: 768px) {
+    .svg-pequeno {
+        top: 11%
     }
+}
 </style>

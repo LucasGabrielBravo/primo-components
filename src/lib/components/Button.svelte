@@ -22,11 +22,17 @@
 				lg: "lg",
 				xl: "xl",
 			},
+			variant: {
+				default: "",
+				ringed: "ringed",
+				filled: "filled",
+			},
 		},
 		compoundVariants: [],
 		defaultVariants: {
 			size: "md",
 			color: "default",
+			variant: "default",
 		},
 	});
 
@@ -39,13 +45,14 @@
 	export let href: string | undefined = undefined;
 	export let color: $$Props["color"] = "default";
 	export let size: $$Props["size"] = "md";
+	export let variant: $$Props["variant"] = "default";
 </script>
 
 <svelte:element
 	this={href ? "a" : "button"}
 	{href}
 	{...$$props}
-	class={`button ${button({ size, color, class: $$props.class })}`}
+	class={`button ${button({ size, color, variant, class: $$props.class })}`}
 >
 	<slot />
 </svelte:element>
@@ -100,6 +107,11 @@
 	.button.tertiary-primary {
 		@apply bg-gradient-to-br from-tertiary-500 to-primary-500 text-[--on-tertiary,#FFF] border-[#FFF0];
 		@apply hover:from-tertiary-600 hover:to-primary-600;
+	}
+
+	.button.ringed {
+		@apply min-w-max border-2 border-primary-500 !text-[--on-primary,#FFF] bg-transparent;
+		@apply hover:bg-primary-500 hover:border-primary-500;
 	}
 
 	.button.sm {

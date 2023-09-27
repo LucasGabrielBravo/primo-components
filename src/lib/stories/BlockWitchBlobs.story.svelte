@@ -1,5 +1,5 @@
 <script lang="ts">
-    import BlockWitchBlobs from "$lib/components/blocks/blockContent/BlockWitchBlobs.svelte";
+    import BlockWithBlobs from "$lib/components/blocks/blockContent/BlockWithBlobs.svelte";
     import type { Hst } from "@histoire/plugin-svelte";
     export let Hst: Hst;
 
@@ -11,8 +11,8 @@
     let servicocontratado = "Solicitou serviço de Cuidador de Idosos";
 </script>
 
-<Hst.Story title="BlockWitchBlobs">
-    <BlockWitchBlobs
+<Hst.Story title="BlockWithBlobs">
+    <BlockWithBlobs
         {titulobranco}
         {titulosecunday}
         {paragrafo}

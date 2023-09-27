@@ -229,14 +229,17 @@ export let variant = "default";
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-border-opacity));
     background-color: transparent;
-    color: var(--on-primary,#FFF) !important
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
 
 	.button.ringed:hover {
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity))
+    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
 }
 
 	.button.sm {

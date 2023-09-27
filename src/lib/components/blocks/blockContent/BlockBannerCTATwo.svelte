@@ -1,16 +1,7 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import ContainerPage from "$lib/components/ContainerPage.svelte";
-
-    interface IBotao {
-        label: string;
-        url: string;
-    }
-
-    interface IImage {
-        alt: string;
-        url: string;
-    }
+    import type { IBotao, IImage } from "../../../../types/fields";
 
     export let subtitulo: string;
     export let titulo: string;

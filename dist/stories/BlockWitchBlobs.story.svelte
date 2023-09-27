@@ -1,4 +1,4 @@
-<script>import BlockWitchBlobs from "../components/blocks/blockContent/BlockWitchBlobs.svelte";
+<script>import BlockWithBlobs from "../components/blocks/blockContent/BlockWithBlobs.svelte";
 export let Hst;
 let titulobranco = "Experi\xEAncias ";
 let titulosecunday = "verdadeiras";
@@ -7,8 +7,8 @@ let autor = "Mariana da Gl\xF3ria ";
 let servicocontratado = "Solicitou servi\xE7o de Cuidador de Idosos";
 </script>
 
-<Hst.Story title="BlockWitchBlobs">
-    <BlockWitchBlobs
+<Hst.Story title="BlockWithBlobs">
+    <BlockWithBlobs
         {titulobranco}
         {titulosecunday}
         {paragrafo}

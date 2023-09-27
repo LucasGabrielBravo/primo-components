@@ -1,14 +1,15 @@
 <script lang="ts">
     import BlockBannerCtaTwo from "$lib/components/blocks/blockContent/BlockBannerCTATwo.svelte";
     import type { Hst } from "@histoire/plugin-svelte";
+    import type { IBotao, IImage } from "../../types/fields";
     export let Hst: Hst;
 
-    let botao = {
+    let botao: IBotao = {
         label: "Pedir orçamento",
         url: "/",
     };
 
-    let image = {
+    let image: IImage = {
         alt: "bgImage",
         url: "https://www.seatecnologia.com.br/documents/20181/1600996/computer.png/d7d4e635-8a28-17c1-92f1-24a53b051ed3?t=1644324687317",
     };

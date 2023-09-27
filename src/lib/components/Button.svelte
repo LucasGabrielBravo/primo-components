@@ -110,8 +110,8 @@
 	}
 
 	.button.ringed {
-		@apply min-w-max border-2 border-primary-500 !text-[--on-primary,#FFF] bg-transparent;
-		@apply hover:bg-primary-500 hover:border-primary-500;
+		@apply min-w-max border-2 border-primary-500 text-primary-500 bg-transparent;
+		@apply hover:bg-primary-500 hover:border-primary-500 hover:text-surface-50;
 	}
 
 	.button.sm {

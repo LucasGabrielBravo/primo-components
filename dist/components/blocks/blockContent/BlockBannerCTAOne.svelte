@@ -25,7 +25,7 @@ export let backgroundimage;
                         <div class="chamada-text">
                             {#each paragrafos as paragrafo, i}
                                 <span data-key="paragrafos[{i}].paragrafo">
-                                    {@html paragrafo.paragrafo}
+                                    {@html paragrafo.text}
                                 </span>
                             {/each}
                         </div>
@@ -52,12 +52,8 @@ export let backgroundimage;
     position: relative;
     min-height: -moz-max-content;
     min-height: max-content;
+    width: 100%;
     align-items: center
-}
-@media (min-width: 768px) {
-    .box {
-        aspect-ratio: 2.1
-    }
 }
     .img-fundo {
     position: absolute;

@@ -1,18 +1,7 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import ContainerPage from "$lib/components/ContainerPage.svelte";
-
-    interface IBotao {
-        label: string;
-        url: string;
-    }
-    interface IImage {
-        alt: string;
-        url: string;
-    }
-    interface IParagrafo {
-        paragrafo: string;
-    }
+    import type { IBotao, IImage, IParagrafo } from "../../../../types/fields";
 
     export let titulo: string;
     export let paragrafos: IParagrafo[];
@@ -40,7 +29,7 @@
                         <div class="chamada-text">
                             {#each paragrafos as paragrafo, i}
                                 <span data-key="paragrafos[{i}].paragrafo">
-                                    {@html paragrafo.paragrafo}
+                                    {@html paragrafo.text}
                                 </span>
                             {/each}
                         </div>
@@ -64,7 +53,7 @@
 
 <style lang="postcss">
     .box {
-        @apply relative  min-h-max  md:aspect-[2.1] items-center;
+        @apply relative  min-h-max  w-full items-center;
     }
     .img-fundo {
         @apply absolute inset-0 h-full w-full object-cover object-left;

@@ -20,7 +20,7 @@
             titulo: "Assitencia",
             descricao: "teste",
             icon: {
-                label: "Teste",
+                alt: "Teste",
                 url: "https://www.climego.com.br/images/imagem-telefonista.png",
             },
         },
@@ -28,7 +28,7 @@
             titulo: "Assitencia",
             descricao: "teste",
             icon: {
-                label: "Teste",
+                alt: "Teste",
                 url: "https://www.climego.com.br/images/imagem-telefonista.png",
             },
         },
@@ -36,7 +36,7 @@
             titulo: "Assitencia",
             descricao: "teste",
             icon: {
-                label: "Teste",
+                alt: "Teste",
                 url: "https://www.climego.com.br/images/imagem-telefonista.png",
             },
         },

@@ -2,23 +2,12 @@
     import Button from "$lib/components/Button.svelte";
     import ContainerPage from "$lib/components/ContainerPage.svelte";
     import clsx from "clsx";
-
-    interface IBotao {
-        label: string;
-        url: string;
-    }
-    interface IImage {
-        alt: string;
-        url: string;
-    }
+    import type { IBotao, IImage } from "../../../../types/fields";
 
     interface IDiferencial {
         titulo: string;
         descricao: string;
-        icon: {
-            label: string;
-            url: string;
-        };
+        icon: IImage;
     }
 
     export let titulo: string;
@@ -79,7 +68,7 @@
                                 data-key="diferencial[{i}].icon"
                                 class="icon-botao"
                                 src={diferencial.icon.url}
-                                alt={diferencial.icon.label}
+                                alt={diferencial.icon.alt}
                             />
                             <div class="box-icon-descripition">
                                 <span

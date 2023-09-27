@@ -3,10 +3,10 @@ export let Hst;
 let titulo = "Titulo";
 let paragrafos = [
   {
-    paragrafo: "Somos uma rede de cuidadores de excel\xEAncia especializados em atenca\xE7\xE3o domiciliar e hospitalar do Rio de Janeiro."
+    text: "Somos uma rede de cuidadores de excel\xEAncia especializados em atenca\xE7\xE3o domiciliar e hospitalar do Rio de Janeiro."
   },
   {
-    paragrafo: "Somos uma rede de cuidadores de excel\xEAncia especializados em atenca\xE7\xE3o domiciliar e hospitalar do Rio de Janeiro."
+    text: "Somos uma rede de cuidadores de excel\xEAncia especializados em atenca\xE7\xE3o domiciliar e hospitalar do Rio de Janeiro."
   }
 ];
 let botao1 = {

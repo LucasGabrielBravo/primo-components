@@ -2,21 +2,9 @@
     import Button from "$lib/components/Button.svelte";
     import ContainerPage from "$lib/components/ContainerPage.svelte";
     import Check from "$lib/components/icons/Check.svelte";
+    import type { IBotao, IImage, IParagrafo } from "../../../../types/fields";
 
-    interface IImage {
-        alt: string;
-        url: string;
-    }
-    interface IBotao {
-        label: string;
-        url: string;
-    }
-
-    interface IListCuidados {
-        cuidado: string;
-    }
-
-    export let listCuidados: IListCuidados[];
+    export let listCuidados: IParagrafo[];
     export let titulo: string;
     export let paragrafo: string;
     export let imageGrande: IImage;
@@ -45,7 +33,7 @@
                                 <span class="cuidado-icon">
                                     <Check />
                                 </span>
-                                {cuidado.cuidado}
+                                {cuidado.text}
                             </span>
                         {/each}
                     </div>

@@ -30,7 +30,7 @@ export let botao1;
                                 <span class="cuidado-icon">
                                     <Check />
                                 </span>
-                                {cuidado.cuidado}
+                                {cuidado.text}
                             </span>
                         {/each}
                     </div>

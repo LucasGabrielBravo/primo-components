@@ -12,9 +12,9 @@ declare const __propDef: {
     };
     slots: {};
 };
-export type BlockWitchBlobsProps = typeof __propDef.props;
-export type BlockWitchBlobsEvents = typeof __propDef.events;
-export type BlockWitchBlobsSlots = typeof __propDef.slots;
-export default class BlockWitchBlobs extends SvelteComponent<BlockWitchBlobsProps, BlockWitchBlobsEvents, BlockWitchBlobsSlots> {
+export type BlockWithBlobsProps = typeof __propDef.props;
+export type BlockWithBlobsEvents = typeof __propDef.events;
+export type BlockWithBlobsSlots = typeof __propDef.slots;
+export default class BlockWithBlobs extends SvelteComponent<BlockWithBlobsProps, BlockWithBlobsEvents, BlockWithBlobsSlots> {
 }
 export {};

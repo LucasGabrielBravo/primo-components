@@ -1,23 +1,13 @@
 import { SvelteComponent } from "svelte";
+import type { IBotao, IImage, IParagrafo } from "../../../../types/fields";
 declare const __propDef: {
     props: {
-        listCuidados: {
-            cuidado: string;
-        }[];
+        listCuidados: IParagrafo[];
         titulo: string;
         paragrafo: string;
-        imageGrande: {
-            alt: string;
-            url: string;
-        };
-        imagePequena: {
-            alt: string;
-            url: string;
-        };
-        botao1: {
-            label: string;
-            url: string;
-        };
+        imageGrande: IImage;
+        imagePequena: IImage;
+        botao1: IBotao;
     };
     events: {
         [evt: string]: CustomEvent<any>;

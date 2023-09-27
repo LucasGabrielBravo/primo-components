@@ -59,7 +59,7 @@ export let backgroundimage;
                                 data-key="diferencial[{i}].icon"
                                 class="icon-botao"
                                 src={diferencial.icon.url}
-                                alt={diferencial.icon.label}
+                                alt={diferencial.icon.alt}
                             />
                             <div class="box-icon-descripition">
                                 <span

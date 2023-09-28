@@ -100,8 +100,8 @@ export let botao1;
 
 <style>
     .ajust {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem
+    padding-top: 2rem;
+    padding-bottom: 2rem
 }
     .table {
     display: grid;
@@ -118,16 +118,10 @@ export let botao1;
     flex-direction: column
 }
     .box-chamada-text {
-    margin-top: 24rem;
     display: flex;
     width: 100%;
     flex-direction: column;
     gap: 2rem
-}
-    @media (min-width: 768px) {
-    .box-chamada-text {
-        margin-top: 0px
-    }
 }
     .chamada-title {
     max-width: 24rem;

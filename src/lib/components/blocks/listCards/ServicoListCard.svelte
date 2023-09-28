@@ -23,13 +23,12 @@
             <div class="table">
                 {#each listservicos as servico}
                     <div class="servico-card">
-                        <div>
-                            <img
-                                src={servico.image.url}
-                                alt={servico.image.alt}
-                                class="image-servico"
-                            />
-                        </div>
+                        <img
+                            src={servico.image.url}
+                            alt={servico.image.alt}
+                            class="image-servico"
+                        />
+
                         <div class="servico-card-text-balao">
                             <span class="text-balao">{servico.servico}</span>
                         </div>
@@ -49,7 +48,7 @@
         @apply flex flex-col items-center justify-center gap-12;
     }
     .table {
-        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center justify-center gap-2;
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2;
     }
     .titulo {
         @apply text-primary-500 text-5xl font-bold;
@@ -58,10 +57,10 @@
         @apply text-surface-700 text-base font-medium text-center max-w-4xl;
     }
     .servico-card {
-        @apply relative overflow-hidden rounded-sm drop-shadow-sm h-48;
+        @apply relative overflow-hidden rounded-sm drop-shadow-sm h-96;
     }
     .image-servico {
-        @apply object-cover w-full h-auto;
+        @apply object-cover w-full h-full;
     }
     .servico-card-text-balao {
         @apply absolute bottom-2 w-full items-center justify-center flex;

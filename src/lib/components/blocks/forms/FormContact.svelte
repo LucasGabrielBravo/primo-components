@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Button from "$lib/components/Button.svelte";
     import Select from "$lib/components/Select.svelte";
     import ContainerPage from "../../ContainerPage.svelte";
     import Input from "../../Input.svelte";
@@ -18,7 +19,7 @@
 
     export let nomeempresa: string;
 
-    export let cargosForSelect: ICargosSelect[];
+    export let cargosforselect: ICargosSelect[];
 </script>
 
 <div>
@@ -27,7 +28,7 @@
             <Input
                 color="primary"
                 border="borderBottom"
-                label="Nome Completo"
+                label="NOME COMPLETO"
                 required
                 type="Text"
                 placeholder="Nome Completo"
@@ -55,7 +56,7 @@
                 border="borderBottom"
                 label="SERVIÇO DESEJADO"
                 placeholder="Selecione"
-                options={cargosForSelect}
+                options={cargosforselect}
                 required
                 bind:value={formData.servico}
             />
@@ -78,22 +79,50 @@
                     informações de produtos e anúncios de marketing da {nomeempresa}.
                 </span>
             </div>
+            <div class="button-form">
+                <Button color="primary">
+                    <span class="btn-content">
+                        Enviar mensagem
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                        >
+                            <path
+                                d="M15.7271 10.0833L18.3891 12.6388M18.3891 12.6388L15.7271 15.1944M18.3891 12.6388H5.61133"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </span>
+                </Button>
+            </div>
         </div>
     </ContainerPage>
 </div>
 
 <style lang="postcss">
     .form {
-        @apply flex flex-col gap-2 my-2;
+        @apply flex flex-col gap-2 py-8;
     }
     .forma-contato {
         @apply grid grid-cols-1 md:grid-cols-2 gap-2;
     }
     .checkbox-container {
-        @apply flex flex-row gap-2;
+        @apply flex flex-row items-center gap-2 my-2;
     }
 
     .checkbox-span {
         @apply text-xs;
+    }
+    .btn-content {
+        @apply flex flex-row items-center;
+    }
+    .button-form {
+        @apply flex max-w-max;
     }
 </style>

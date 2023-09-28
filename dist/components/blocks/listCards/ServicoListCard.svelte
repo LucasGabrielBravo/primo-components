@@ -13,13 +13,12 @@ export let listservicos;
             <div class="table">
                 {#each listservicos as servico}
                     <div class="servico-card">
-                        <div>
-                            <img
-                                src={servico.image.url}
-                                alt={servico.image.alt}
-                                class="image-servico"
-                            />
-                        </div>
+                        <img
+                            src={servico.image.url}
+                            alt={servico.image.alt}
+                            class="image-servico"
+                        />
+
                         <div class="servico-card-text-balao">
                             <span class="text-balao">{servico.servico}</span>
                         </div>
@@ -49,12 +48,12 @@ export let listservicos;
     justify-content: center;
     gap: 0.5rem
 }
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
     .table {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
 }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
     .table {
         grid-template-columns: repeat(4, minmax(0, 1fr))
     }
@@ -77,14 +76,14 @@ export let listservicos;
 }
     .servico-card {
     position: relative;
-    height: 12rem;
+    height: 24rem;
     overflow: hidden;
     border-radius: 0.125rem;
     --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
 }
     .image-servico {
-    height: auto;
+    height: 100%;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover

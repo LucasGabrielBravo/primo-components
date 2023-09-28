@@ -103,7 +103,7 @@
 
 <style lang="postcss">
     .ajust {
-        @apply py-10;
+        @apply py-8;
     }
     .table {
         @apply grid grid-cols-1 md:grid-cols-2;
@@ -112,7 +112,7 @@
         @apply flex flex-col h-full;
     }
     .box-chamada-text {
-        @apply flex flex-col w-full gap-8 mt-96 md:mt-0;
+        @apply flex flex-col w-full gap-8;
     }
     .chamada-title {
         @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-4xl  max-w-sm;

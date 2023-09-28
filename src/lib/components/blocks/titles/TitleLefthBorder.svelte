@@ -16,6 +16,6 @@
         @apply flex flex-col w-full gap-8 mt-96 md:mt-0 py-8;
     }
     .chamada-title {
-        @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-4xl  max-w-sm;
+        @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-4xl max-w-6xl;
     }
 </style>

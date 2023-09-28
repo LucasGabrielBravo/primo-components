@@ -26,7 +26,7 @@
 
 <style lang="postcss">
     .box {
-        @apply relative  min-h-max  md:h-[50vh] items-center;
+        @apply relative  h-[50vh] items-center;
     }
     .img-fundo {
         @apply absolute inset-0 h-full w-full object-cover object-center;
@@ -38,7 +38,7 @@
         @apply flex w-full h-full items-end justify-start;
     }
     .logo {
-        @apply w-[20%] h-auto mb-14;
+        @apply w-[70%] sm:w-[50%] md:w-[20%] h-auto mb-14;
     }
     .pelicula {
         @apply flex w-full h-full  absolute;

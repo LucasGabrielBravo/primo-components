@@ -1,4 +1,5 @@
-<script>import Select from "../../Select.svelte";
+<script>import Button from "../../Button.svelte";
+import Select from "../../Select.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
 import Input from "../../Input.svelte";
 let formData = {
@@ -9,7 +10,7 @@ let formData = {
   mensagem: ""
 };
 export let nomeempresa;
-export let cargosForSelect;
+export let cargosforselect;
 </script>
 
 <div>
@@ -18,7 +19,7 @@ export let cargosForSelect;
             <Input
                 color="primary"
                 border="borderBottom"
-                label="Nome Completo"
+                label="NOME COMPLETO"
                 required
                 type="Text"
                 placeholder="Nome Completo"
@@ -46,7 +47,7 @@ export let cargosForSelect;
                 border="borderBottom"
                 label="SERVIÇO DESEJADO"
                 placeholder="Selecione"
-                options={cargosForSelect}
+                options={cargosforselect}
                 required
                 bind:value={formData.servico}
             />
@@ -69,17 +70,39 @@ export let cargosForSelect;
                     informações de produtos e anúncios de marketing da {nomeempresa}.
                 </span>
             </div>
+            <div class="button-form">
+                <Button color="primary">
+                    <span class="btn-content">
+                        Enviar mensagem
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                        >
+                            <path
+                                d="M15.7271 10.0833L18.3891 12.6388M18.3891 12.6388L15.7271 15.1944M18.3891 12.6388H5.61133"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </span>
+                </Button>
+            </div>
         </div>
     </ContainerPage>
 </div>
 
 <style>
     .form {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem
+    gap: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem
 }
     .forma-contato {
     display: grid;
@@ -92,13 +115,26 @@ export let cargosForSelect;
     }
 }
     .checkbox-container {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 0.5rem
 }
 
     .checkbox-span {
     font-size: 0.75rem;
     line-height: 1rem
+}
+    .btn-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+    .button-form {
+    display: flex;
+    max-width: -moz-max-content;
+    max-width: max-content
 }
 </style>

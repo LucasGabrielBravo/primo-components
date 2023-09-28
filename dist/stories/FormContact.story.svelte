@@ -1,7 +1,7 @@
 <script>import FormContact from "../components/blocks/forms/FormContact.svelte";
 export let Hst;
 let nomeempresa = "Empresa Nome";
-let cargosForSelect = [
+let cargosforselect = [
   { label: "Teste", value: "Teste" },
   { label: "Teste", value: "Teste" },
   { label: "Teste", value: "Teste" },
@@ -12,7 +12,7 @@ let cargosForSelect = [
 </script>
 
 <Hst.Story title="FormContact">
-    <FormContact {cargosForSelect} {nomeempresa} />
+    <FormContact {cargosforselect} {nomeempresa} />
 
     <svelte:fragment slot="controls" />
 </Hst.Story>

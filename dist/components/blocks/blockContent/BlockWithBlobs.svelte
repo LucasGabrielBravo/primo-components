@@ -61,19 +61,13 @@ export let servicocontratado;
 <style>
     .fundo {
     position: relative;
-    max-height: -moz-min-content;
-    max-height: min-content;
+    min-height: 70vh;
     width: 100%;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     --tw-bg-opacity: 1;
     background-color: rgb(var(--color-primary-700, 29 78 216) / var(--tw-bg-opacity))
-}
-@media (min-width: 768px) {
-    .fundo {
-        height: 70vh
-    }
 }
     .svg-top {
     position: absolute;

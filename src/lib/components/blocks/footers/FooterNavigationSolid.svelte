@@ -1,15 +1,6 @@
 <script lang="ts">
     import ContainerPage from "$lib/components/ContainerPage.svelte";
-
-    interface IImage {
-        alt: string;
-        url: string;
-    }
-
-    interface ILink {
-        label: string;
-        url: string;
-    }
+    import type { IImage, ILink } from "../../../../types/fields";
 
     interface IRedessocias {
         logoredesocial: IImage;

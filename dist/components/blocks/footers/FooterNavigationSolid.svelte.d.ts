@@ -1,23 +1,12 @@
 import { SvelteComponent } from "svelte";
+import type { IImage, ILink } from "../../../../types/fields";
 declare const __propDef: {
     props: {
-        logo: {
-            alt: string;
-            url: string;
-        };
-        links: {
-            label: string;
-            url: string;
-        }[];
+        logo: IImage;
+        links: ILink[];
         redessocias: {
-            logoredesocial: {
-                alt: string;
-                url: string;
-            };
-            link: {
-                label: string;
-                url: string;
-            };
+            logoredesocial: IImage;
+            link: ILink;
         }[];
         textodireitos: string;
     };

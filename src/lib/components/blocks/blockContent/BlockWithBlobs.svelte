@@ -62,7 +62,7 @@
 
 <style lang="postcss">
     .fundo {
-        @apply bg-primary-700 max-h-min md:h-[70vh] relative w-full overflow-hidden justify-center items-center;
+        @apply bg-primary-700 min-h-[70vh] relative w-full overflow-hidden justify-center items-center;
     }
     .svg-top {
         @apply text-primary-800 absolute left-0 -top-[30%];

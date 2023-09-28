@@ -24,14 +24,8 @@ export let logo;
 <style>
     .box {
         position: relative;
-        min-height: -moz-max-content;
-        min-height: max-content;
+        height: 50vh;
         align-items: center
-}
-@media (min-width: 768px) {
-        .box {
-                height: 50vh
-        }
 }
     .img-fundo {
         position: absolute;
@@ -58,7 +52,17 @@ export let logo;
     .logo {
         margin-bottom: 3.5rem;
         height: auto;
-        width: 20%
+        width: 70%
+}
+    @media (min-width: 640px) {
+        .logo {
+                width: 50%
+        }
+}
+    @media (min-width: 768px) {
+        .logo {
+                width: 20%
+        }
 }
     .pelicula {
         position: absolute;

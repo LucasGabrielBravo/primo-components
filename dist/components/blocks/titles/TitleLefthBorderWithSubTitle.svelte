@@ -28,7 +28,7 @@ export let subtitulo;
     }
 }
     .chamada-title {
-    max-width: 24rem;
+    max-width: 72rem;
     border-left-width: 4px;
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-border-opacity));
@@ -46,7 +46,7 @@ export let subtitulo;
     }
 }
     .chamada-subtitle {
-    max-width: 32rem;
+    max-width: 42rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
     font-weight: 300

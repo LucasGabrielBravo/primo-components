@@ -24,13 +24,12 @@ export let logo;
 <style>
     .box {
         position: relative;
-        min-height: -moz-max-content;
-        min-height: max-content;
+        height: 40vh;
         align-items: center
 }
 @media (min-width: 768px) {
         .box {
-                aspect-ratio: 2.1
+                height: 50vh
         }
 }
     .img-fundo {
@@ -57,8 +56,12 @@ export let logo;
         justify-content: center
 }
     .logo {
-        height: auto;
-        width: 20%
+        height: auto
+}
+    @media (min-width: 640px) {
+        .logo {
+                width: 20%
+        }
 }
     .pelicula {
         position: absolute;

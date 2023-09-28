@@ -1,16 +1,16 @@
 import { SvelteComponent } from "svelte";
+import type { IBotao, IImage, ILink } from "../../../../types/fields";
 declare const __propDef: {
     props: {
-        logo: {
-            alt: string;
-            url: string;
-        };
+        redessocias: {
+            logoredesocial: IImage;
+            link: ILink;
+        }[];
+        logo: IImage;
         ligueChamada: string;
         telefone: string;
-        botaoOrcamento: {
-            label: string;
-            url: string;
-        };
+        botaoOrcamento: IBotao;
+        links: ILink[];
     };
     events: {
         [evt: string]: CustomEvent<any>;

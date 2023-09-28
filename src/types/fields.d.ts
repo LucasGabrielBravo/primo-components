@@ -11,5 +11,10 @@ interface IParagrafo {
     text: string;
 }
 
-export { IBotao, IImage, IParagrafo };
+interface ILink {
+    label: string;
+    url: string;
+}
+
+export { IBotao, IImage, ILink, IParagrafo };
 

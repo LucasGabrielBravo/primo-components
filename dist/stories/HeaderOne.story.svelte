@@ -2,18 +2,71 @@
 export let Hst;
 let logo = {
   alt: "teste",
-  url: "https://lh5.googleusercontent.com/mna8YIThwr4JCqcMlujxZM3FPXG7Pe1RJqe2DgMagUID4X65ZmdC4XFd2YmMQE7r5Rj-szwWmq98g4-jpIEx9Cs=w16383"
+  url: "https://trypyramid.com/img/pyramid-logo-black-horizontal.png"
 };
+let redessocias = [
+  {
+    logoredesocial: {
+      alt: "",
+      url: "https://www.nicepng.com/png/full/611-6115840_app-apps-instagram-instagramsticker-instagramstickers-icono-instagram-pequeo.png"
+    },
+    link: {
+      label: "",
+      url: "https://www.instagram.com/"
+    }
+  },
+  {
+    logoredesocial: {
+      alt: "",
+      url: "https://www.nicepng.com/png/full/611-6115840_app-apps-instagram-instagramsticker-instagramstickers-icono-instagram-pequeo.png"
+    },
+    link: {
+      label: "",
+      url: "https://www.instagram.com/"
+    }
+  },
+  {
+    logoredesocial: {
+      alt: "",
+      url: "https://www.nicepng.com/png/full/611-6115840_app-apps-instagram-instagramsticker-instagramstickers-icono-instagram-pequeo.png"
+    },
+    link: {
+      label: "",
+      url: "https://www.instagram.com/"
+    }
+  }
+];
 let telefone = "+55 21 99369-6648";
 let botaoOrcamento = {
   label: "Pedir or\xE7amento",
   url: "/"
 };
+let links = [
+  {
+    label: "teste",
+    url: "/"
+  },
+  {
+    label: "teste2",
+    url: "/"
+  },
+  {
+    label: "teste3",
+    url: "/"
+  }
+];
 let ligueChamada = "Ligue para:";
 </script>
 
 <Hst.Story title="HeaderOne">
-  <HeaderOne {logo} {telefone} {botaoOrcamento} {ligueChamada} />
+  <HeaderOne
+    {logo}
+    {telefone}
+    {botaoOrcamento}
+    {ligueChamada}
+    {links}
+    {redessocias}
+  />
 
   <svelte:fragment slot="controls" />
 </Hst.Story>

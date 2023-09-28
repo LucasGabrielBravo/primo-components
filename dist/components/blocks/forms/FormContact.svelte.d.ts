@@ -2,7 +2,7 @@ import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         nomeempresa: string;
-        cargosForSelect: {
+        cargosforselect: {
             label: string;
             value: string;
         }[];

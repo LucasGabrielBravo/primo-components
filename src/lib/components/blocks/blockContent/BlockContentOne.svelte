@@ -39,7 +39,12 @@
                     </div>
 
                     <div class="chamada-botoes" data-key="botao1">
-                        <Button color="secondary" size="lg" href={botao1.url}>
+                        <Button
+                            color="secondary"
+                            size="lg"
+                            href={botao1.url}
+                            shaddow="shaddow-lg"
+                        >
                             {@html botao1.label}
                         </Button>
                     </div>
@@ -115,19 +120,19 @@
         @apply flex flex-col w-full gap-8;
     }
     .chamada-title {
-        @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-4xl  max-w-sm;
+        @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-sm;
     }
     .chamda-text {
-        @apply text-primary-500 text-base md:text-lg font-medium max-w-sm;
+        @apply text-primary-500 text-base md:text-lg font-medium max-w-lg;
     }
     .cuidados {
         @apply flex flex-col gap-2;
     }
     .cuidado-icon {
-        @apply text-primary-500;
+        @apply text-secondary-500;
     }
     .cuidado-texto {
-        @apply flex items-center gap-1;
+        @apply flex items-center gap-1 font-medium text-base text-surface-700;
     }
     .chamada-botoes {
         @apply flex flex-col md:flex-row gap-2;
@@ -154,7 +159,7 @@
         @apply relative flex w-full top-[10%] h-[90%] items-center;
     }
     .imagem {
-        @apply h-full absolute -right-[15%] md:-right-[30%] rounded-sm object-cover object-center;
+        @apply h-full absolute -right-[11%] md:-right-[30%] rounded-sm object-cover object-center;
     }
     .image-pequena {
         @apply overflow-hidden w-[60%] relative h-[60%] flex flex-col p-4  mx-auto;

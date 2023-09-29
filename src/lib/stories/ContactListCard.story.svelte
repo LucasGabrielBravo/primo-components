@@ -1,11 +1,12 @@
 <script lang="ts">
     import ContactListCard from "$lib/components/blocks/listCards/ContactListCard.svelte";
     import type { Hst } from "@histoire/plugin-svelte";
+    import type { IBotao } from "../../types/fields";
     export let Hst: Hst;
 
     let titulo = "Titulo";
 
-    let botao = {
+    let botao: IBotao = {
         label: "Texto Botao",
         url: "/",
     };

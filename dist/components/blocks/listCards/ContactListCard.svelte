@@ -1,10 +1,30 @@
 <script>import ContainerPage from "../../ContainerPage.svelte";
+import { cva } from "class-variance-authority";
+const fundo = cva([], {
+  variants: {
+    color: {
+      default: "",
+      primary: "primary",
+      secondary: "secondary",
+      tertiary: "tertiary"
+    }
+  },
+  compoundVariants: [],
+  defaultVariants: {
+    color: "default"
+  }
+});
 export let titulo;
+export let color = void 0;
 export let botao;
 export let passos;
 </script>
 
-<div class="ajust">
+<div
+    class={`fundo ${fundo({
+        color,
+    })}`}
+>
     <ContainerPage>
         <div class="table">
             <div class="info">
@@ -12,6 +32,7 @@ export let passos;
 
                 <div class="passo-passo">
                     {#each passos as passo}
+                        <div class="pipe" />
                         <div class="item">
                             <div class="item-image-box">
                                 <img
@@ -79,12 +100,17 @@ export let passos;
 </div>
 
 <style>
+    .fundo {
+    background-color: transparent;
+    padding-top: 1rem;
+    padding-bottom: 1rem
+}
     .table {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 0.5rem
 }
-@media (min-width: 768px) {
+    @media (min-width: 768px) {
     .table {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
@@ -114,6 +140,18 @@ export let passos;
     width: 100%;
     align-items: center;
     gap: 0.5rem
+}
+    .pipe {
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+    margin-left: 1rem;
+    height: 18px;
+    width: 2px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-surface-300, 214 218 220) / var(--tw-bg-opacity))
+}
+    .pipe:first-child {
+    display: none
 }
     .item-image-box {
     display: flex;
@@ -173,5 +211,16 @@ export let passos;
     display: flex;
     align-items: center;
     gap: 0.5rem
+}
+    .fundo.primary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary-50, 239 246 255) / var(--tw-bg-opacity))
+}
+    .fundo.secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-secondary-50, 254 235 243) / var(--tw-bg-opacity))
+}
+    .fundo.default {
+    background-color: transparent
 }
 </style>

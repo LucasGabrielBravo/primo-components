@@ -1,6 +1,7 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
+        color?: "default" | "primary" | "secondary" | "tertiary" | null | undefined;
         titulo: string;
         botao: {
             label: string;

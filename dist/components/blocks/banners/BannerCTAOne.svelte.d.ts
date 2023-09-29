@@ -12,9 +12,9 @@ declare const __propDef: {
     };
     slots: {};
 };
-export type BlockBannerCtaOneProps = typeof __propDef.props;
-export type BlockBannerCtaOneEvents = typeof __propDef.events;
-export type BlockBannerCtaOneSlots = typeof __propDef.slots;
-export default class BlockBannerCtaOne extends SvelteComponent<BlockBannerCtaOneProps, BlockBannerCtaOneEvents, BlockBannerCtaOneSlots> {
+export type BannerCtaOneProps = typeof __propDef.props;
+export type BannerCtaOneEvents = typeof __propDef.events;
+export type BannerCtaOneSlots = typeof __propDef.slots;
+export default class BannerCtaOne extends SvelteComponent<BannerCtaOneProps, BannerCtaOneEvents, BannerCtaOneSlots> {
 }
 export {};

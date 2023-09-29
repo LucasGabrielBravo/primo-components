@@ -15,10 +15,10 @@
 
 <style lang="postcss">
     .box-title {
-        @apply flex flex-col w-full gap-8 mt-96 md:mt-0 py-8 justify-start items-start;
+        @apply flex flex-col w-full gap-8 py-8 justify-start items-start;
     }
     .chamada-title {
-        @apply pr-6 font-bold text-primary-500 text-2xl md:text-4xl  max-w-6xl;
+        @apply pr-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-6xl;
     }
     .chamada-subtitle {
         @apply font-light text-xl max-w-2xl text-left;

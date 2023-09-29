@@ -71,7 +71,7 @@ export let cargosforselect;
                 </span>
             </div>
             <div class="button-form">
-                <Button color="primary">
+                <Button color="primary" shaddow="shaddow-lg" size="md">
                     <span class="btn-content">
                         Enviar mensagem
                         <svg

@@ -41,7 +41,7 @@ function drawerclose() {
               />
             </svg>
           </span>
-          <span>Menu</span>
+          <span class="button-menu-text">Menu</span>
         </button>
       </div>
       <div>
@@ -80,6 +80,7 @@ function drawerclose() {
             <Button
               class="botao-orcamento"
               color="primary"
+              shaddow="shaddow-lg"
               href={botaoOrcamento.url}
             >
               {@html botaoOrcamento.label}
@@ -232,6 +233,14 @@ function drawerclose() {
     height: 100%;
     align-items: center;
     gap: 0.5rem
+}
+  .button-menu-text {
+    display: none
+}
+  @media (min-width: 768px) {
+    .button-menu-text {
+        display: block
+    }
 }
   .logo {
     height: 2.5rem;

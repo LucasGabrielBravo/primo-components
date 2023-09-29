@@ -69,11 +69,17 @@ export let listparceiros;
     gap: 2rem
 }
     .titulo {
+    text-align: center;
     font-size: 3rem;
     line-height: 1;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .titulo {
+        text-align: left
+    }
 }
     .paragrafo {
     font-size: 1rem;

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import BlockBannerCtaTwo from "$lib/components/blocks/blockContent/BlockBannerCTATwo.svelte";
+    import BannerCtaTwo from "$lib/components/blocks/banners/BannerCTATwo.svelte";
     import type { Hst } from "@histoire/plugin-svelte";
     import type { IBotao, IImage } from "../../types/fields";
     export let Hst: Hst;
@@ -15,13 +15,13 @@
     };
 
     let subtitulo = "Buscando uma oportunidade como Cuidador?";
-    let titulo = "Trabalhando juntos para uma vida melhor";
+    let titulo = "Trabalhando juntos para uma vida melhor ";
     let chamada =
         "Venha se especializar e conquistar o mercado que você merece.";
 </script>
 
-<Hst.Story title="BlockBannerCTATwo">
-    <BlockBannerCtaTwo {subtitulo} {titulo} {chamada} {botao} {image} />
+<Hst.Story title="BannerCTATwo">
+    <BannerCtaTwo {subtitulo} {titulo} {chamada} {botao} {image} />
 
     <svelte:fragment slot="controls" />
 </Hst.Story>

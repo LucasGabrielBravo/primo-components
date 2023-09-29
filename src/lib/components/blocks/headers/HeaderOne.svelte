@@ -53,7 +53,7 @@
               />
             </svg>
           </span>
-          <span>Menu</span>
+          <span class="button-menu-text">Menu</span>
         </button>
       </div>
       <div>
@@ -92,6 +92,7 @@
             <Button
               class="botao-orcamento"
               color="primary"
+              shaddow="shaddow-lg"
               href={botaoOrcamento.url}
             >
               {@html botaoOrcamento.label}
@@ -201,6 +202,9 @@
   }
   .button-menu {
     @apply flex gap-2 items-center h-full;
+  }
+  .button-menu-text {
+    @apply hidden md:block;
   }
   .logo {
     @apply grow-0 h-10 justify-center items-center;

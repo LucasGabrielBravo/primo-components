@@ -31,7 +31,7 @@ export let backgroundimage;
                         <div class="chamada-botoes" data-key="botao1">
                             <Button
                                 color="secondary"
-                                size="lg"
+                                size="md"
                                 href={botao1.url}
                             >
                                 {@html botao1.label}
@@ -92,7 +92,7 @@ export let backgroundimage;
 }
 @media (min-width: 768px) {
         .box {
-                aspect-ratio: 2.1;
+                aspect-ratio: 16 / 9;
         }
 }
     .img-fundo {
@@ -114,6 +114,7 @@ export let backgroundimage;
         display: flex;
         height: 100%;
         flex-direction: column;
+        padding-top: 2rem;
 }
     .chamada {
         margin-top: auto;
@@ -132,6 +133,11 @@ export let backgroundimage;
                 margin-top: 0px;
         }
 }
+    @media (min-width: 1024px) {
+        .box-chamada-text {
+                padding-top: 3.5rem;
+        }
+}
     .chamada-title {
         max-width: 24rem;
         border-left-width: 4px;
@@ -146,8 +152,8 @@ export let backgroundimage;
 }
     @media (min-width: 768px) {
         .chamada-title {
-                font-size: 2.25rem;
-                line-height: 2.5rem;
+                font-size: 1.875rem;
+                line-height: 2.25rem;
         }
 }
     .chamda-text {
@@ -183,8 +189,8 @@ export let backgroundimage;
         padding-right: 1rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        font-size: 1.125rem;
-        line-height: 1.75rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
         --tw-text-opacity: 1 !important;
         color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity)) !important;
         text-decoration-line: underline;
@@ -202,11 +208,10 @@ export let backgroundimage;
         margin-left: auto;
         margin-right: auto;
         margin-top: auto;
-        display: grid;
+        display: none;
         min-height: -moz-max-content;
         min-height: max-content;
         width: 100%;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 0.5rem;
         border-top-left-radius: 0.375rem;
         border-top-right-radius: 0.375rem;
@@ -215,8 +220,9 @@ export let backgroundimage;
         -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
                 backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         .box-botoes {
+                display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 }
@@ -270,15 +276,15 @@ export let backgroundimage;
         flex-direction: column;
 }
     .text-descripition-first {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         line-height: 1.75rem;
         font-weight: 700;
         --tw-text-opacity: 1;
         color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity));
 }
     .text-descripition-second {
-        font-size: 1.125rem;
-        line-height: 1.75rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
         font-weight: 500;
         --tw-text-opacity: 1;
         color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity));

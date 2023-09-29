@@ -51,21 +51,23 @@
     padding-bottom: 0.5rem
 }
     .img-card {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 2rem;
+    width: 2rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
+    @media (min-width: 768px) {
+    .img-card {
+        height: 3.5rem;
+        width: 3.5rem
+    }
+}
     .number {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
-}
-    @media (min-width: 768px) {
-    .number {
-        font-size: 2.25rem;
-        line-height: 2.5rem
-    }
 }
     .descricao {
     font-size: 1.125rem;

@@ -64,7 +64,7 @@
         @apply w-full flex flex-col gap-8 max-w-lg;
     }
     .titulo {
-        @apply text-5xl font-bold text-primary-500;
+        @apply text-5xl font-bold text-primary-500 text-center md:text-left;
     }
     .paragrafo {
         @apply text-base text-surface-700;

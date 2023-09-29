@@ -69,8 +69,8 @@ export let backgroundimage;
     position: relative;
     display: flex;
     height: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem
+    padding-top: 3rem;
+    padding-bottom: 3rem
 }
     .conteudo-text {
     display: flex;

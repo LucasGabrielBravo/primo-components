@@ -1,4 +1,4 @@
-<script>import BlockBannerCtaOne from "../components/blocks/blockContent/BlockBannerCTAOne.svelte";
+<script>import BannerCtaOne from "../components/blocks/banners/BannerCTAOne.svelte";
 export let Hst;
 let titulo = "Titulo";
 let paragrafos = [
@@ -19,8 +19,8 @@ let backgroundimage = {
 };
 </script>
 
-<Hst.Story title="BlockBannerCTAOne">
-    <BlockBannerCtaOne {botao1} {titulo} {paragrafos} {backgroundimage} />
+<Hst.Story title="BannerCTAOne">
+    <BannerCtaOne {botao1} {titulo} {paragrafos} {backgroundimage} />
 
     <svelte:fragment slot="controls" />
 </Hst.Story>

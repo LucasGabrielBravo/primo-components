@@ -36,7 +36,12 @@ export let botao1;
                     </div>
 
                     <div class="chamada-botoes" data-key="botao1">
-                        <Button color="secondary" size="lg" href={botao1.url}>
+                        <Button
+                            color="secondary"
+                            size="lg"
+                            href={botao1.url}
+                            shaddow="shaddow-lg"
+                        >
                             {@html botao1.label}
                         </Button>
                     </div>
@@ -137,12 +142,12 @@ export let botao1;
 }
     @media (min-width: 768px) {
     .chamada-title {
-        font-size: 2.25rem;
-        line-height: 2.5rem
+        font-size: 1.875rem;
+        line-height: 2.25rem
     }
 }
     .chamda-text {
-    max-width: 24rem;
+    max-width: 32rem;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 500;
@@ -162,12 +167,17 @@ export let botao1;
 }
     .cuidado-icon {
     --tw-text-opacity: 1;
-    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+    color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
 }
     .cuidado-texto {
     display: flex;
     align-items: center;
-    gap: 0.25rem
+    gap: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
 }
     .chamada-botoes {
     display: flex;
@@ -258,7 +268,7 @@ export let botao1;
 }
     .imagem {
     position: absolute;
-    right: -15%;
+    right: -11%;
     height: 100%;
     border-radius: 0.125rem;
     -o-object-fit: cover;

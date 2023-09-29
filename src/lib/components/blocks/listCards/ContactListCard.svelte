@@ -1,5 +1,6 @@
 <script lang="ts">
     import ContainerPage from "$lib/components/ContainerPage.svelte";
+    import { cva, type VariantProps } from "class-variance-authority";
 
     interface IBotao {
         label: string;
@@ -13,14 +14,37 @@
         };
     }
 
+    const fundo = cva([], {
+        variants: {
+            color: {
+                default: "",
+                primary: "primary",
+                secondary: "secondary",
+                tertiary: "tertiary",
+            },
+        },
+        compoundVariants: [],
+        defaultVariants: {
+            color: "default",
+        },
+    });
+    interface $$Props extends VariantProps<typeof fundo> {
+        titulo: string;
+        botao: IBotao;
+        passos: Ipassos[];
+    }
+
     export let titulo: string;
-
+    export let color: undefined | $$Props["color"] = undefined;
     export let botao: IBotao;
-
     export let passos: Ipassos[];
 </script>
 
-<div class="ajust">
+<div
+    class={`fundo ${fundo({
+        color,
+    })}`}
+>
     <ContainerPage>
         <div class="table">
             <div class="info">
@@ -28,6 +52,7 @@
 
                 <div class="passo-passo">
                     {#each passos as passo}
+                        <div class="pipe" />
                         <div class="item">
                             <div class="item-image-box">
                                 <img
@@ -95,6 +120,9 @@
 </div>
 
 <style lang="postcss">
+    .fundo {
+        @apply py-4 bg-transparent;
+    }
     .table {
         @apply grid grid-cols-1 md:grid-cols-2 gap-2;
     }
@@ -109,6 +137,9 @@
     }
     .item {
         @apply flex w-full items-center gap-2;
+    }
+    .pipe {
+        @apply first:hidden ml-4 w-[2px] bg-surface-300 h-[18px] -my-2;
     }
     .item-image-box {
         @apply flex w-1/12 aspect-square rounded-full overflow-hidden items-center justify-center;
@@ -130,5 +161,14 @@
     }
     .text-btn {
         @apply flex items-center gap-2;
+    }
+    .fundo.primary {
+        @apply bg-primary-50;
+    }
+    .fundo.secondary {
+        @apply bg-secondary-50;
+    }
+    .fundo.default {
+        @apply bg-transparent;
     }
 </style>

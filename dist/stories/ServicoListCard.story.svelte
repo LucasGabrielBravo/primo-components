@@ -1,7 +1,14 @@
 <script>import ServicoListCard from "../components/blocks/listCards/ServicoListCard.svelte";
 export let Hst;
 let titulo = "Nossos servi\xE7os";
-let paragrafo = "Conhe\xE7a os diversos objetivos para os quais voc\xEA pode contratar os profissionais da ampla rede da Ag\xEAncia PrimeCare. Estamos aqui para fornecer todo o suporte necess\xE1rio para cuidados especiais de idosos, crian\xE7as, p\xF3s-cir\xFArgicos e outros que precisam do acompanhamento de um profissional.";
+let paragrafos = [
+  {
+    text: "Conhe\xE7a os diversos objetivos para os quais voc\xEA pode contratar os profissionais da ampla rede da Ag\xEAncia PrimeCare. Estamos aqui para fornecer todo o suporte necess\xE1rio para cuidados especiais de idosos, crian\xE7as, p\xF3s-cir\xFArgicos e outros que precisam do acompanhamento de um profissional."
+  },
+  {
+    text: "Conhe\xE7a os diversos objetivos para os quais voc\xEA pode contratar os profissionais da ampla rede da Ag\xEAncia PrimeCare. Estamos aqui para fornecer todo o suporte necess\xE1rio para cuidados especiais de idosos, crian\xE7as, p\xF3s-cir\xFArgicos e outros que precisam do acompanhamento de um profissional."
+  }
+];
 let listservicos = [
   {
     image: {
@@ -63,7 +70,7 @@ let listservicos = [
 </script>
 
 <Hst.Story title="ServicoListCard">
-    <ServicoListCard {titulo} {paragrafo} {listservicos} />
+    <ServicoListCard {titulo} {paragrafos} {listservicos} />
 
     <svelte:fragment slot="controls" />
 </Hst.Story>

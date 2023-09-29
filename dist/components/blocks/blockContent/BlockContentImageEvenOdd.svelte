@@ -4,6 +4,17 @@ export let toptitulo;
 export let titulo;
 export let subtitulo;
 export let conteudos;
+let sizeView = window.innerWidth;
+let isMobile = window.innerWidth < 768 ? true : false;
+$:
+  if (sizeView < 768) {
+    isMobile = true;
+  } else {
+    isMobile = false;
+  }
+document.body.onresize = function() {
+  sizeView = window.innerWidth;
+};
 </script>
 
 <ContainerPage>
@@ -13,16 +24,61 @@ export let conteudos;
         <span class="subtitulo">{subtitulo}</span>
     </header>
     <div class="conteudos">
-        {#each conteudos as conteudo, i}
-            {#if i % 2 == 0}
+        {#if !isMobile}
+            {#each conteudos as conteudo, i}
+                {#if i % 2 !== 0}
+                    <div class="conteudo">
+                        {#if conteudo.image.url}
+                            <img
+                                class="image-conteudo"
+                                src={conteudo.image.url}
+                                alt={conteudo.image.alt}
+                            />
+                        {/if}
+                        <div class="body">
+                            <h2 class="title">{conteudo.titulo}</h2>
+                            <span class="content">{@html conteudo.texto}</span>
+                            {#if conteudo.botao.url}
+                                <Button
+                                    href=""
+                                    color="primary"
+                                    size="md"
+                                    variant="ringed"
+                                >
+                                    {conteudo.botao.label}
+                                </Button>
+                            {/if}
+                        </div>
+                    </div>
+                {:else}
+                    <div class="conteudo">
+                        <div class="body">
+                            <h2 class="title">{conteudo.titulo}</h2>
+                            <span class="content">{@html conteudo.texto}</span>
+                            {#if conteudo.botao.url}
+                                <Button
+                                    href=""
+                                    color="primary"
+                                    size="md"
+                                    variant="ringed"
+                                >
+                                    {conteudo.botao.label}
+                                </Button>
+                            {/if}
+                        </div>
+                        {#if conteudo.image.url}
+                            <img
+                                class="image-conteudo"
+                                src={conteudo.image.url}
+                                alt={conteudo.image.alt}
+                            />
+                        {/if}
+                    </div>
+                {/if}
+            {/each}
+        {:else}
+            {#each conteudos as conteudo, i}
                 <div class="conteudo">
-                    {#if conteudo.image.url}
-                        <img
-                            class="image-conteudo"
-                            src={conteudo.image.url}
-                            alt={conteudo.image.alt}
-                        />
-                    {/if}
                     <div class="body">
                         <h2 class="title">{conteudo.titulo}</h2>
                         <span class="content">{@html conteudo.texto}</span>
@@ -37,23 +93,6 @@ export let conteudos;
                             </Button>
                         {/if}
                     </div>
-                </div>
-            {:else}
-                <div class="conteudo">
-                    <div class="body">
-                        <h2 class="title">{conteudo.titulo}</h2>
-                        <span class="content">{@html conteudo.texto}</span>
-                        {#if conteudo.botao.url}
-                            <Button
-                                href=""
-                                color="primary"
-                                size="md"
-                                variant="ringed"
-                            >
-                                {conteudo.botao.label}
-                            </Button>
-                        {/if}
-                    </div>
                     {#if conteudo.image.url}
                         <img
                             class="image-conteudo"
@@ -62,8 +101,8 @@ export let conteudos;
                         />
                     {/if}
                 </div>
-            {/if}
-        {/each}
+            {/each}
+        {/if}
     </div>
 </ContainerPage>
 

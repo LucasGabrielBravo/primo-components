@@ -1,8 +1,9 @@
 import { SvelteComponent } from "svelte";
+import type { IParagrafo } from "../../../../types/fields";
 declare const __propDef: {
     props: {
         titulo: string;
-        paragrafo: string;
+        paragrafos: IParagrafo[];
         listservicos: {
             image: {
                 url: string;

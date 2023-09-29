@@ -59,7 +59,7 @@
         @apply absolute inset-0 h-full w-full object-cover object-left;
     }
     .conteudo {
-        @apply relative h-full flex py-4;
+        @apply relative h-full flex py-12;
     }
     .conteudo-text {
         @apply flex flex-col h-full;

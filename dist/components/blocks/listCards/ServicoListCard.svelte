@@ -1,15 +1,21 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
 export let titulo;
-export let paragrafo;
+export let paragrafos;
 export let listservicos;
 </script>
 
 <div class="ajust">
     <ContainerPage>
         <div class="conteudo">
-            <span class="titulo">{titulo}</span>
-            <span class="paragrafo">{paragrafo}</span>
+            {#if titulo}
+                <span class="titulo">{titulo}</span>
+            {/if}
+            {#if paragrafos}
+                {#each paragrafos as paragrafo}
+                    <span class="paragrafo">{paragrafo.text}</span>
+                {/each}
+            {/if}
             <div class="table">
                 {#each listservicos as servico}
                     <div class="servico-card">
@@ -25,7 +31,8 @@ export let listservicos;
                     </div>
                 {/each}
             </div>
-            <Button color="secondary" size="lg" href="/">
+
+            <Button color="secondary" size="md" href="/" shaddow="shaddow-lg">
                 <!-- {@html botao1.label} -->
                 Conheça os serviços
             </Button>
@@ -59,18 +66,25 @@ export let listservicos;
     }
 }
     .titulo {
-    font-size: 3rem;
-    line-height: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .titulo {
+        font-size: 1.875rem;
+        line-height: 2.25rem
+    }
 }
     .paragrafo {
     max-width: 56rem;
     text-align: center;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
 }

@@ -13,9 +13,9 @@ declare const __propDef: {
     };
     slots: {};
 };
-export type BlockBannerCtaTwoProps = typeof __propDef.props;
-export type BlockBannerCtaTwoEvents = typeof __propDef.events;
-export type BlockBannerCtaTwoSlots = typeof __propDef.slots;
-export default class BlockBannerCtaTwo extends SvelteComponent<BlockBannerCtaTwoProps, BlockBannerCtaTwoEvents, BlockBannerCtaTwoSlots> {
+export type BannerCtaTwoProps = typeof __propDef.props;
+export type BannerCtaTwoEvents = typeof __propDef.events;
+export type BannerCtaTwoSlots = typeof __propDef.slots;
+export default class BannerCtaTwo extends SvelteComponent<BannerCtaTwoProps, BannerCtaTwoEvents, BannerCtaTwoSlots> {
 }
 export {};

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import BlockBannerCtaOne from "$lib/components/blocks/blockContent/BlockBannerCTAOne.svelte";
+    import BannerCtaOne from "$lib/components/blocks/banners/BannerCTAOne.svelte";
     import type { Hst } from "@histoire/plugin-svelte";
     import type { IBotao, IImage, IParagrafo } from "../../types/fields";
     export let Hst: Hst;
@@ -24,8 +24,8 @@
     };
 </script>
 
-<Hst.Story title="BlockBannerCTAOne">
-    <BlockBannerCtaOne {botao1} {titulo} {paragrafos} {backgroundimage} />
+<Hst.Story title="BannerCTAOne">
+    <BannerCtaOne {botao1} {titulo} {paragrafos} {backgroundimage} />
 
     <svelte:fragment slot="controls" />
 </Hst.Story>

@@ -40,7 +40,7 @@
                         <div class="chamada-botoes" data-key="botao1">
                             <Button
                                 color="secondary"
-                                size="lg"
+                                size="md"
                                 href={botao1.url}
                             >
                                 {@html botao1.label}
@@ -94,7 +94,7 @@
 
 <style lang="postcss">
     .box {
-        @apply relative  min-h-max  md:aspect-[2.1] items-center;
+        @apply relative  min-h-max  md:aspect-video items-center;
     }
     .img-fundo {
         @apply absolute inset-0 h-full w-full object-cover object-center;
@@ -103,16 +103,16 @@
         @apply relative h-full flex;
     }
     .conteudo-text {
-        @apply flex flex-col h-full;
+        @apply flex flex-col h-full pt-8;
     }
     .chamada {
         @apply flex my-auto;
     }
     .box-chamada-text {
-        @apply flex flex-col w-full gap-8 mt-96 md:mt-0;
+        @apply flex flex-col w-full gap-8 mt-96 md:mt-0 lg:pt-14;
     }
     .chamada-title {
-        @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-4xl  max-w-sm;
+        @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-sm;
     }
     .chamda-text {
         @apply text-primary-500 text-base md:text-lg font-medium max-w-sm;
@@ -121,13 +121,13 @@
         @apply flex flex-col md:flex-row gap-2;
     }
     .botao-chamada {
-        @apply text-lg underline !text-primary-500 px-4 py-2 flex flex-row items-center justify-center;
+        @apply text-base underline !text-primary-500 px-4 py-2 flex flex-row items-center justify-center;
     }
     .aria-vazia {
         @apply md:flex w-full hidden;
     }
     .box-botoes {
-        @apply mt-auto mx-auto grid grid-cols-1 md:grid-cols-3 p-2 gap-2 backdrop-blur-lg w-full rounded-t-md min-h-max;
+        @apply hidden mt-auto mx-auto lg:grid lg:grid-cols-3 p-2 gap-2 backdrop-blur-lg w-full rounded-t-md min-h-max;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     }
     .botao-1 {
@@ -143,9 +143,9 @@
         @apply flex flex-col;
     }
     .text-descripition-first {
-        @apply font-bold text-xl text-primary-500;
+        @apply font-bold text-lg text-primary-500;
     }
     .text-descripition-second {
-        @apply font-medium text-lg text-surface-50;
+        @apply font-medium text-base text-surface-50;
     }
 </style>

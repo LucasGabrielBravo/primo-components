@@ -12,18 +12,12 @@ export let titulo;
 
 <style>
     .box-title {
-    margin-top: 24rem;
     display: flex;
     width: 100%;
     flex-direction: column;
     gap: 2rem;
     padding-top: 2rem;
     padding-bottom: 2rem
-}
-@media (min-width: 768px) {
-    .box-title {
-        margin-top: 0px
-    }
 }
     .chamada-title {
     max-width: 72rem;
@@ -39,8 +33,8 @@ export let titulo;
 }
     @media (min-width: 768px) {
     .chamada-title {
-        font-size: 2.25rem;
-        line-height: 2.5rem
+        font-size: 1.875rem;
+        line-height: 2.25rem
     }
 }
 </style>

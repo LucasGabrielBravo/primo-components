@@ -237,7 +237,7 @@
     @apply fixed inset-0 z-10 bg-primary-700/30 backdrop-blur-sm;
   }
   .drawer__unique14 {
-    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6 pt-24 bg-surface-100 sm:max-w-sm sm:shadow-lg;
+    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6 pt-24 bg-surface-100 sm:max-w-sm sm:shadow-lg min-w-max;
   }
   .drawer__unique15 {
     @apply flex items-center justify-between;

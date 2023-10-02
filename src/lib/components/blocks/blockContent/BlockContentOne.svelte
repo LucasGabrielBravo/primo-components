@@ -129,7 +129,7 @@
         @apply flex flex-col gap-2;
     }
     .cuidado-icon {
-        @apply text-secondary-500;
+        @apply text-secondary-500 font-normal;
     }
     .cuidado-texto {
         @apply flex items-center gap-1 font-medium text-base text-surface-700;

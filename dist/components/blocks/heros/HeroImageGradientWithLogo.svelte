@@ -24,12 +24,12 @@ export let logo;
 <style>
     .box {
         position: relative;
-        height: 40vh;
+        height: 50vh;
         align-items: center
 }
 @media (min-width: 768px) {
         .box {
-                height: 50vh
+                height: 65vh
         }
 }
     .img-fundo {

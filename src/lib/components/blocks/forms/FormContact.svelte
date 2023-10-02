@@ -123,6 +123,6 @@
         @apply flex flex-row items-center;
     }
     .button-form {
-        @apply flex max-w-max;
+        @apply flex w-full;
     }
 </style>

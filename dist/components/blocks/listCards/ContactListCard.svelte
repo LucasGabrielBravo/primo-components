@@ -123,11 +123,17 @@ export let passos;
 }
     .titulo {
     max-width: 36rem;
-    font-size: 3rem;
-    line-height: 1;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .titulo {
+        font-size: 1.875rem;
+        line-height: 2.25rem
+    }
 }
     .passo-passo {
     display: flex;

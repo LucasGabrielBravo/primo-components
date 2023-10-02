@@ -36,7 +36,7 @@
                         <div class="chamada-botoes" data-key="botao1">
                             <Button
                                 color="secondary"
-                                size="lg"
+                                size="md"
                                 variant="ringed"
                                 href={botao1.url}
                             >

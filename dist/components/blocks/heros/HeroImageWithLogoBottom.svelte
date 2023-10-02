@@ -27,6 +27,11 @@ export let logo;
         height: 50vh;
         align-items: center
 }
+@media (min-width: 768px) {
+        .box {
+                height: 65vh
+        }
+}
     .img-fundo {
         position: absolute;
         inset: 0px;

@@ -166,6 +166,7 @@ export let botao1;
     gap: 0.5rem
 }
     .cuidado-icon {
+    font-weight: 400;
     --tw-text-opacity: 1;
     color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
 }

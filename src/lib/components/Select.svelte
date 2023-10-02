@@ -91,6 +91,6 @@
         @apply !w-full !flex !flex-col !rounded-none !py-[14px]  !bg-transparent;
     }
     .selecti.borderBottom {
-        @apply !border-b-2 !border-secondary-900/40;
+        @apply !border-b-2 !border-secondary-900/40 font-medium;
     }
 </style>

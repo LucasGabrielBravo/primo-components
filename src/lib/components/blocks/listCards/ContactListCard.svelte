@@ -130,7 +130,7 @@
         @apply w-full flex flex-col gap-10;
     }
     .titulo {
-        @apply text-5xl text-primary-500 max-w-xl font-bold;
+        @apply text-2xl md:text-3xl text-primary-500 max-w-xl font-bold;
     }
     .passo-passo {
         @apply flex flex-col gap-4 max-w-md;

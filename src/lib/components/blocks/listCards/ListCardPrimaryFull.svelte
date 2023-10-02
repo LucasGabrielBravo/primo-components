@@ -42,13 +42,13 @@
         @apply bg-primary-500 rounded-md flex-1 items-center justify-center flex flex-col py-2;
     }
     .img-card {
-        @apply w-8 md:w-14 h-8 md:h-14 text-primary-500;
+        @apply w-6 md:w-8 h-6 md:h-8 text-surface-100;
     }
     .number {
-        @apply text-secondary-500 font-bold text-4xl;
+        @apply text-surface-50 font-bold text-4xl;
     }
     .descricao {
-        @apply text-lg text-surface-50;
+        @apply text-lg text-surface-100;
     }
     .ajust {
         @apply py-8;

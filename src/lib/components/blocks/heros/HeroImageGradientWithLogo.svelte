@@ -26,7 +26,7 @@
 
 <style lang="postcss">
     .box {
-        @apply relative  h-[40vh]  md:h-[50vh] items-center;
+        @apply relative  h-[50vh]  md:h-[65vh] items-center;
     }
     .img-fundo {
         @apply absolute inset-0 h-full w-full object-cover object-center;

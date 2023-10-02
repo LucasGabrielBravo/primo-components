@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button from "$lib/components/Button.svelte";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
+
   import clsx from "clsx";
   import type { IBotao, IImage } from "../../../../types/fields";
 
@@ -25,6 +26,7 @@
     src={backgroundimage.url}
     alt=""
   />
+  <div class="pelicula" />
 
   <div class="conteudo">
     <ContainerPage>
@@ -77,14 +79,40 @@
       </div>
     </ContainerPage>
   </div>
+  <div class="box-botoes-two">
+    {#each diferenciais as diferencial, i}
+      <div class={clsx("", i % 2 === 0 ? "botao-1" : "botao-2")}>
+        <img
+          data-key="diferencial[{i}].icon"
+          class="icon-botao"
+          src={diferencial.icon.url}
+          alt={diferencial.icon.alt}
+        />
+        <div class="box-icon-descripition">
+          <span
+            class="text-descripition-first"
+            data-key="diferencial[{i}].titulo"
+          >
+            {@html diferencial.titulo}
+          </span>
+          <span
+            class="text-descripition-second"
+            data-key="diferencial[{i}].descricao"
+          >
+            {@html diferencial.descricao}
+          </span>
+        </div>
+      </div>
+    {/each}
+  </div>
 </div>
 
 <style lang="postcss">
   .box {
-    @apply relative  min-h-max  md:h-[80vh] items-center;
+    @apply relative  min-h-max md:h-[80vh] items-center;
   }
   .img-fundo {
-    @apply absolute inset-0 h-full w-full object-cover object-[65%] sm:object-center;
+    @apply absolute h-full w-full object-cover object-[65%] sm:object-top brightness-105 contrast-125;
   }
   .conteudo {
     @apply relative h-full flex;
@@ -96,7 +124,7 @@
     @apply flex my-auto;
   }
   .box-chamada-text {
-    @apply flex flex-col w-full gap-8 mt-96 md:mt-0 lg:pt-14;
+    @apply flex flex-col w-full gap-8 mt-96 md:mt-0 lg:pt-14 drop-shadow-xl;
   }
   .chamada-title {
     @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-sm;
@@ -114,25 +142,33 @@
     @apply md:flex w-full hidden;
   }
   .box-botoes {
-    @apply hidden mt-auto mx-auto lg:grid lg:grid-cols-3 p-2 gap-2 backdrop-blur-lg w-full rounded-t-md min-h-max;
+    @apply hidden mt-auto mx-auto lg:grid lg:grid-cols-3 p-2 gap-2 backdrop-blur-lg w-full rounded-t-md min-h-max translate-y-6;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+  .box-botoes-two {
+    @apply lg:hidden mt-auto mx-auto grid grid-cols-1 p-2 gap-2 bg-surface-200 w-full  min-h-max relative;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   }
   .botao-1 {
     @apply flex py-2 px-5 gap-2 items-center justify-center;
   }
   .botao-2 {
-    @apply flex py-2 px-5 gap-2 items-center justify-center border-y-2 md:border-x-2 md:border-y-0 border-surface-50;
+    @apply flex py-2 px-5 gap-2 items-center justify-center border-y-2 lg:border-x-2 lg:border-y-0 border-surface-50;
   }
   .icon-botao {
     @apply h-9 w-9 md:h-[51px] md:w-[51px];
   }
   .box-icon-descripition {
-    @apply flex flex-col;
+    @apply flex flex-col w-2/3 lg:w-full;
   }
   .text-descripition-first {
     @apply font-bold text-lg text-primary-500;
   }
   .text-descripition-second {
-    @apply font-medium text-base text-surface-50;
+    @apply font-medium text-base text-surface-700;
+  }
+  .pelicula {
+    @apply flex w-full h-full  absolute;
+    background-image: linear-gradient(180deg, transparent, #ffffff73);
   }
 </style>

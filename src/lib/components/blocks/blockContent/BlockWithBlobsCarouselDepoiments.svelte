@@ -1,11 +1,18 @@
 <script lang="ts">
+    import CarouselWithDepoiments from "$lib/components/CarouselWithDepoiments.svelte";
     import ContainerPage from "$lib/components/ContainerPage.svelte";
+    import type { IImage } from "../../../../types/fields";
 
-    export let titulobranco: string;
-    export let titulosecunday: string;
-    export let paragrafo: string;
-    export let autor: string;
-    export let servicocontratado: string;
+    interface IDepoimento {
+        titulobranco: string;
+        titulosecunday: string;
+        paragrafo: string;
+        autor: string;
+        servicocontratado: string;
+    }
+
+    export let depoimentos: IDepoimento[];
+    export let logo: IImage;
 </script>
 
 <div class="fundo">
@@ -37,32 +44,14 @@
     </svg>
     <div class="conteudo">
         <ContainerPage>
-            <div class="conteudo-text">
-                <div class="textos">
-                    <span class="titulo-surface">
-                        {titulobranco}
-                        <span class="titulo-secondary">
-                            {titulosecunday}
-                        </span>
-                    </span>
-                    <span class="paragrafo">
-                        {paragrafo}
-                    </span>
-                    <div class="autor-box">
-                        <span class="autor">{autor}</span>
-                        <span class="servicoContratado">
-                            {servicocontratado}
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <CarouselWithDepoiments {depoimentos} {logo} />
         </ContainerPage>
     </div>
 </div>
 
 <style lang="postcss">
     .fundo {
-        @apply bg-primary-700 min-h-[70vh] relative w-full overflow-hidden justify-center items-center;
+        @apply bg-primary-700 min-h-[85vh] relative w-full overflow-hidden justify-center items-center;
     }
     .svg-top {
         @apply text-primary-800 absolute left-0 -top-[30%];
@@ -72,29 +61,5 @@
     }
     .conteudo {
         @apply absolute flex w-full h-full;
-    }
-    .conteudo-text {
-        @apply flex w-full h-full  justify-center items-center flex-col py-12;
-    }
-    .textos {
-        @apply max-w-md flex w-full h-full flex-col items-center justify-center gap-8;
-    }
-    .titulo-surface {
-        @apply text-surface-50 font-bold text-2xl md:text-3xl text-center;
-    }
-    .titulo-secondary {
-        @apply text-secondary-500;
-    }
-    .paragrafo {
-        @apply text-surface-50 font-medium text-xl text-left;
-    }
-    .autor-box {
-        @apply flex flex-col text-surface-50 w-full;
-    }
-    .autor {
-        @apply font-light text-sm  text-left;
-    }
-    .servicoContratado {
-        @apply font-normal text-sm  text-left;
     }
 </style>

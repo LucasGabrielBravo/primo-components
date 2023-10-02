@@ -134,7 +134,6 @@ export let cargosforselect;
 }
     .button-form {
     display: flex;
-    max-width: -moz-max-content;
-    max-width: max-content
+    width: 100%
 }
 </style>

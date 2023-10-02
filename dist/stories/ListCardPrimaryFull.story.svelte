@@ -4,7 +4,7 @@ let list = [
   {
     icon: {
       alt: "icon",
-      url: "https://cdn-icons-png.flaticon.com/512/5987/5987462.png"
+      url: "https://www.essenzahotel.com.br/wp-content/plugins/nd-booking/assets/img/icons/icon-user-grey.svg"
     },
     number: "100",
     descricao: "Teste"
@@ -12,7 +12,7 @@ let list = [
   {
     icon: {
       alt: "icon",
-      url: "https://cdn-icons-png.flaticon.com/512/5987/5987462.png"
+      url: "https://www.essenzahotel.com.br/wp-content/plugins/nd-booking/assets/img/icons/icon-user-grey.svg"
     },
     number: "100",
     descricao: "Teste"
@@ -20,7 +20,7 @@ let list = [
   {
     icon: {
       alt: "icon",
-      url: "https://cdn-icons-png.flaticon.com/512/5987/5987462.png"
+      url: "https://www.essenzahotel.com.br/wp-content/plugins/nd-booking/assets/img/icons/icon-user-grey.svg"
     },
     number: "100",
     descricao: "Teste"

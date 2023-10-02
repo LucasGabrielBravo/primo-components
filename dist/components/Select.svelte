@@ -80,6 +80,7 @@ const select = cva([], {
 }
     .selecti.borderBottom {
     border-bottom-width: 2px !important;
-    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4) !important
+    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4) !important;
+    font-weight: 500
 }
 </style>

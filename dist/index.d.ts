@@ -12,6 +12,7 @@ export { default as BlockContentParagraphItemsImage } from './components/blocks/
 export { default as BlockGridParagraph } from "./components/blocks/blockContent/BlockGridParagraph.svelte";
 export { default as BlockListTopicItens } from "./components/blocks/blockContent/BlockListTopicItens.svelte";
 export { default as BlockWithBlobs } from "./components/blocks/blockContent/BlockWithBlobs.svelte";
+export { default as BlockWithBlobsCarouselDepoiments } from "./components/blocks/blockContent/BlockWithBlobsCarouselDepoiments.svelte";
 export { default as FooterNavigationSolid } from './components/blocks/footers/FooterNavigationSolid.svelte';
 export { default as FormContact } from './components/blocks/forms/FormContact.svelte';
 export { default as HeaderOne } from './components/blocks/headers/HeaderOne.svelte';

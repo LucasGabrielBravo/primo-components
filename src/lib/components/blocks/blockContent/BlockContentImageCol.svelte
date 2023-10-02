@@ -19,9 +19,15 @@
 
 <ContainerPage>
     <header class="heading-group">
-        <span class="toptitulo">{toptitulo}</span>
-        <h2 class="titulo">{titulo}</h2>
-        <span class="subtitulo">{subtitulo}</span>
+        {#if toptitulo}
+            <span class="toptitulo">{toptitulo}</span>
+        {/if}
+        {#if titulo}
+            <h2 class="titulo">{titulo}</h2>
+        {/if}
+        {#if subtitulo}
+            <span class="subtitulo">{subtitulo}</span>
+        {/if}
     </header>
     <div class="conteudos">
         {#each conteudos as conteudo, i}
@@ -54,7 +60,7 @@
 
 <style lang="postcss">
     .heading-group {
-        @apply flex flex-col mb-24 text-center gap-4;
+        @apply flex flex-col mb-12 text-center gap-4;
     }
     .toptitulo {
         @apply text-xl text-secondary-500;

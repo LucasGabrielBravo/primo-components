@@ -64,19 +64,19 @@
         @apply w-full flex flex-col gap-8 max-w-lg;
     }
     .titulo {
-        @apply text-5xl font-bold text-primary-500 text-center md:text-left;
+        @apply text-2xl md:text-3xl font-bold text-primary-500 text-left;
     }
     .paragrafo {
         @apply text-base text-surface-700;
     }
     .parceiras {
-        @apply grid grid-cols-2 gap-3;
+        @apply grid grid-cols-1 md:grid-cols-2 gap-3;
     }
     .card {
         @apply w-full flex flex-row gap-2 p-2;
     }
     .image-parceira {
-        @apply rounded-full w-12 h-12 overflow-hidden drop-shadow-md ring-1 ring-surface-700/10;
+        @apply rounded-full w-8 h-8 md:w-12 md:h-12 overflow-hidden drop-shadow-md ring-1 ring-surface-700/10;
     }
     .text-parceira {
         @apply flex flex-col;

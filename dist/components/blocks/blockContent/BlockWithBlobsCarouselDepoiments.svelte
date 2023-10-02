@@ -1,9 +1,7 @@
-<script>import ContainerPage from "../../ContainerPage.svelte";
-export let titulobranco;
-export let titulosecunday;
-export let paragrafo;
-export let autor;
-export let servicocontratado;
+<script>import CarouselWithDepoiments from "../../CarouselWithDepoiments.svelte";
+import ContainerPage from "../../ContainerPage.svelte";
+export let depoimentos;
+export let logo;
 </script>
 
 <div class="fundo">
@@ -35,25 +33,7 @@ export let servicocontratado;
     </svg>
     <div class="conteudo">
         <ContainerPage>
-            <div class="conteudo-text">
-                <div class="textos">
-                    <span class="titulo-surface">
-                        {titulobranco}
-                        <span class="titulo-secondary">
-                            {titulosecunday}
-                        </span>
-                    </span>
-                    <span class="paragrafo">
-                        {paragrafo}
-                    </span>
-                    <div class="autor-box">
-                        <span class="autor">{autor}</span>
-                        <span class="servicoContratado">
-                            {servicocontratado}
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <CarouselWithDepoiments {depoimentos} {logo} />
         </ContainerPage>
     </div>
 </div>
@@ -61,7 +41,7 @@ export let servicocontratado;
 <style>
     .fundo {
     position: relative;
-    min-height: 70vh;
+    min-height: 85vh;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -88,70 +68,5 @@ export let servicocontratado;
     display: flex;
     height: 100%;
     width: 100%
-}
-    .conteudo-text {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem
-}
-    .textos {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    max-width: 28rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem
-}
-    .titulo-surface {
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    --tw-text-opacity: 1;
-    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
-}
-    @media (min-width: 768px) {
-    .titulo-surface {
-        font-size: 1.875rem;
-        line-height: 2.25rem
-    }
-}
-    .titulo-secondary {
-    --tw-text-opacity: 1;
-    color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
-}
-    .paragrafo {
-    text-align: left;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    font-weight: 500;
-    --tw-text-opacity: 1;
-    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
-}
-    .autor-box {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    --tw-text-opacity: 1;
-    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
-}
-    .autor {
-    text-align: left;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 300
-}
-    .servicoContratado {
-    text-align: left;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 400
 }
 </style>

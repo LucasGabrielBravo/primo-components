@@ -321,6 +321,8 @@ function drawerclose() {
     right: 0px;
     z-index: 10;
     width: 100%;
+    min-width: -moz-max-content;
+    min-width: max-content;
     overflow-y: auto;
     --tw-bg-opacity: 1;
     background-color: rgb(var(--color-surface-100, 243 244 244) / var(--tw-bg-opacity));

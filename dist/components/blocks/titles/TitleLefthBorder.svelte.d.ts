@@ -1,7 +1,8 @@
 import { SvelteComponent } from "svelte";
+import type { IParagrafo } from "../../../../types/fields";
 declare const __propDef: {
     props: {
-        titulo: string;
+        titulos: IParagrafo[];
     };
     events: {
         [evt: string]: CustomEvent<any>;

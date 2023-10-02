@@ -20,7 +20,7 @@ let diferenciais = [
     }
   },
   {
-    titulo: "Assitencia",
+    titulo: "Cuidadores Treinados",
     descricao: "teste",
     icon: {
       alt: "Teste",
@@ -28,7 +28,7 @@ let diferenciais = [
     }
   },
   {
-    titulo: "Assitencia",
+    titulo: "Plano de cuidado individualizado",
     descricao: "teste",
     icon: {
       alt: "Teste",

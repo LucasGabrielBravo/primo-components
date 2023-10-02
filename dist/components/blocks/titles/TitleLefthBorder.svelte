@@ -1,12 +1,14 @@
 <script>import ContainerPage from "../../ContainerPage.svelte";
-export let titulo;
+export let titulos;
 </script>
 
 <ContainerPage>
     <div class="box-title">
-        <span class="chamada-title">
-            {titulo}
-        </span>
+        <div class="chamada-title">
+            {#each titulos as titulo, i}
+                <span>{titulo.text}</span>
+            {/each}
+        </div>
     </div>
 </ContainerPage>
 
@@ -20,7 +22,9 @@ export let titulo;
     padding-bottom: 2rem
 }
     .chamada-title {
+    display: flex;
     max-width: 72rem;
+    flex-direction: column;
     border-left-width: 4px;
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-border-opacity));

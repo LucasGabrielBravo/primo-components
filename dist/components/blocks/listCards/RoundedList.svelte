@@ -69,16 +69,17 @@ export let listparceiros;
     gap: 2rem
 }
     .titulo {
-    text-align: center;
-    font-size: 3rem;
-    line-height: 1;
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
     @media (min-width: 768px) {
     .titulo {
-        text-align: left
+        font-size: 1.875rem;
+        line-height: 2.25rem
     }
 }
     .paragrafo {
@@ -89,8 +90,13 @@ export let listparceiros;
 }
     .parceiras {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 0.75rem
+}
+    @media (min-width: 768px) {
+    .parceiras {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
 }
     .card {
     display: flex;
@@ -100,8 +106,8 @@ export let listparceiros;
     padding: 0.5rem
 }
     .image-parceira {
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     overflow: hidden;
     border-radius: 9999px;
     --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -110,6 +116,12 @@ export let listparceiros;
     --tw-ring-color: rgb(var(--color-surface-700, 113 122 127) / 0.1);
     --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
+    @media (min-width: 768px) {
+    .image-parceira {
+        height: 3rem;
+        width: 3rem
+    }
 }
     .text-parceira {
     display: flex;

@@ -19,9 +19,15 @@ document.body.onresize = function() {
 
 <ContainerPage>
     <header class="heading-group">
-        <span class="toptitulo">{toptitulo}</span>
-        <h2 class="titulo">{titulo}</h2>
-        <span class="subtitulo">{subtitulo}</span>
+        {#if toptitulo}
+            <span class="toptitulo">{toptitulo}</span>
+        {/if}
+        {#if titulo}
+            <h2 class="titulo">{titulo}</h2>
+        {/if}
+        {#if subtitulo}
+            <span class="subtitulo">{subtitulo}</span>
+        {/if}
     </header>
     <div class="conteudos">
         {#if !isMobile}
@@ -164,10 +170,16 @@ document.body.onresize = function() {
     text-align: left
 }
     .title {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .title {
+        font-size: 1.875rem;
+        line-height: 2.25rem
+    }
 }
     .content {
     font-size: 1.125rem;

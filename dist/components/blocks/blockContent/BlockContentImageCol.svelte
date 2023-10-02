@@ -8,9 +8,15 @@ export let conteudos;
 
 <ContainerPage>
     <header class="heading-group">
-        <span class="toptitulo">{toptitulo}</span>
-        <h2 class="titulo">{titulo}</h2>
-        <span class="subtitulo">{subtitulo}</span>
+        {#if toptitulo}
+            <span class="toptitulo">{toptitulo}</span>
+        {/if}
+        {#if titulo}
+            <h2 class="titulo">{titulo}</h2>
+        {/if}
+        {#if subtitulo}
+            <span class="subtitulo">{subtitulo}</span>
+        {/if}
     </header>
     <div class="conteudos">
         {#each conteudos as conteudo, i}
@@ -43,7 +49,7 @@ export let conteudos;
 
 <style>
     .heading-group {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;

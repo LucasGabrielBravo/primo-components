@@ -32,9 +32,15 @@
 
 <ContainerPage>
     <header class="heading-group">
-        <span class="toptitulo">{toptitulo}</span>
-        <h2 class="titulo">{titulo}</h2>
-        <span class="subtitulo">{subtitulo}</span>
+        {#if toptitulo}
+            <span class="toptitulo">{toptitulo}</span>
+        {/if}
+        {#if titulo}
+            <h2 class="titulo">{titulo}</h2>
+        {/if}
+        {#if subtitulo}
+            <span class="subtitulo">{subtitulo}</span>
+        {/if}
     </header>
     <div class="conteudos">
         {#if !isMobile}
@@ -142,7 +148,7 @@
         @apply flex flex-col items-start gap-4 p-0 w-full h-full justify-center text-left;
     }
     .title {
-        @apply text-lg text-secondary-500;
+        @apply text-2xl md:text-3xl text-secondary-500;
     }
     .content {
         @apply text-surface-700 text-lg;

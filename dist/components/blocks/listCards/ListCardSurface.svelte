@@ -53,15 +53,15 @@ export let list;
     padding-bottom: 0.5rem
 }
     .img-card {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
     @media (min-width: 768px) {
     .img-card {
-        height: 3.5rem;
-        width: 3.5rem
+        height: 2rem;
+        width: 2rem
     }
 }
     .number {
@@ -69,13 +69,13 @@ export let list;
     line-height: 2.5rem;
     font-weight: 700;
     --tw-text-opacity: 1;
-    color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
     .descricao {
     font-size: 1.125rem;
     line-height: 1.75rem;
     --tw-text-opacity: 1;
-    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
     .ajust {
     padding-top: 2rem;

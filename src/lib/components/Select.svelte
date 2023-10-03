@@ -54,7 +54,7 @@
 
 <label for={id} class={clsx("label theme", labelClass)}>
     {#if label}
-        <span class="text-surface-800">
+        <span class="label-text">
             {label}
             {#if required}
                 <span class="require">*</span>
@@ -84,6 +84,9 @@
     .label {
         @apply flex flex-col items-start;
     }
+    .label-text {
+        @apply flex gap-1 items-start !font-medium text-base;
+    }
     .require {
         @apply text-red-500;
     }
@@ -91,6 +94,6 @@
         @apply !w-full !flex !flex-col !rounded-none !py-[14px]  !bg-transparent;
     }
     .selecti.borderBottom {
-        @apply !border-b-2 !border-secondary-900/40 font-medium;
+        @apply !border-b-2 !border-secondary-900/40;
     }
 </style>

@@ -12,10 +12,14 @@
         { label: "Teste", value: "Teste" },
         { label: "Teste", value: "Teste" },
     ];
+
+    function handleSubmit(data:any) {
+        console.table(data);
+    }
 </script>
 
 <Hst.Story title="FormContact">
-    <FormContact {cargosforselect} {nomeempresa} />
+    <FormContact {cargosforselect} {nomeempresa} {handleSubmit} />
 
     <svelte:fragment slot="controls" />
 </Hst.Story>

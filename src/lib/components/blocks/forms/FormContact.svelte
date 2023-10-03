@@ -20,11 +20,13 @@
     export let nomeempresa: string;
 
     export let cargosforselect: ICargosSelect[];
+
+    export let handleSubmit:<T>(data:T) => Promise<void>
 </script>
 
 <div>
     <ContainerPage>
-        <div class="form">
+        <form on:submit|preventDefault={()=> handleSubmit(formData)} class="form">
             <Input
                 color="primary"
                 border="borderBottom"
@@ -101,7 +103,7 @@
                     </span>
                 </Button>
             </div>
-        </div>
+        </form>
     </ContainerPage>
 </div>
 

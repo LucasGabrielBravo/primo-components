@@ -1,30 +1,31 @@
 <script lang="ts">
-  import CarouselWithBlock from "$lib/components/CarouselWithBlock.svelte";
+  import CarouselWithDepoiments from "$lib/components/CarouselWithDepoiments.svelte";
   import type { Hst } from "@histoire/plugin-svelte";
+  import type { IImage } from "../../types/fields";
   export let Hst: Hst;
 
   let hiddenArrows = false;
   let autoPlay = false;
   let interval = 5000;
 
-  const images = [
-    "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80",
-    "https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
-    "https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80",
-    "https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80",
-    "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+  let logo: IImage = {
+    url: "https://trypyramid.com/img/pyramid-logo-black-horizontal.png",
+    alt: "logo",
+  };
+
+  let depoimentos = [
+    {
+      titulobranco: "Titulo",
+      titulosecunday: "TituloSecondary",
+      paragrafo:
+        "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      autor: "Lorem Ipsum",
+      servicocontratado: "Teste Lorem Ipsum",
+    },
   ];
 
   $: source = `
     import { Carousel } from "/index.js"
-
-    const images = [
-      "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80",
-      "https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
-      "https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80",
-      "https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80",
-      "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
-    ];
 
     <div class="h-60 w-64">
       <Carousel
@@ -36,9 +37,9 @@
   `;
 </script>
 
-<Hst.Story {source} title="CarouselWithBlock">
+<Hst.Story {source} title="CarouselWithDepoiments">
   <div class="frame">
-    <CarouselWithBlock {images} {interval} {autoPlay} {hiddenArrows} />
+    <CarouselWithDepoiments {depoimentos} {logo} />
   </div>
 
   <svelte:fragment slot="controls">

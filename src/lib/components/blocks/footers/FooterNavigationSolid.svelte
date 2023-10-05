@@ -75,7 +75,7 @@
         @apply hover:scale-105;
     }
     .rede-social-logo {
-        @apply object-cover h-full w-full;
+        @apply object-contain h-full w-full;
     }
     .copyright {
         @apply text-surface-50 text-sm;

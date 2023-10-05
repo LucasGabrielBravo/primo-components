@@ -192,7 +192,7 @@
 
 <style lang="postcss">
   .fundo {
-    @apply flex  py-2 justify-center  backdrop-blur-lg border-b-[1px] border-surface-50 absolute top-0 w-full z-10;
+    @apply flex  py-2 justify-center  backdrop-blur-[8px] border-b-[1px] border-surface-50 absolute top-0 w-full z-10 bg-[rgba(185,188,195,0.5)];
   }
   .table {
     @apply flex flex-row-reverse md:flex-row w-full h-full bg-transparent rounded-none justify-between;
@@ -269,6 +269,6 @@
     @apply hover:scale-105;
   }
   .rede-social-logo {
-    @apply object-cover h-full w-full;
+    @apply object-contain h-full w-full;
   }
 </style>

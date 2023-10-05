@@ -18,15 +18,16 @@
     };
 
     export let nomeempresa: string;
-
     export let cargosforselect: ICargosSelect[];
-
-    export let handleSubmit:<T>(data:T) => Promise<void>
+    export let handleSubmit: <T>(data: any) => void;
 </script>
 
 <div>
     <ContainerPage>
-        <form on:submit|preventDefault={()=> handleSubmit(formData)} class="form">
+        <form
+            on:submit|preventDefault={() => handleSubmit(formData)}
+            class="form"
+        >
             <Input
                 color="primary"
                 border="borderBottom"
@@ -34,7 +35,7 @@
                 required
                 type="Text"
                 placeholder="Nome Completo"
-                bind:value={formData.email}
+                bind:value={formData.nome}
             />
             <div class="forma-contato">
                 <Input
@@ -44,6 +45,7 @@
                     placeholder="seuemail@mail.com"
                     bind:value={formData.email}
                     required
+                    type="email"
                 />
                 <Input
                     color="primary"

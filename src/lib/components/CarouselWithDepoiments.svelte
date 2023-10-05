@@ -184,7 +184,7 @@
     @apply text-surface-50 font-medium text-base md:text-xl text-left px-1;
   }
   .autor-box {
-    @apply flex flex-col text-surface-50 w-full transition-all rounded-lg p-2;
+    @apply flex flex-col text-surface-50 w-full transition-all rounded-lg p-2 gap-2;
     @apply hover:shadow-lg;
   }
   .autor {
@@ -200,7 +200,7 @@
     @apply flex items-center text-xs gap-2;
   }
   .estrelinhas {
-    @apply flex w-full items-start justify-center text-center gap-2;
+    @apply flex w-full items-start justify-start text-center gap-2;
   }
   .arrows {
     @apply pt-[32rem] md:pt-0;

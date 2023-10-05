@@ -100,8 +100,8 @@ const ano = data.getFullYear();
     .rede-social-logo {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover
+    -o-object-fit: contain;
+       object-fit: contain
 }
     .copyright {
     font-size: 0.875rem;

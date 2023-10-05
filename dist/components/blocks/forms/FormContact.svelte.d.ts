@@ -6,6 +6,7 @@ declare const __propDef: {
             label: string;
             value: string;
         }[];
+        handleSubmit: <T>(data: any) => void;
     };
     events: {
         [evt: string]: CustomEvent<any>;

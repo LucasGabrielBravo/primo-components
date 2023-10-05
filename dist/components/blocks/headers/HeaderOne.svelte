@@ -189,9 +189,10 @@ function drawerclose() {
     border-bottom-width: 1px;
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-border-opacity));
+    background-color: rgba(185,188,195,0.5);
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    --tw-backdrop-blur: blur(16px);
+    --tw-backdrop-blur: blur(8px);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
             backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
 }
@@ -413,7 +414,7 @@ function drawerclose() {
   .rede-social-logo {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover
+    -o-object-fit: contain;
+       object-fit: contain
 }
 </style>

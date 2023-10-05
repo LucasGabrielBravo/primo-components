@@ -16,7 +16,7 @@ export let backgroundimage;
     src={backgroundimage.url}
     alt=""
   />
-  <div class="pelicula" />
+  <!-- <div class="pelicula" /> -->
 
   <div class="conteudo">
     <ContainerPage>
@@ -117,14 +117,11 @@ export let backgroundimage;
        object-fit: cover;
     -o-object-position: 65%;
        object-position: 65%;
-    --tw-brightness: brightness(1.05);
-    --tw-contrast: contrast(1.25);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
   @media (min-width: 640px) {
     .img-fundo {
-        -o-object-position: top;
-           object-position: top;
+        -o-object-position: center;
+           object-position: center;
     }
 }
   .conteudo {
@@ -215,6 +212,7 @@ export let backgroundimage;
     padding-bottom: 0.5rem;
     font-size: 1rem;
     line-height: 1.5rem;
+    font-weight: 500;
     --tw-text-opacity: 1 !important;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity)) !important;
     text-decoration-line: underline;
@@ -241,8 +239,9 @@ export let backgroundimage;
     gap: 0.5rem;
     border-top-left-radius: 0.375rem;
     border-top-right-radius: 0.375rem;
+    background-color: rgba(185,188,195,0.5);
     padding: 0.5rem;
-    --tw-backdrop-blur: blur(16px);
+    --tw-backdrop-blur: blur(8px);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
             backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
@@ -342,7 +341,7 @@ export let backgroundimage;
     line-height: 1.5rem;
     font-weight: 500;
     --tw-text-opacity: 1;
-    color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity));
+    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity));
 }
   .pelicula {
     position: absolute;

@@ -60,7 +60,7 @@ export let logo;
 }
     @media (min-width: 640px) {
         .logo {
-                width: 20%
+                width: 10%
         }
 }
     .pelicula {

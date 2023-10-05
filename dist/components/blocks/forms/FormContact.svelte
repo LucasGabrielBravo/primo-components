@@ -11,11 +11,15 @@ let formData = {
 };
 export let nomeempresa;
 export let cargosforselect;
+export let handleSubmit;
 </script>
 
 <div>
     <ContainerPage>
-        <div class="form">
+        <form
+            on:submit|preventDefault={() => handleSubmit(formData)}
+            class="form"
+        >
             <Input
                 color="primary"
                 border="borderBottom"
@@ -23,7 +27,7 @@ export let cargosforselect;
                 required
                 type="Text"
                 placeholder="Nome Completo"
-                bind:value={formData.email}
+                bind:value={formData.nome}
             />
             <div class="forma-contato">
                 <Input
@@ -33,6 +37,7 @@ export let cargosforselect;
                     placeholder="seuemail@mail.com"
                     bind:value={formData.email}
                     required
+                    type="email"
                 />
                 <Input
                     color="primary"
@@ -92,7 +97,7 @@ export let cargosforselect;
                     </span>
                 </Button>
             </div>
-        </div>
+        </form>
     </ContainerPage>
 </div>
 

@@ -1,8 +1,12 @@
 <script lang="ts">
   import Button from "$lib/components/Button.svelte";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
-
+  // import { inview as inviewFunction } from "$lib/utils";
+  // import type { IOptions } from "$lib/utils/inview";
+  // import { inview } from "$lib/utils";
+  // import { createInview, type IOptions } from "$lib/utils/inview";
   import clsx from "clsx";
+  // import { onMount } from "svelte";
   import type { IBotao, IImage } from "../../../../types/fields";
 
   interface IDiferencial {
@@ -17,6 +21,28 @@
   export let botao2: IBotao;
   export let diferenciais: IDiferencial[];
   export let backgroundimage: IImage;
+
+  // export let inview: (
+  //   element: HTMLElement,
+  //   options?: Partial<IOptions>
+  // ) => {
+  //   destroy(): void;
+  // } = inviewFunction;
+
+  //createInview
+
+  // let inviewfunction: (
+  //   element: HTMLElement,
+  //   options?: Partial<IOptions> | undefined
+  // ) =>
+  //   | {
+  //       destroy(): void;
+  //     }
+  //   | undefined;
+
+  // onMount(() => {
+  //   inviewfunction = createInview();
+  // });
 </script>
 
 <div class="box">
@@ -26,7 +52,7 @@
     src={backgroundimage.url}
     alt=""
   />
-  <div class="pelicula" />
+  <!-- <div class="pelicula" /> -->
 
   <div class="conteudo">
     <ContainerPage>
@@ -112,7 +138,7 @@
     @apply relative  min-h-max md:h-[80vh] items-center;
   }
   .img-fundo {
-    @apply absolute h-full w-full object-cover object-[65%] sm:object-top brightness-105 contrast-125;
+    @apply absolute h-full w-full object-cover object-[65%] sm:object-center;
   }
   .conteudo {
     @apply relative h-full flex;
@@ -136,13 +162,13 @@
     @apply flex flex-col md:flex-row gap-2;
   }
   .botao-chamada {
-    @apply text-base underline !text-primary-500 px-4 py-2 flex flex-row items-center justify-center;
+    @apply text-base underline !text-primary-500 px-4 py-2 flex flex-row items-center justify-center font-medium;
   }
   .aria-vazia {
     @apply md:flex w-full hidden;
   }
   .box-botoes {
-    @apply hidden mt-auto mx-auto lg:grid lg:grid-cols-3 p-2 gap-2 backdrop-blur-lg w-full rounded-t-md min-h-max translate-y-6;
+    @apply hidden mt-auto mx-auto lg:grid lg:grid-cols-3 p-2 gap-2 bg-[rgba(185,188,195,0.5)] backdrop-blur-[8px] w-full rounded-t-md min-h-max translate-y-6;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   }
   .box-botoes-two {
@@ -165,7 +191,7 @@
     @apply font-bold text-lg text-primary-500;
   }
   .text-descripition-second {
-    @apply font-medium text-base text-surface-700;
+    @apply font-medium text-base text-surface-50;
   }
   .pelicula {
     @apply flex w-full h-full  absolute;

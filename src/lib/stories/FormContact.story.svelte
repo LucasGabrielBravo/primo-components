@@ -6,14 +6,14 @@
     let nomeempresa = "Empresa Nome";
     let cargosforselect = [
         { label: "Teste", value: "Teste" },
-        { label: "Teste", value: "Teste" },
-        { label: "Teste", value: "Teste" },
-        { label: "Teste", value: "Teste" },
-        { label: "Teste", value: "Teste" },
-        { label: "Teste", value: "Teste" },
+        { label: "Teste", value: "Teste 1" },
+        { label: "Teste", value: "Teste 2" },
+        { label: "Teste", value: "Teste 3" },
+        { label: "Teste", value: "Teste 4" },
+        { label: "Teste", value: "Teste 5" },
     ];
 
-    function handleSubmit(data:any) {
+    function handleSubmit<T>(data: any) {
         console.table(data);
     }
 </script>

@@ -13,7 +13,7 @@
         src={backgroundimage.url}
         alt={backgroundimage.alt}
     />
-    <div class="pelicula" />
+    <!-- <div class="pelicula" /> -->
 
     <div class="conteudo">
         <ContainerPage>
@@ -40,8 +40,8 @@
     .logo {
         @apply w-[70%] sm:w-[50%] md:w-[20%] h-auto mb-14;
     }
-    .pelicula {
+    /* .pelicula {
         @apply flex w-full h-full  absolute;
         background-image: linear-gradient(#fff, transparent);
-    }
+    } */
 </style>

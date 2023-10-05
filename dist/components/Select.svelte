@@ -33,7 +33,7 @@ const select = cva([], {
 
 <label for={id} class={clsx("label theme", labelClass)}>
     {#if label}
-        <span class="text-surface-800">
+        <span class="label-text">
             {label}
             {#if required}
                 <span class="require">*</span>
@@ -65,6 +65,14 @@ const select = cva([], {
     flex-direction: column;
     align-items: flex-start
 }
+    .label-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500 !important
+}
     .require {
     --tw-text-opacity: 1;
     color: rgb(239 68 68 / var(--tw-text-opacity))
@@ -80,7 +88,6 @@ const select = cva([], {
 }
     .selecti.borderBottom {
     border-bottom-width: 2px !important;
-    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4) !important;
-    font-weight: 500
+    border-color: rgb(var(--color-secondary-900, 59 3 25) / 0.4) !important
 }
 </style>

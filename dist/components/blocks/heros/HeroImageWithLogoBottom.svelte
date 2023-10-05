@@ -10,7 +10,7 @@ export let logo;
         src={backgroundimage.url}
         alt={backgroundimage.alt}
     />
-    <div class="pelicula" />
+    <!-- <div class="pelicula" /> -->
 
     <div class="conteudo">
         <ContainerPage>
@@ -23,57 +23,54 @@ export let logo;
 
 <style>
     .box {
-        position: relative;
-        height: 50vh;
-        align-items: center
+    position: relative;
+    height: 50vh;
+    align-items: center
 }
 @media (min-width: 768px) {
-        .box {
-                height: 65vh
-        }
+    .box {
+        height: 65vh
+    }
 }
     .img-fundo {
-        position: absolute;
-        inset: 0px;
-        height: 100%;
-        width: 100%;
-        -o-object-fit: cover;
-           object-fit: cover;
-        -o-object-position: center;
-           object-position: center
+    position: absolute;
+    inset: 0px;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center
 }
     .conteudo {
-        position: relative;
-        display: flex;
-        height: 100%
+    position: relative;
+    display: flex;
+    height: 100%
 }
     .logo-box {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        align-items: flex-end;
-        justify-content: flex-start
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-start
 }
     .logo {
-        margin-bottom: 3.5rem;
-        height: auto;
-        width: 70%
+    margin-bottom: 3.5rem;
+    height: auto;
+    width: 70%
 }
     @media (min-width: 640px) {
-        .logo {
-                width: 50%
-        }
+    .logo {
+        width: 50%
+    }
 }
     @media (min-width: 768px) {
-        .logo {
-                width: 20%
-        }
+    .logo {
+        width: 20%
+    }
 }
-    .pelicula {
-        position: absolute;
-        display: flex;
-        height: 100%;
-        width: 100%;
-        background-image: linear-gradient(#fff, transparent)
-}
+    /* .pelicula {
+        @apply flex w-full h-full  absolute;
+        background-image: linear-gradient(#fff, transparent);
+    } */
 </style>

@@ -725,6 +725,8 @@ $:
 
     flex-direction: column;
 
+    gap: 0.5rem;
+
     border-radius: 0.5rem;
 
     padding: 0.5rem;
@@ -791,7 +793,7 @@ $:
 
     align-items: flex-start;
 
-    justify-content: center;
+    justify-content: flex-start;
 
     gap: 0.5rem;
 

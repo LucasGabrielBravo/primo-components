@@ -38,7 +38,7 @@ let diferenciais = [
 ];
 let backgroundimage = {
   alt: "bgImage",
-  url: "https://s3-alpha-sig.figma.com/img/170e/405d/dbc52a03b7d1bac197738a4bbb48ac03?Expires=1696204800&Signature=F2Z2vzLdav1KotAvhTYVS73V~ROH9goZO1DW2XMW3GJ0mhj8ceIBM6RKdnBfIy04Gje0Vd~ZCLVAsR5kmpoQxEXz9Cbs7BD9GUA7kcChrqwhzAYR10VJ9sZOMpmSkdcOo4m1rDp1KBGlfb3osnwX80f4XhdRB2q6Of4W-Yi-~MUI2XyU1pIQ9KlclJgzMnU8QdKnfJrQ9ksdVhXt3BeLRToujs6~TMz3LCkcwDEPTlz0ZLyil4C5yeOisNWa1YckrQpATdNkLpmuR~otzp9mI-aFZI3-ArebwCP-5VB8gXmOH2aXf2TMG~N-QolQvWArY6Ip3CjOj875IE9rcpSiWQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+  url: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true"
 };
 </script>
 

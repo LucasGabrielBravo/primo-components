@@ -39,7 +39,7 @@
         @apply flex w-full h-full items-center justify-center;
     }
     .logo {
-        @apply sm:w-[20%] h-auto;
+        @apply sm:w-[10%] h-auto;
     }
     .pelicula {
         @apply flex w-full h-full  absolute;

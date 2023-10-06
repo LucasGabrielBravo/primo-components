@@ -1,4 +1,4 @@
-interface IOptions {
+export interface IOptions {
     transition: number;
     opacity: string;
     direction: "up" | "down" | "left" | "right";
@@ -8,4 +8,6 @@ interface IOptions {
 export default function inview(element: HTMLElement, options?: Partial<IOptions>): {
     destroy(): void;
 };
-export {};
+export declare function createInview(): (element: HTMLElement, options?: Partial<IOptions>) => {
+    destroy(): void;
+};

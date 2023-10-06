@@ -3,7 +3,7 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
-      colors: {        
+      colors: {
         primary: {
           50: 'rgb(var(--color-primary-50, 239 246 255) / <alpha-value>)',
           100: 'rgb(var(--color-primary-100, 219 234 254) / <alpha-value>)',
@@ -41,6 +41,30 @@ export default {
           700: 'rgb(var(--color-tertiary-700, 73 171 7) / <alpha-value>)',
           800: 'rgb(var(--color-tertiary-800, 48 112 5) / <alpha-value>)',
           900: 'rgb(var(--color-tertiary-900, 25 59 3) / <alpha-value>)',
+        },
+        surface: {
+          50: 'rgb(var(--color-surface-50, 250 250 250) / <alpha-value>)',
+          100: 'rgb(var(--color-surface-100, 243 244 244) / <alpha-value>)',
+          200: 'rgb(var(--color-surface-200, 232 235 236) / <alpha-value>)',
+          300: 'rgb(var(--color-surface-300, 214 218 220) / <alpha-value>)',
+          400: 'rgb(var(--color-surface-400, 187 193 197) / <alpha-value>)',
+          500: 'rgb(var(--color-surface-500, 157 165 170) / <alpha-value>)',
+          600: 'rgb(var(--color-surface-600, 135 144 150) / <alpha-value>)',
+          700: 'rgb(var(--color-surface-700, 113 122 127) / <alpha-value>)',
+          800: 'rgb(var(--color-surface-800, 95 101 106) / <alpha-value>)',
+          900: 'rgb(var(--color-surface-900, 77 82 86) / <alpha-value>)'
+        },
+        slate: {
+          50: 'rgb(var(--color-slate-50, 248 250 252) / <alpha-value>)',
+          100: 'rgb(var(--color-slate-100, 241 245 249) / <alpha-value>)',
+          200: 'rgb(var(--color-slate-200, 226 232 240) / <alpha-value>)',
+          300: 'rgb(var(--color-slate-300, 203 213 225) / <alpha-value>)',
+          400: 'rgb(var(--color-slate-400, 148 163 184) / <alpha-value>)',
+          500: 'rgb(var(--color-slate-500, 100 116 139) / <alpha-value>)',
+          600: 'rgb(var(--color-slate-600, 71 85 105) / <alpha-value>)',
+          700: 'rgb(var(--color-slate-700, 51 65 85) / <alpha-value>)',
+          800: 'rgb(var(--color-slate-800, 30 41 59) / <alpha-value>)',
+          900: 'rgb(var(--color-slate-900, 15 23 42) / <alpha-value>)'
         }
       }
     },

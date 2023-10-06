@@ -214,6 +214,8 @@ declare const __propDef: {
         'on:fullscreenerror'?: import("svelte/elements").EventHandler<Event, HTMLButtonElement> | null | undefined;
         color?: "default" | "primary" | "secondary" | "tertiary" | "primary-gradient" | "secondary-gradient" | "tertiary-gradient" | "primary-secondary" | "secondary-tertiary" | "tertiary-primary" | null | undefined;
         size?: "sm" | "md" | "lg" | "xl" | null | undefined;
+        variant?: "default" | "ringed" | "filled" | null | undefined;
+        shaddow?: "shaddow-default" | "shaddow-sm" | "shaddow-md" | "shaddow-lg" | "shaddow-xl" | null | undefined;
         href?: string | undefined;
     };
     events: {

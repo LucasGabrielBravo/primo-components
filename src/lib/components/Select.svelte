@@ -54,7 +54,7 @@
 
 <label for={id} class={clsx("label theme", labelClass)}>
     {#if label}
-        <span class="text-surface-800">
+        <span class="label-text">
             {label}
             {#if required}
                 <span class="require">*</span>
@@ -83,6 +83,9 @@
 <style lang="postcss">
     .label {
         @apply flex flex-col items-start;
+    }
+    .label-text {
+        @apply flex gap-1 items-start !font-medium text-base;
     }
     .require {
         @apply text-red-500;

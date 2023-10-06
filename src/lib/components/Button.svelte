@@ -18,15 +18,29 @@
 			},
 			size: {
 				sm: "sm",
-				md: "",
+				md: "md",
 				lg: "lg",
 				xl: "xl",
+			},
+			variant: {
+				default: "",
+				ringed: "ringed",
+				filled: "filled",
+			},
+			shaddow: {
+				"shaddow-default": "",
+				"shaddow-sm": "shaddow-sm",
+				"shaddow-md": "shaddow-md",
+				"shaddow-lg": "shaddow-lg",
+				"shaddow-xl": "shaddow-xl",
 			},
 		},
 		compoundVariants: [],
 		defaultVariants: {
 			size: "md",
 			color: "default",
+			variant: "default",
+			shaddow: "shaddow-default",
 		},
 	});
 
@@ -39,20 +53,28 @@
 	export let href: string | undefined = undefined;
 	export let color: $$Props["color"] = "default";
 	export let size: $$Props["size"] = "md";
+	export let variant: $$Props["variant"] = "default";
+	export let shaddow: $$Props["shaddow"] = "shaddow-default";
 </script>
 
 <svelte:element
 	this={href ? "a" : "button"}
 	{href}
 	{...$$props}
-	class={`button ${button({ size, color, class: $$props.class })}`}
+	class={`button ${button({
+		size,
+		color,
+		variant,
+		shaddow,
+		class: $$props.class,
+	})}`}
 >
 	<slot />
 </svelte:element>
 
 <style lang="postcss">
 	.button {
-		@apply px-4 py-2 flex flex-row items-center border rounded-[--rounded-base];
+		@apply px-4 py-2 flex flex-row items-center justify-center border rounded-[--rounded-base] w-full sm:max-w-max;
 		@apply border-slate-400 bg-slate-100 text-slate-700;
 		@apply active:scale-95 transition-all;
 	}
@@ -102,8 +124,16 @@
 		@apply hover:from-tertiary-600 hover:to-primary-600;
 	}
 
+	.button.ringed {
+		@apply min-w-max border-2 border-primary-500 text-primary-500 bg-transparent;
+		@apply hover:bg-primary-500 hover:border-primary-500 hover:text-surface-50;
+	}
+
 	.button.sm {
 		@apply px-2 py-1 text-sm;
+	}
+	.button.md {
+		@apply text-base;
 	}
 
 	.button.lg {
@@ -112,5 +142,22 @@
 
 	.button.xl {
 		@apply px-5 py-3 text-xl;
+	}
+	.button.shaddow-sm {
+		box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	}
+	.button.shaddow-md {
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+			0 2px 4px -2px rgb(0 0 0 / 0.1);
+	}
+
+	.button.shaddow-lg {
+		box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+			0 4px 6px -4px rgb(0 0 0 / 0.1);
+	}
+
+	.button.shaddow-xl {
+		box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+			0 8px 10px -6px rgb(0 0 0 / 0.1);
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import FooterNavigationSolid from "$lib/components/blocks/footers/FooterNavigationSolid.svelte";
   import type { Hst } from "@histoire/plugin-svelte";
+  import type { ILink } from "../../types/fields";
   export let Hst: Hst;
 
   let logo = {
@@ -8,7 +9,7 @@
     url: "https://seeklogo.com/images/B/black-company-logo-C40022C4D5-seeklogo.com.png",
   };
 
-  let links = [
+  let links: ILink[] = [
     {
       label: "Teste0",
       url: "/",

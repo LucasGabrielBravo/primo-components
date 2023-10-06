@@ -9,6 +9,8 @@ declare const __propDef: {
             paragrafo: string;
             autor: string;
             servicocontratado: string;
+            link: string;
+            botaotext: string;
         }[];
         id?: string | undefined;
         hiddenArrows?: boolean | undefined;

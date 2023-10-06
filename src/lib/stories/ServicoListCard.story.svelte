@@ -1,10 +1,15 @@
 <script lang="ts">
     import ServicoListCard from "$lib/components/blocks/listCards/ServicoListCard.svelte";
     import type { Hst } from "@histoire/plugin-svelte";
-    import type { IParagrafo } from "../../types/fields";
+    import type { IBotao, IParagrafo } from "../../types/fields";
     export let Hst: Hst;
 
     let titulo = "Nossos serviços";
+
+    let botao1: IBotao = {
+        label: "Conheca os serviços",
+        url: "/",
+    };
 
     let paragrafos: IParagrafo[] = [
         {
@@ -76,7 +81,7 @@
 </script>
 
 <Hst.Story title="ServicoListCard">
-    <ServicoListCard {titulo} {paragrafos} {listservicos} />
+    <ServicoListCard {titulo} {paragrafos} {listservicos} {botao1} />
 
     <svelte:fragment slot="controls" />
 </Hst.Story>

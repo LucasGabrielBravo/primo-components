@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { IParagrafo } from "../../../../types/fields";
+import type { IBotao, IParagrafo } from "../../../../types/fields";
 declare const __propDef: {
     props: {
         titulo: string;
@@ -11,6 +11,7 @@ declare const __propDef: {
             };
             servico: string;
         }[];
+        botao1: IBotao;
     };
     events: {
         [evt: string]: CustomEvent<any>;

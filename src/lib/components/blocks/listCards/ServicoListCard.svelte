@@ -1,7 +1,7 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import ContainerPage from "$lib/components/ContainerPage.svelte";
-    import type { IParagrafo } from "../../../../types/fields";
+    import type { IBotao, IParagrafo } from "../../../../types/fields";
 
     interface IServico {
         image: {
@@ -14,6 +14,7 @@
     export let titulo: string;
     export let paragrafos: IParagrafo[];
     export let listservicos: IServico[];
+    export let botao1: IBotao;
 </script>
 
 <div class="ajust">
@@ -43,9 +44,13 @@
                 {/each}
             </div>
 
-            <Button color="secondary" size="md" href="/" shaddow="shaddow-lg">
-                <!-- {@html botao1.label} -->
-                Conheça os serviços
+            <Button
+                color="secondary"
+                size="md"
+                href={botao1.url}
+                shaddow="shaddow-lg"
+            >
+                {@html botao1.label}
             </Button>
         </div>
     </ContainerPage>

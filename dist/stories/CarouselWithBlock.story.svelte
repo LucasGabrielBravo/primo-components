@@ -15,7 +15,7 @@ let depoimentos = [
     autor: "Lorem Ipsum",
     servicocontratado: "Teste Lorem Ipsum",
     botaotext: "Ver mais depoimentos",
-    link: "https://www.instagram.com/stories/highlights/18234250894206700/"
+    link: "/"
   }
 ];
 $:

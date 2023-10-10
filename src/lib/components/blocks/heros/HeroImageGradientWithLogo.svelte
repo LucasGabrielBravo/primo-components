@@ -29,7 +29,7 @@
         @apply relative  h-[50vh]  md:h-[65vh] items-center;
     }
     .img-fundo {
-        @apply absolute inset-0 h-full w-full object-cover object-center;
+        @apply absolute inset-0 h-full w-full object-cover object-center lg:object-top;
         -webkit-mask-image: linear-gradient(to top, transparent 20%, #000 100%);
     }
     .conteudo {

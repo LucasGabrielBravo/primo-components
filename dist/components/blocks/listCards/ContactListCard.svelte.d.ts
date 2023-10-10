@@ -1,4 +1,5 @@
 import { SvelteComponent } from "svelte";
+import type { IImage } from "../../../../types/fields";
 declare const __propDef: {
     props: {
         color?: "default" | "primary" | "secondary" | "tertiary" | null | undefined;
@@ -14,6 +15,7 @@ declare const __propDef: {
                 alt: string;
             };
         }[];
+        image: IImage;
     };
     events: {
         [evt: string]: CustomEvent<any>;

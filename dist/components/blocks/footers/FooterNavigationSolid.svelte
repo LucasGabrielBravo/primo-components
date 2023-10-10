@@ -11,9 +11,9 @@ const ano = data.getFullYear();
     <ContainerPage>
         <div class="conteudo">
             <div class="links">
-                {#each links as link, i}
-                    <a data-key="links[{i}].link" class="link" href={link.url}>
-                        {@html link.label}</a
+                {#each links as link}
+                    <a class="link" href={link.url}>
+                        <span>{link.label}</span></a
                     >
                 {/each}
             </div>

@@ -33,7 +33,7 @@ export let conteudos;
                     <span class="content">{@html conteudo.texto}</span>
                     {#if conteudo.botao.url}
                         <Button
-                            href=""
+                            href={conteudo.botao.url}
                             color="primary"
                             size="md"
                             variant="ringed"

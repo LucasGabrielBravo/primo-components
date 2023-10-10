@@ -21,28 +21,6 @@
   export let botao2: IBotao;
   export let diferenciais: IDiferencial[];
   export let backgroundimage: IImage;
-
-  // export let inview: (
-  //   element: HTMLElement,
-  //   options?: Partial<IOptions>
-  // ) => {
-  //   destroy(): void;
-  // } = inviewFunction;
-
-  //createInview
-
-  // let inviewfunction: (
-  //   element: HTMLElement,
-  //   options?: Partial<IOptions> | undefined
-  // ) =>
-  //   | {
-  //       destroy(): void;
-  //     }
-  //   | undefined;
-
-  // onMount(() => {
-  //   inviewfunction = createInview();
-  // });
 </script>
 
 <div class="box">
@@ -138,7 +116,7 @@
     @apply relative  min-h-max md:h-[80vh] items-center;
   }
   .img-fundo {
-    @apply absolute h-full w-full object-cover object-[65%] sm:object-center;
+    @apply absolute h-full w-full object-cover object-[65%] sm:object-center lg:object-top;
   }
   .conteudo {
     @apply relative h-full flex;

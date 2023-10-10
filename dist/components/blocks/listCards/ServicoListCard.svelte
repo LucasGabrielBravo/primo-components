@@ -3,6 +3,7 @@ import ContainerPage from "../../ContainerPage.svelte";
 export let titulo;
 export let paragrafos;
 export let listservicos;
+export let botao1;
 </script>
 
 <div class="ajust">
@@ -32,9 +33,13 @@ export let listservicos;
                 {/each}
             </div>
 
-            <Button color="secondary" size="md" href="/" shaddow="shaddow-lg">
-                <!-- {@html botao1.label} -->
-                Conheça os serviços
+            <Button
+                color="secondary"
+                size="md"
+                href={botao1.url}
+                shaddow="shaddow-lg"
+            >
+                {@html botao1.label}
             </Button>
         </div>
     </ContainerPage>

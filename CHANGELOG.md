@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.34](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.33...v0.2.34) (2023-10-11)
+
+### [0.2.33](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.32...v0.2.33) (2023-10-11)
+
+### [0.2.32](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.4...v0.2.32) (2023-10-11)
+
+### [0.2.31](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.30...v0.2.31) (2023-10-11)
+
+### [0.2.30](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.4...v0.2.30) (2023-10-11)
+
+### [0.2.29](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.28...v0.2.29) (2023-10-11)
+
+### [0.2.28](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.26...v0.2.28) (2023-10-11)
+
+### [0.2.27](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.26...v0.2.27) (2023-10-11)
+
+### [0.2.26](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.25...v0.2.26) (2023-10-10)
+
+### [0.2.25](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.24...v0.2.25) (2023-10-06)
+
 ### [0.2.24](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.23...v0.2.24) (2023-08-28)
 
 ### [0.2.23](https://github.com/LucasGabrielBravo/primo-components/compare/v0.2.22...v0.2.23) (2023-08-25)

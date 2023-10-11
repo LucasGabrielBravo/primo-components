@@ -1,6 +1,7 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import ContainerPage from "$lib/components/ContainerPage.svelte";
+    import type { IOptions } from "$lib/utils/inview";
     import type { IBotao, IImage } from "../../../../types/fields";
 
     interface IConteudo {
@@ -28,6 +29,88 @@
     document.body.onresize = function () {
         sizeView = window.innerWidth;
     };
+
+    let intersectionObserver: IntersectionObserver | undefined;
+
+    function ensureIntersectionObserver(threshold: number) {
+        if (intersectionObserver) return;
+
+        intersectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    //const eventName = entry.isIntersecting ? 'enterViewport' : 'exitViewport'
+                    //entry.target.dispatchEvent(new CustomEvent(eventName))
+
+                    if (entry.isIntersecting) {
+                        const element = entry.target as HTMLElement;
+                        element.style.opacity = "1";
+                        element.style.transform = "";
+                    }
+                });
+            },
+            { threshold: threshold }
+        );
+    }
+
+    function inview(element: HTMLElement, options?: Partial<IOptions>) {
+        let { direction, distance, opacity, threshold, transition }: IOptions =
+            {
+                direction: "up",
+                opacity: "0",
+                threshold: 0,
+                transition: 0.5,
+                distance: 20,
+            };
+
+        if (options) {
+            if (options.direction) {
+                direction = options.direction;
+            }
+
+            if (options.distance) {
+                distance = options.distance;
+            }
+
+            if (options.opacity) {
+                opacity = options.opacity;
+            }
+
+            if (options.threshold) {
+                threshold = options.threshold;
+            }
+
+            if (options.transition) {
+                transition = options.transition;
+            }
+        }
+
+        const directions = ((distance: number) => {
+            return {
+                up: `translateY(${distance}px)`,
+                down: `translateY(-${distance}px)`,
+                left: `translateX(${distance}px)`,
+                right: `translateX(-${distance}px)`,
+            };
+        })(distance);
+
+        ensureIntersectionObserver(threshold);
+
+        if (intersectionObserver) {
+            intersectionObserver.observe(element);
+
+            element.style.opacity = opacity;
+            element.style.transform = directions[direction];
+            element.style.transition = `${transition}s`;
+        }
+
+        return {
+            destroy() {
+                if (intersectionObserver) {
+                    intersectionObserver.unobserve(element);
+                }
+            },
+        };
+    }
 </script>
 
 <ContainerPage>
@@ -48,7 +131,15 @@
         {#if !isMobile}
             {#each conteudos as conteudo, i}
                 {#if i % 2 !== 0}
-                    <div class="conteudo">
+                    <div
+                        use:inview={{
+                            distance: 10,
+                            direction: "left",
+                            transition: 2,
+                            threshold: 1,
+                        }}
+                        class="conteudo"
+                    >
                         {#if conteudo.image.url}
                             <img
                                 class="image-conteudo"
@@ -72,7 +163,15 @@
                         </div>
                     </div>
                 {:else}
-                    <div class="conteudo">
+                    <div
+                        use:inview={{
+                            distance: -10,
+                            direction: "left",
+                            transition: 2,
+                            threshold: 1,
+                        }}
+                        class="conteudo"
+                    >
                         <div class="body">
                             <h2 class="title">{conteudo.titulo}</h2>
                             <span class="content">{@html conteudo.texto}</span>
@@ -150,9 +249,9 @@
         @apply flex flex-col items-start gap-4 p-0 w-full h-full justify-center text-left;
     }
     .title {
-        @apply text-xl md:text-2xl text-secondary-500 font-medium;
+        @apply text-base md:text-lg text-secondary-500 font-medium;
     }
     .content {
-        @apply text-surface-700 text-base md:text-lg;
+        @apply text-surface-700 text-base;
     }
 </style>

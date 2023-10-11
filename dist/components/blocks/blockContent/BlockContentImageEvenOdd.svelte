@@ -15,6 +15,71 @@ $:
 document.body.onresize = function() {
   sizeView = window.innerWidth;
 };
+let intersectionObserver;
+function ensureIntersectionObserver(threshold) {
+  if (intersectionObserver)
+    return;
+  intersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          element.style.opacity = "1";
+          element.style.transform = "";
+        }
+      });
+    },
+    { threshold }
+  );
+}
+function inview(element, options) {
+  let { direction, distance, opacity, threshold, transition } = {
+    direction: "up",
+    opacity: "0",
+    threshold: 0,
+    transition: 0.5,
+    distance: 20
+  };
+  if (options) {
+    if (options.direction) {
+      direction = options.direction;
+    }
+    if (options.distance) {
+      distance = options.distance;
+    }
+    if (options.opacity) {
+      opacity = options.opacity;
+    }
+    if (options.threshold) {
+      threshold = options.threshold;
+    }
+    if (options.transition) {
+      transition = options.transition;
+    }
+  }
+  const directions = ((distance2) => {
+    return {
+      up: `translateY(${distance2}px)`,
+      down: `translateY(-${distance2}px)`,
+      left: `translateX(${distance2}px)`,
+      right: `translateX(-${distance2}px)`
+    };
+  })(distance);
+  ensureIntersectionObserver(threshold);
+  if (intersectionObserver) {
+    intersectionObserver.observe(element);
+    element.style.opacity = opacity;
+    element.style.transform = directions[direction];
+    element.style.transition = `${transition}s`;
+  }
+  return {
+    destroy() {
+      if (intersectionObserver) {
+        intersectionObserver.unobserve(element);
+      }
+    }
+  };
+}
 </script>
 
 <ContainerPage>
@@ -35,7 +100,15 @@ document.body.onresize = function() {
         {#if !isMobile}
             {#each conteudos as conteudo, i}
                 {#if i % 2 !== 0}
-                    <div class="conteudo">
+                    <div
+                        use:inview={{
+                            distance: 10,
+                            direction: "left",
+                            transition: 2,
+                            threshold: 1,
+                        }}
+                        class="conteudo"
+                    >
                         {#if conteudo.image.url}
                             <img
                                 class="image-conteudo"
@@ -59,7 +132,15 @@ document.body.onresize = function() {
                         </div>
                     </div>
                 {:else}
-                    <div class="conteudo">
+                    <div
+                        use:inview={{
+                            distance: -10,
+                            direction: "left",
+                            transition: 2,
+                            threshold: 1,
+                        }}
+                        class="conteudo"
+                    >
                         <div class="body">
                             <h2 class="title">{conteudo.titulo}</h2>
                             <span class="content">{@html conteudo.texto}</span>
@@ -172,16 +253,16 @@ document.body.onresize = function() {
     text-align: left
 }
     .title {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 500;
     --tw-text-opacity: 1;
     color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
 }
     @media (min-width: 768px) {
     .title {
-        font-size: 1.5rem;
-        line-height: 2rem
+        font-size: 1.125rem;
+        line-height: 1.75rem
     }
 }
     .content {
@@ -189,11 +270,5 @@ document.body.onresize = function() {
     line-height: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
-}
-    @media (min-width: 768px) {
-    .content {
-        font-size: 1.125rem;
-        line-height: 1.75rem
-    }
 }
 </style>

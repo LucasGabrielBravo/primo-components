@@ -113,11 +113,17 @@ export let conteudos;
     text-align: left
 }
     .title {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .title {
+        font-size: 1.125rem;
+        line-height: 1.75rem
+    }
 }
     .content {
     font-size: 1rem;

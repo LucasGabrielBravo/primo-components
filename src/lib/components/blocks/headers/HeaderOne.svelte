@@ -214,13 +214,13 @@
     @apply grow-0 h-10 justify-center items-center;
   }
   .logo-img {
-    @apply object-contain h-full w-48;
+    @apply object-contain h-full w-20 md:w-48;
   }
   .contato {
-    @apply md:block grow w-full items-center px-2 hidden;
+    @apply md:flex grow w-full items-center px-2 hidden justify-end;
   }
   .botoes {
-    @apply flex gap-6 justify-end items-center;
+    @apply flex sm:gap-2 md:gap-3 lg:gap-6 justify-end items-center;
   }
   .telefone {
     @apply flex items-center gap-2;
@@ -241,7 +241,7 @@
     @apply fixed inset-0 z-10 backdrop-blur-sm;
   }
   .drawer__unique14 {
-    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6 pt-24 bg-primary-500 sm:max-w-sm sm:shadow-lg min-w-max;
+    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6 pt-24 bg-secondary-500 sm:max-w-sm sm:shadow-lg min-w-max;
   }
   .drawer__unique15 {
     @apply flex items-center justify-between;
@@ -263,7 +263,7 @@
   }
   .drawer-button {
     @apply py-6 px-4 flex items-center transition-all even:border-y-2 even:border-surface-100 text-surface-50;
-    @apply hover:bg-primary-600;
+    @apply hover:bg-secondary-600;
   }
   .redes-socias {
     @apply flex flex-row gap-4 w-full items-center justify-center;

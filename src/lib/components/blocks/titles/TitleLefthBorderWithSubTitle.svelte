@@ -21,6 +21,6 @@
         @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-6xl;
     }
     .chamada-subtitle {
-        @apply font-light text-xl max-w-2xl;
+        @apply font-light text-base md:text-lg max-w-2xl;
     }
 </style>

@@ -18,7 +18,7 @@
         @apply py-8;
     }
     .box-image {
-        @apply flex w-full h-[60vh] md:h-[40vh] drop-shadow-md overflow-hidden bg-red-500 rounded-lg;
+        @apply flex w-full h-[60vh] md:h-[40vh] drop-shadow-md overflow-hidden rounded-lg;
     }
     .image {
         @apply w-full h-full  object-cover object-center;

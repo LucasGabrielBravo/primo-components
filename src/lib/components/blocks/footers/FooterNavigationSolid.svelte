@@ -8,12 +8,10 @@
     }
 
     export let logo: IImage;
-
     export let links: ILink[];
-
     export let redessocias: IRedessocias[];
-
     export let textodireitos: string;
+    export let politica: ILink;
 
     const data = new Date();
     const ano = data.getFullYear();
@@ -46,6 +44,9 @@
             <div class="copyright">
                 <span> © {ano} {textodireitos} </span>
             </div>
+            {#if politica.url}
+                <a class="politica" href={politica.url}>{politica.label}</a>
+            {/if}
         </div>
     </ContainerPage>
 </div>
@@ -71,7 +72,7 @@
         @apply flex flex-row gap-4;
     }
     .rede-social {
-        @apply w-7 h-7;
+        @apply w-7 h-7 text-surface-50;
         @apply hover:scale-105;
     }
     .rede-social-logo {
@@ -79,5 +80,8 @@
     }
     .copyright {
         @apply text-surface-50 text-sm;
+    }
+    .politica {
+        @apply w-full justify-center flex py-4 text-xs transition-all text-surface-50/80 hover:text-surface-50/80;
     }
 </style>

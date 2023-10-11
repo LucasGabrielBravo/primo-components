@@ -31,17 +31,19 @@
 </script>
 
 <ContainerPage>
-    <header class="heading-group">
-        {#if toptitulo}
-            <span class="toptitulo">{toptitulo}</span>
-        {/if}
-        {#if titulo}
-            <h2 class="titulo">{titulo}</h2>
-        {/if}
-        {#if subtitulo}
-            <span class="subtitulo">{subtitulo}</span>
-        {/if}
-    </header>
+    {#if toptitulo || titulo || subtitulo}
+        <header class="heading-group">
+            {#if toptitulo}
+                <span class="toptitulo">{toptitulo}</span>
+            {/if}
+            {#if titulo}
+                <h2 class="titulo">{titulo}</h2>
+            {/if}
+            {#if subtitulo}
+                <span class="subtitulo">{subtitulo}</span>
+            {/if}
+        </header>
+    {/if}
     <div class="conteudos">
         {#if !isMobile}
             {#each conteudos as conteudo, i}
@@ -148,9 +150,9 @@
         @apply flex flex-col items-start gap-4 p-0 w-full h-full justify-center text-left;
     }
     .title {
-        @apply text-2xl md:text-3xl text-secondary-500;
+        @apply text-xl md:text-2xl text-secondary-500 font-medium;
     }
     .content {
-        @apply text-surface-700 text-lg;
+        @apply text-surface-700 text-base md:text-lg;
     }
 </style>

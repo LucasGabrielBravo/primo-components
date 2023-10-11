@@ -52,7 +52,7 @@
         @apply text-primary-500 font-bold text-4xl;
     }
     .descricao {
-        @apply text-lg text-primary-500;
+        @apply text-base text-primary-500;
     }
     .ajust {
         @apply py-8;

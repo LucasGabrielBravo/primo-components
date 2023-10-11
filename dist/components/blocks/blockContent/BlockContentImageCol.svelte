@@ -7,17 +7,19 @@ export let conteudos;
 </script>
 
 <ContainerPage>
-    <header class="heading-group">
-        {#if toptitulo}
-            <span class="toptitulo">{toptitulo}</span>
-        {/if}
-        {#if titulo}
-            <h2 class="titulo">{titulo}</h2>
-        {/if}
-        {#if subtitulo}
-            <span class="subtitulo">{subtitulo}</span>
-        {/if}
-    </header>
+    {#if toptitulo || titulo || subtitulo}
+        <header class="heading-group">
+            {#if toptitulo}
+                <span class="toptitulo">{toptitulo}</span>
+            {/if}
+            {#if titulo}
+                <h2 class="titulo">{titulo}</h2>
+            {/if}
+            {#if subtitulo}
+                <span class="subtitulo">{subtitulo}</span>
+            {/if}
+        </header>
+    {/if}
     <div class="conteudos">
         {#each conteudos as conteudo, i}
             <div class="conteudo">
@@ -111,15 +113,22 @@ export let conteudos;
     text-align: left
 }
     .title {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.75rem;
+    font-weight: 500;
     --tw-text-opacity: 1;
     color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-text-opacity))
 }
     .content {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .content {
+        font-size: 1.125rem;
+        line-height: 1.75rem
+    }
 }
 </style>

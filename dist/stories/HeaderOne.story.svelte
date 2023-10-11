@@ -56,6 +56,10 @@ let links = [
   }
 ];
 let ligueChamada = "Ligue para:";
+let politica = {
+  label: "Politica de privacidade",
+  url: "/"
+};
 </script>
 
 <Hst.Story title="HeaderOne">
@@ -66,6 +70,7 @@ let ligueChamada = "Ligue para:";
     {ligueChamada}
     {links}
     {redessocias}
+    {politica}
   />
 
   <svelte:fragment slot="controls" />

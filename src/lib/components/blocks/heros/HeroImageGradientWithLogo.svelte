@@ -43,6 +43,6 @@
     }
     .pelicula {
         @apply flex w-full h-full  absolute;
-        background-image: linear-gradient(#32a7fc, transparent);
+        background-image: linear-gradient(#32a7fccc, transparent);
     }
 </style>

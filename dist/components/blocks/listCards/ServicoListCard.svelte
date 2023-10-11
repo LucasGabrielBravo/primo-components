@@ -34,7 +34,7 @@ export let botao1;
             </div>
 
             <Button
-                color="secondary"
+                color="primary"
                 size="md"
                 href={botao1.url}
                 shaddow="shaddow-lg"
@@ -58,7 +58,7 @@ export let botao1;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     align-items: center;
     justify-content: center;
-    gap: 0.5rem
+    gap: 1rem
 }
     @media (min-width: 768px) {
     .table {
@@ -89,9 +89,14 @@ export let botao1;
     text-align: center;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: 400;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .paragrafo {
+        font-size: 1.125rem;
+        line-height: 1.75rem
+    }
 }
     .servico-card {
     position: relative;
@@ -99,7 +104,15 @@ export let botao1;
     overflow: hidden;
     border-radius: 0.125rem;
     --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+    .servico-card:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
     .image-servico {
     height: 100%;

@@ -42,6 +42,12 @@ export let logo;
     -o-object-position: center;
        object-position: center
 }
+    @media (min-width: 1024px) {
+    .img-fundo {
+        -o-object-position: top;
+           object-position: top
+    }
+}
     .conteudo {
     position: relative;
     display: flex;

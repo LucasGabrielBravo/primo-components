@@ -17,6 +17,7 @@
   export let telefone: string;
   export let botaoOrcamento: IBotao;
   export let links: ILink[];
+  export let politica: ILink;
 
   let drawerState: boolean = false;
 
@@ -183,6 +184,9 @@
                 </a>
               {/each}
             </div>
+            {#if politica.url}
+              <a class="politica" href={politica.url}>{politica.label}</a>
+            {/if}
           </div>
         </div>
       </div>
@@ -192,7 +196,7 @@
 
 <style lang="postcss">
   .fundo {
-    @apply flex  py-2 justify-center  backdrop-blur-[8px] border-b-[1px] border-surface-50 absolute top-0 w-full z-10 bg-[rgba(185,188,195,0.5)];
+    @apply fixed top-0 flex  py-2 justify-center  backdrop-blur-[8px] border-b-[1px] border-surface-50  w-full z-10 bg-[rgba(185,188,195,0.5)];
   }
   .table {
     @apply flex flex-row-reverse md:flex-row w-full h-full bg-transparent rounded-none justify-between;
@@ -204,19 +208,19 @@
     @apply flex gap-2 items-center h-full;
   }
   .button-menu-text {
-    @apply hidden md:block;
+    @apply hidden md:block font-medium;
   }
   .logo {
     @apply grow-0 h-10 justify-center items-center;
   }
   .logo-img {
-    @apply object-contain h-full w-40;
+    @apply object-contain h-full w-48;
   }
   .contato {
     @apply md:block grow w-full items-center px-2 hidden;
   }
   .botoes {
-    @apply flex gap-4 justify-end items-center;
+    @apply flex gap-6 justify-end items-center;
   }
   .telefone {
     @apply flex items-center gap-2;
@@ -234,10 +238,10 @@
     @apply flex flex-col;
   }
   .drawer__unique13 {
-    @apply fixed inset-0 z-10 bg-primary-700/30 backdrop-blur-sm;
+    @apply fixed inset-0 z-10 backdrop-blur-sm;
   }
   .drawer__unique14 {
-    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6 pt-24 bg-surface-100 sm:max-w-sm sm:shadow-lg min-w-max;
+    @apply fixed top-0 bottom-0 right-0 z-10 w-full overflow-y-auto p-6 pt-24 bg-primary-500 sm:max-w-sm sm:shadow-lg min-w-max;
   }
   .drawer__unique15 {
     @apply flex items-center justify-between;
@@ -258,17 +262,20 @@
     @apply py-6 flex flex-col;
   }
   .drawer-button {
-    @apply py-6 px-4 flex items-center transition-all even:border-y-2 even:border-secondary-100;
-    @apply hover:bg-surface-200;
+    @apply py-6 px-4 flex items-center transition-all even:border-y-2 even:border-surface-100 text-surface-50;
+    @apply hover:bg-primary-600;
   }
   .redes-socias {
     @apply flex flex-row gap-4 w-full items-center justify-center;
   }
   .rede-social {
-    @apply w-7 h-7;
+    @apply w-7 h-7 transition-all;
     @apply hover:scale-105;
   }
   .rede-social-logo {
     @apply object-contain h-full w-full;
+  }
+  .politica {
+    @apply w-full justify-center flex py-8 text-xs text-surface-50;
   }
 </style>

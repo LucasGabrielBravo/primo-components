@@ -184,7 +184,7 @@ export let backgroundimage;
     }
 }
   .chamda-text {
-    max-width: 24rem;
+    max-width: 28rem;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 500;
@@ -222,6 +222,14 @@ export let backgroundimage;
     --tw-text-opacity: 1 !important;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity)) !important;
     text-decoration-line: underline;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+  .botao-chamada:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
   .aria-vazia {
     display: none;

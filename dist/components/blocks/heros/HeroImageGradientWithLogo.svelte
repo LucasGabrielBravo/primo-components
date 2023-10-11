@@ -25,11 +25,11 @@ export let logo;
     .box {
         position: relative;
         height: 50vh;
-        align-items: center
+        align-items: center;
 }
 @media (min-width: 768px) {
         .box {
-                height: 65vh
+                height: 65vh;
         }
 }
     .img-fundo {
@@ -41,26 +41,34 @@ export let logo;
            object-fit: cover;
         -o-object-position: center;
            object-position: center;
-        -webkit-mask-image: linear-gradient(to top, transparent 20%, #000 100%)
 }
+    @media (min-width: 1024px) {
+        .img-fundo {
+                -o-object-position: top;
+                   object-position: top;
+        }
+}
+    .img-fundo {
+        -webkit-mask-image: linear-gradient(to top, transparent 20%, #000 100%);
+    }
     .conteudo {
         position: relative;
         display: flex;
-        height: 100%
+        height: 100%;
 }
     .logo-box {
         display: flex;
         height: 100%;
         width: 100%;
         align-items: center;
-        justify-content: center
+        justify-content: center;
 }
     .logo {
-        height: auto
+        height: auto;
 }
     @media (min-width: 640px) {
         .logo {
-                width: 10%
+                width: 10%;
         }
 }
     .pelicula {
@@ -68,6 +76,6 @@ export let logo;
         display: flex;
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(#32a7fc, transparent)
+        background-image: linear-gradient(#32a7fccc, transparent);
 }
 </style>

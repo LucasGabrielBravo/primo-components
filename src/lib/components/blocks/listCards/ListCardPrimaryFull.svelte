@@ -48,7 +48,7 @@
         @apply text-surface-50 font-bold text-4xl;
     }
     .descricao {
-        @apply text-lg text-surface-100;
+        @apply text-base text-surface-100;
     }
     .ajust {
         @apply py-8;

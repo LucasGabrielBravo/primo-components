@@ -8,6 +8,7 @@ export let ligueChamada;
 export let telefone;
 export let botaoOrcamento;
 export let links;
+export let politica;
 let drawerState = false;
 function drawerOpen() {
   drawerState = true;
@@ -171,6 +172,9 @@ function drawerclose() {
                 </a>
               {/each}
             </div>
+            {#if politica.url}
+              <a class="politica" href={politica.url}>{politica.label}</a>
+            {/if}
           </div>
         </div>
       </div>
@@ -180,7 +184,7 @@ function drawerclose() {
 
 <style>
   .fundo {
-    position: absolute;
+    position: fixed;
     top: 0px;
     z-index: 10;
     display: flex;
@@ -236,7 +240,8 @@ function drawerclose() {
     gap: 0.5rem
 }
   .button-menu-text {
-    display: none
+    display: none;
+    font-weight: 500
 }
   @media (min-width: 768px) {
     .button-menu-text {
@@ -251,7 +256,7 @@ function drawerclose() {
 }
   .logo-img {
     height: 100%;
-    width: 10rem;
+    width: 12rem;
     -o-object-fit: contain;
        object-fit: contain
 }
@@ -272,7 +277,7 @@ function drawerclose() {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 1rem
+    gap: 1.5rem
 }
   .telefone {
     display: flex;
@@ -310,7 +315,6 @@ function drawerclose() {
     position: fixed;
     inset: 0px;
     z-index: 10;
-    background-color: rgb(var(--color-primary-700, 29 78 216) / 0.3);
     --tw-backdrop-blur: blur(4px);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
             backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
@@ -326,7 +330,7 @@ function drawerclose() {
     min-width: max-content;
     overflow-y: auto;
     --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-surface-100, 243 244 244) / var(--tw-bg-opacity));
+    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity));
     padding: 1.5rem;
     padding-top: 6rem
 }
@@ -380,6 +384,8 @@ function drawerclose() {
     padding-bottom: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity));
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
@@ -388,11 +394,11 @@ function drawerclose() {
     border-top-width: 2px;
     border-bottom-width: 2px;
     --tw-border-opacity: 1;
-    border-color: rgb(var(--color-secondary-100, 253 216 231) / var(--tw-border-opacity))
+    border-color: rgb(var(--color-surface-100, 243 244 244) / var(--tw-border-opacity))
 }
   .drawer-button:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-surface-200, 232 235 236) / var(--tw-bg-opacity))
+    background-color: rgb(var(--color-primary-600, 37 99 235) / var(--tw-bg-opacity))
 }
   .redes-socias {
     display: flex;
@@ -404,7 +410,10 @@ function drawerclose() {
 }
   .rede-social {
     height: 1.75rem;
-    width: 1.75rem
+    width: 1.75rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
 }
   .rede-social:hover {
     --tw-scale-x: 1.05;
@@ -416,5 +425,16 @@ function drawerclose() {
     width: 100%;
     -o-object-fit: contain;
        object-fit: contain
+}
+  .politica {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
 }
 </style>

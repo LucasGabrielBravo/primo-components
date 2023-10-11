@@ -3,6 +3,7 @@ export let logo;
 export let links;
 export let redessocias;
 export let textodireitos;
+export let politica;
 const data = /* @__PURE__ */ new Date();
 const ano = data.getFullYear();
 </script>
@@ -34,6 +35,9 @@ const ano = data.getFullYear();
             <div class="copyright">
                 <span> © {ano} {textodireitos} </span>
             </div>
+            {#if politica.url}
+                <a class="politica" href={politica.url}>{politica.label}</a>
+            {/if}
         </div>
     </ContainerPage>
 </div>
@@ -90,7 +94,9 @@ const ano = data.getFullYear();
 }
     .rede-social {
     height: 1.75rem;
-    width: 1.75rem
+    width: 1.75rem;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
 }
     .rede-social:hover {
     --tw-scale-x: 1.05;
@@ -108,5 +114,21 @@ const ano = data.getFullYear();
     line-height: 1.25rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
+}
+    .politica {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgb(var(--color-surface-50, 250 250 250) / 0.8);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+    .politica:hover {
+    color: rgb(var(--color-surface-50, 250 250 250) / 0.8)
 }
 </style>

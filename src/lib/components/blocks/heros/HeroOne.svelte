@@ -134,13 +134,13 @@
     @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-sm;
   }
   .chamda-text {
-    @apply text-primary-500 text-base md:text-lg font-medium max-w-sm;
+    @apply text-primary-500 text-base md:text-lg font-medium max-w-md;
   }
   .chamada-botoes {
     @apply flex flex-col md:flex-row gap-2;
   }
   .botao-chamada {
-    @apply text-base underline !text-primary-500 px-4 py-2 flex flex-row items-center justify-center font-medium;
+    @apply text-base underline !text-primary-500 px-4 py-2 flex flex-row items-center justify-center font-medium transition-all hover:scale-105;
   }
   .aria-vazia {
     @apply md:flex w-full hidden;

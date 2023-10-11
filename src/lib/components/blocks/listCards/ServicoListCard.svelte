@@ -45,7 +45,7 @@
             </div>
 
             <Button
-                color="secondary"
+                color="primary"
                 size="md"
                 href={botao1.url}
                 shaddow="shaddow-lg"
@@ -61,16 +61,16 @@
         @apply flex flex-col items-center justify-center gap-12;
     }
     .table {
-        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-2;
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-4;
     }
     .titulo {
         @apply text-primary-500 text-2xl md:text-3xl font-bold text-center;
     }
     .paragrafo {
-        @apply text-surface-700 text-base font-normal text-center max-w-4xl;
+        @apply text-base md:text-lg text-surface-700 text-center max-w-4xl;
     }
     .servico-card {
-        @apply relative overflow-hidden rounded-sm drop-shadow-sm h-96;
+        @apply relative overflow-hidden rounded-sm drop-shadow-sm h-96 transition-all hover:scale-105;
     }
     .image-servico {
         @apply object-cover w-full h-full;

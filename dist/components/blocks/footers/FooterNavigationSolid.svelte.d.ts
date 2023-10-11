@@ -9,6 +9,7 @@ declare const __propDef: {
             link: ILink;
         }[];
         textodireitos: string;
+        politica: ILink;
     };
     events: {
         [evt: string]: CustomEvent<any>;

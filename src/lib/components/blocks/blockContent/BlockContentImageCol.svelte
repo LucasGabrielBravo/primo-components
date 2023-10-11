@@ -83,7 +83,7 @@
         @apply flex flex-col items-start gap-4 p-0 w-full h-full justify-center text-left;
     }
     .title {
-        @apply text-xl text-secondary-500 font-medium;
+        @apply text-base md:text-lg text-secondary-500 font-bold;
     }
     .content {
         @apply text-surface-700 text-base md:text-lg;

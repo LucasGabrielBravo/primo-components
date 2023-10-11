@@ -1,4 +1,6 @@
-<script>import { cva } from "class-variance-authority";
+<!--  -->
+<import { cva } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 const button = cva([], {
   variants: {
     color: {

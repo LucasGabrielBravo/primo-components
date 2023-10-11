@@ -6,7 +6,7 @@ let paragrafos = [
     text: "Somos uma rede de cuidadores de excel\xEAncia especializados em atenca\xE7\xE3o domiciliar e hospitalar do Rio de Janeiro."
   },
   {
-    text: "Somos uma rede de cuidadores de excel\xEAncia especializados em atenca\xE7\xE3o domiciliar e hospitalar do Rio de Janeiro."
+    text: "Seja para cuidados de longo prazo ou assist\xEAncia p\xF3s-operat\xF3ria, a Ag\xEAncia PrimeCare est\xE1 pronta para fornecer cuidados de qualidade, confian\xE7a e compaix\xE3o, garantindo a tranquilidade que voc\xEA e seus entes queridos merecem."
   }
 ];
 let botao1 = {

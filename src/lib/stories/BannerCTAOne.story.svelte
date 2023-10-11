@@ -10,7 +10,7 @@
             text: "Somos uma rede de cuidadores de excelência especializados em atencação domiciliar e hospitalar do Rio de Janeiro.",
         },
         {
-            text: "Somos uma rede de cuidadores de excelência especializados em atencação domiciliar e hospitalar do Rio de Janeiro.",
+            text: "Seja para cuidados de longo prazo ou assistência pós-operatória, a Agência PrimeCare está pronta para fornecer cuidados de qualidade, confiança e compaixão, garantindo a tranquilidade que você e seus entes queridos merecem.",
         },
     ];
 

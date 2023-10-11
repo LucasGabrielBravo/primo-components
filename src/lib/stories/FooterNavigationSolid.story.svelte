@@ -64,12 +64,22 @@
       },
     },
   ];
+  let politica: ILink = {
+    label: "Politica de privacidade",
+    url: "/",
+  };
 
   let textodireitos = "todos os direitos são reservados";
 </script>
 
 <Hst.Story title="FooterNavigationSolid">
-  <FooterNavigationSolid {links} {logo} {redessocias} {textodireitos} />
+  <FooterNavigationSolid
+    {links}
+    {logo}
+    {redessocias}
+    {textodireitos}
+    {politica}
+  />
 
   <svelte:fragment slot="controls" />
 </Hst.Story>

@@ -112,7 +112,7 @@ export let backgroundimage;
 }
     .chamada-text {
     display: flex;
-    max-width: 24rem;
+    max-width: 32rem;
     flex-direction: column;
     gap: 1rem;
     font-size: 1rem;

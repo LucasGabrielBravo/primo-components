@@ -58,11 +58,21 @@ let redessocias = [
     }
   }
 ];
+let politica = {
+  label: "Politica de privacidade",
+  url: "/"
+};
 let textodireitos = "todos os direitos s\xE3o reservados";
 </script>
 
 <Hst.Story title="FooterNavigationSolid">
-  <FooterNavigationSolid {links} {logo} {redessocias} {textodireitos} />
+  <FooterNavigationSolid
+    {links}
+    {logo}
+    {redessocias}
+    {textodireitos}
+    {politica}
+  />
 
   <svelte:fragment slot="controls" />
 </Hst.Story>

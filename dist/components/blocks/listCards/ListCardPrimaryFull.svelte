@@ -70,8 +70,8 @@
     color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
 }
     .descricao {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-100, 243 244 244) / var(--tw-text-opacity))
 }

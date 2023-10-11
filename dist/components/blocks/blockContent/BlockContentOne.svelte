@@ -176,9 +176,14 @@ export let botao1;
     gap: 0.25rem;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: 500;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
+}
+    @media (min-width: 768px) {
+    .cuidado-texto {
+        font-size: 1.125rem;
+        line-height: 1.75rem
+    }
 }
     .chamada-botoes {
     display: flex;

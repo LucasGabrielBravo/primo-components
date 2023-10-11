@@ -132,7 +132,7 @@
         @apply text-secondary-500 font-normal;
     }
     .cuidado-texto {
-        @apply flex items-center gap-1 font-medium text-base text-surface-700;
+        @apply flex items-center gap-1 text-base md:text-lg text-surface-700;
     }
     .chamada-botoes {
         @apply flex flex-col md:flex-row gap-2;

@@ -74,7 +74,7 @@
         @apply font-bold text-primary-500 text-2xl md:text-3xl max-w-sm;
     }
     .chamada-text {
-        @apply text-surface-50 text-base md:text-lg font-normal max-w-sm flex flex-col gap-4;
+        @apply text-surface-50 text-base md:text-lg font-normal max-w-lg flex flex-col gap-4;
     }
     .chamada-botoes {
         @apply flex flex-col md:flex-row gap-2;

@@ -72,8 +72,8 @@ export let list;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
     .descricao {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }

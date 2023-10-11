@@ -11,6 +11,7 @@ declare const __propDef: {
         telefone: string;
         botaoOrcamento: IBotao;
         links: ILink[];
+        politica: ILink;
     };
     events: {
         [evt: string]: CustomEvent<any>;

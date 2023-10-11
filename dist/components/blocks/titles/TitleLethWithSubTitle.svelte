@@ -41,8 +41,14 @@ export let subtitulo;
     .chamada-subtitle {
     max-width: 42rem;
     text-align: left;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 300
+}
+    @media (min-width: 768px) {
+    .chamada-subtitle {
+        font-size: 1.125rem;
+        line-height: 1.75rem
+    }
 }
 </style>

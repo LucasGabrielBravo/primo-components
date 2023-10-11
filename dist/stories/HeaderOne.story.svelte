@@ -2,7 +2,8 @@
 export let Hst;
 let logo = {
   alt: "teste",
-  url: "https://trypyramid.com/img/pyramid-logo-black-horizontal.png"
+  url: "https://pbahuevfmdmrbsapdggm.supabase.co/storage/v1/object/public/images/c4c2b75b-4667-45e0-861f-a0225cd8986c/1696516473503Primecare.png"
+  // url: "https://trypyramid.com/img/pyramid-logo-black-horizontal.png",
 };
 let redessocias = [
   {

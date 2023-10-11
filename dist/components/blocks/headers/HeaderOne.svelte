@@ -256,28 +256,48 @@ function drawerclose() {
 }
   .logo-img {
     height: 100%;
-    width: 12rem;
+    width: 5rem;
     -o-object-fit: contain;
        object-fit: contain
+}
+  @media (min-width: 768px) {
+    .logo-img {
+        width: 12rem
+    }
 }
   .contato {
     display: none;
     width: 100%;
     flex-grow: 1;
     align-items: center;
+    justify-content: flex-end;
     padding-left: 0.5rem;
     padding-right: 0.5rem
 }
   @media (min-width: 768px) {
     .contato {
-        display: block
+        display: flex
     }
 }
   .botoes {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 1.5rem
+    justify-content: flex-end
+}
+  @media (min-width: 640px) {
+    .botoes {
+        gap: 0.5rem
+    }
+}
+  @media (min-width: 768px) {
+    .botoes {
+        gap: 0.75rem
+    }
+}
+  @media (min-width: 1024px) {
+    .botoes {
+        gap: 1.5rem
+    }
 }
   .telefone {
     display: flex;
@@ -330,7 +350,7 @@ function drawerclose() {
     min-width: max-content;
     overflow-y: auto;
     --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity));
+    background-color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-bg-opacity));
     padding: 1.5rem;
     padding-top: 6rem
 }
@@ -398,7 +418,7 @@ function drawerclose() {
 }
   .drawer-button:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-primary-600, 37 99 235) / var(--tw-bg-opacity))
+    background-color: rgb(var(--color-secondary-600, 225 10 96) / var(--tw-bg-opacity))
 }
   .redes-socias {
     display: flex;

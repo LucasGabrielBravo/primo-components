@@ -1,28 +1,33 @@
 <script>import ContainerPage from "../../ContainerPage.svelte";
+import { onMount } from "svelte";
+import { setupAnimations } from "../../../utils/setupAnimation";
 export let backgroundimage;
 export let logo;
+onMount(() => {
+  setupAnimations();
+});
 </script>
 
 <div class="box">
-    <img
-        class="img-fundo"
-        data-key="backgroundimage"
-        src={backgroundimage.url}
-        alt={backgroundimage.alt}
-    />
-    <!-- <div class="pelicula" /> -->
+  <img
+    class="img-fundo"
+    data-key="backgroundimage"
+    src={backgroundimage.url}
+    alt={backgroundimage.alt}
+  />
+  <!-- <div class="pelicula" /> -->
 
-    <div class="conteudo">
-        <ContainerPage>
-            <div class="logo-box">
-                <img class="logo" src={logo.url} alt={logo.alt} />
-            </div>
-        </ContainerPage>
-    </div>
+  <div class="conteudo">
+    <ContainerPage>
+      <div class="logo-box">
+        <img class="logo" src={logo.url} alt={logo.alt} id="from-bot" />
+      </div>
+    </ContainerPage>
+  </div>
 </div>
 
 <style>
-    .box {
+  .box {
     position: relative;
     height: 50vh;
     align-items: center
@@ -32,7 +37,7 @@ export let logo;
         height: 65vh
     }
 }
-    .img-fundo {
+  .img-fundo {
     position: absolute;
     inset: 0px;
     height: 100%;
@@ -42,40 +47,40 @@ export let logo;
     -o-object-position: center;
        object-position: center
 }
-    @media (min-width: 1024px) {
+  @media (min-width: 1024px) {
     .img-fundo {
         -o-object-position: top;
            object-position: top
     }
 }
-    .conteudo {
+  .conteudo {
     position: relative;
     display: flex;
     height: 100%
 }
-    .logo-box {
+  .logo-box {
     display: flex;
     height: 100%;
     width: 100%;
     align-items: flex-end;
     justify-content: flex-start
 }
-    .logo {
+  .logo {
     margin-bottom: 3.5rem;
     height: auto;
     width: 70%
 }
-    @media (min-width: 640px) {
+  @media (min-width: 640px) {
     .logo {
         width: 50%
     }
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .logo {
         width: 20%
     }
 }
-    /* .pelicula {
+  /* .pelicula {
         @apply flex w-full h-full  absolute;
         background-image: linear-gradient(#fff, transparent);
     } */

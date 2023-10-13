@@ -43,7 +43,10 @@
     },
   ];
 
-  let telefone: string = "+55 21 99369-6648";
+  let telefone: IBotao = {
+    label: "+55 21 993696648",
+    url: "+5521993696648",
+  };
 
   let botaoOrcamento: IBotao = {
     label: "Pedir orçamento",

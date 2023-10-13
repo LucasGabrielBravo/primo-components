@@ -1,29 +1,22 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
-import { onMount } from "svelte";
-import { animate, inView, stagger } from "motion";
-import { afterNavigate } from "$app/navigation";
-import { setupAnimations } from "../../../utils/setupAnimation";
 export let toptitulo;
 export let titulo;
 export let subtitulo;
 export let conteudos;
-onMount(() => {
-  setupAnimations();
-});
 </script>
 
 <ContainerPage>
   {#if toptitulo || titulo || subtitulo}
     <header class="heading-group">
       {#if toptitulo}
-        <span id="to-up" class="toptitulo">{toptitulo}</span>
+        <span class="toptitulo">{toptitulo}</span>
       {/if}
       {#if titulo}
-        <h2 id="to-up" class="titulo">{titulo}</h2>
+        <h2 class="titulo">{titulo}</h2>
       {/if}
       {#if subtitulo}
-        <span id="to-up" class="subtitulo">{subtitulo}</span>
+        <span class="subtitulo">{subtitulo}</span>
       {/if}
     </header>
   {/if}
@@ -32,18 +25,16 @@ onMount(() => {
       <div class="conteudo">
         {#if conteudo.image.url}
           <img
-            id="to-up"
             class="image-conteudo"
             src={conteudo.image.url}
             alt={conteudo.image.alt}
           />
         {/if}
         <div class="body">
-          <h2 id="to-up-delay" class="title">{conteudo.titulo}</h2>
-          <span id="to-up-delay" class="content">{@html conteudo.texto}</span>
+          <h2 class="title">{conteudo.titulo}</h2>
+          <span class="content">{@html conteudo.texto}</span>
           {#if conteudo.botao.url}
             <Button
-              id="to-up-delay"
               href={conteudo.botao.url}
               color="primary"
               size="md"

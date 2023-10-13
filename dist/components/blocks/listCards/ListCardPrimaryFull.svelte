@@ -1,4 +1,5 @@
-<script>import { animate, inView } from "motion";
+<script>import { browser } from "$app/environment";
+import { animate, inView } from "motion";
 import { onMount } from "svelte";
 import Countup from "svelte-countup";
 export let list;
@@ -20,7 +21,7 @@ onMount(() => {
           class="img-card"
         />
         <span class="number" data-key="list[{i}].item.number">
-          {#if navigator}
+          {#if browser}
             <Countup
               initial={0}
               value={parseInt(item.number)}

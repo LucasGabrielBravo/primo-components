@@ -1,21 +1,26 @@
 <script>import ContainerPage from "../../ContainerPage.svelte";
+import { onMount } from "svelte";
+import { setupAnimations } from "../../../utils/setupAnimation";
 export let image;
+onMount(() => {
+  setupAnimations();
+});
 </script>
 
 <div class="ajust">
-    <ContainerPage>
-        <div class="box-image">
-            <img src={image.url} alt={image.alt} class="image" />
-        </div>
-    </ContainerPage>
+  <ContainerPage>
+    <div class="box-image" id="from-bot">
+      <img src={image.url} alt={image.alt} class="image" />
+    </div>
+  </ContainerPage>
 </div>
 
 <style>
-    .ajust {
+  .ajust {
     padding-top: 2rem;
     padding-bottom: 2rem
 }
-    .box-image {
+  .box-image {
     display: flex;
     height: 60vh;
     width: 100%;
@@ -24,12 +29,12 @@ export let image;
     --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .box-image {
         height: 40vh
     }
 }
-    .image {
+  .image {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;

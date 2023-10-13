@@ -18,9 +18,12 @@ export let list;
           />
           <span class="number" data-key="list[{i}].item.number">
             {#if browser}
-              <slot />
+              <Countup
+                initial={0}
+                value={parseInt(item.number)}
+                duration={1000}
+              />
             {/if}
-            <!-- {@html item.number} -->
           </span>
           <span class="descricao" data-key="list[{i}].item.descricao"
             >{@html item.descricao}</span

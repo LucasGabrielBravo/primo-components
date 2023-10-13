@@ -1,6 +1,11 @@
 <script>import ContainerPage from "../../ContainerPage.svelte";
+import { onMount } from "svelte";
+import { setupAnimations } from "../../../utils/setupAnimation";
 export let backgroundimage;
 export let logo;
+onMount(() => {
+  setupAnimations();
+});
 </script>
 
 <div class="box">
@@ -16,7 +21,7 @@ export let logo;
   <div class="conteudo">
     <ContainerPage>
       <div class="logo-box">
-        <img class="logo" src={logo.url} alt={logo.alt} />
+        <img class="logo" src={logo.url} alt={logo.alt} id="from-bot" />
       </div>
     </ContainerPage>
   </div>
@@ -66,10 +71,18 @@ export let logo;
 }
   .logo {
     height: auto;
+    width: 70%;
+    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
   @media (min-width: 640px) {
     .logo {
-        width: 10%;
+        width: 50%;
+    }
+}
+  @media (min-width: 768px) {
+    .logo {
+        width: 20%;
     }
 }
   .pelicula {

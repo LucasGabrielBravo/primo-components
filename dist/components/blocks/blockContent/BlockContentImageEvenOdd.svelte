@@ -1,5 +1,7 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
+import { onMount } from "svelte";
+import { setupAnimations } from "../../../utils/setupAnimation";
 export let toptitulo;
 export let titulo;
 export let subtitulo;
@@ -15,19 +17,22 @@ $:
 document.body.onresize = function() {
   sizeView = window.innerWidth;
 };
+onMount(() => {
+  setupAnimations();
+});
 </script>
 
 <ContainerPage>
   {#if toptitulo || titulo || subtitulo}
     <header class="heading-group">
       {#if toptitulo}
-        <span class="toptitulo">{toptitulo}</span>
+        <span class="toptitulo" id="to-up">{toptitulo}</span>
       {/if}
       {#if titulo}
-        <h2 class="titulo">{titulo}</h2>
+        <h2 class="titulo" id="to-up-delay">{titulo}</h2>
       {/if}
       {#if subtitulo}
-        <span class="subtitulo">{subtitulo}</span>
+        <span class="subtitulo" id="to-up-delay">{subtitulo}</span>
       {/if}
     </header>
   {/if}
@@ -35,21 +40,16 @@ document.body.onresize = function() {
     {#if !isMobile}
       {#each conteudos as conteudo, i}
         {#if i % 2 !== 0}
-          <!-- use:inview={{
-              distance: 10,
-              direction: "left",
-              transition: 2,
-              threshold: 1,
-            }} -->
           <div class="conteudo">
             {#if conteudo.image.url}
               <img
+                id="to-left"
                 class="image-conteudo"
                 src={conteudo.image.url}
                 alt={conteudo.image.alt}
               />
             {/if}
-            <div class="body">
+            <div class="body" id="to-left-delay">
               <h2 class="title">{conteudo.titulo}</h2>
               <span class="content">{@html conteudo.texto}</span>
               {#if conteudo.botao.url}
@@ -60,14 +60,8 @@ document.body.onresize = function() {
             </div>
           </div>
         {:else}
-          <!-- use:inview={{
-              distance: -10,
-              direction: "left",
-              transition: 2,
-              threshold: 1,
-            }} -->
           <div class="conteudo">
-            <div class="body">
+            <div class="body" id="to-right">
               <h2 class="title">{conteudo.titulo}</h2>
               <span class="content">{@html conteudo.texto}</span>
               {#if conteudo.botao.url}
@@ -78,6 +72,7 @@ document.body.onresize = function() {
             </div>
             {#if conteudo.image.url}
               <img
+                id="to-right-delay"
                 class="image-conteudo"
                 src={conteudo.image.url}
                 alt={conteudo.image.alt}
@@ -89,7 +84,7 @@ document.body.onresize = function() {
     {:else}
       {#each conteudos as conteudo, i}
         <div class="conteudo">
-          <div class="body">
+          <div class="body" id="to-up">
             <h2 class="title">{conteudo.titulo}</h2>
             <span class="content">{@html conteudo.texto}</span>
             {#if conteudo.botao.url}
@@ -100,6 +95,7 @@ document.body.onresize = function() {
           </div>
           {#if conteudo.image.url}
             <img
+              id="to-up-delay"
               class="image-conteudo"
               src={conteudo.image.url}
               alt={conteudo.image.alt}
@@ -134,7 +130,8 @@ document.body.onresize = function() {
 }
   .conteudos {
     display: grid;
-    gap: 6rem
+    gap: 6rem;
+    overflow: hidden
 }
   .conteudo {
     display: grid;

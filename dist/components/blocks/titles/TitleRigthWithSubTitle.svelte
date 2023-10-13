@@ -1,29 +1,35 @@
 <script>import ContainerPage from "../../ContainerPage.svelte";
+import { setupAnimations } from "../../../utils/setupAnimation";
+import { onMount } from "svelte";
 export let titulo;
 export let subtitulo;
+onMount(() => {
+  setupAnimations();
+});
 </script>
 
 <ContainerPage>
-    <div class="box-title">
-        <span class="chamada-title">
-            {titulo}
-        </span>
-        <span class="chamada-subtitle">{subtitulo}</span>
-    </div>
+  <div class="box-title">
+    <span class="chamada-title" id="to-left">
+      {titulo}
+    </span>
+    <span class="chamada-subtitle" id="to-left-delay">{subtitulo}</span>
+  </div>
 </ContainerPage>
 
 <style>
-    .box-title {
+  .box-title {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
     gap: 2rem;
+    overflow: hidden;
     padding-top: 2rem;
     padding-bottom: 2rem
 }
-    .chamada-title {
+  .chamada-title {
     max-width: 72rem;
     padding-right: 1.5rem;
     font-size: 1.5rem;
@@ -32,20 +38,20 @@ export let subtitulo;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .chamada-title {
         font-size: 1.875rem;
         line-height: 2.25rem
     }
 }
-    .chamada-subtitle {
+  .chamada-subtitle {
     max-width: 42rem;
     text-align: right;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 300
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .chamada-subtitle {
         font-size: 1.125rem;
         line-height: 1.75rem

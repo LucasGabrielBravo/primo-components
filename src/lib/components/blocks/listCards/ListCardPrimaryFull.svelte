@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   import { animate, inView } from "motion";
   import { onMount } from "svelte";
   import Countup from "svelte-countup";
@@ -16,10 +17,10 @@
 
   export let list: ICard[];
 
-  let isIos = false;
-  //   onMount(() => {
-  //     isIos = window.navigator.platform.includes("Mac" || "iPhone");
-  //   });
+  let navigator = false;
+  onMount(() => {
+    if (window != undefined) navigator = true;
+  });
 </script>
 
 <div class="ajust">
@@ -33,11 +34,13 @@
           class="img-card"
         />
         <span class="number" data-key="list[{i}].item.number">
-          <!-- {#if isIos}
-            {@html item.number}
-          {:else} -->
-          <Countup initial={0} value={parseInt(item.number)} duration={1000} />
-          <!-- {/if} -->
+          {#if browser}
+            <Countup
+              initial={0}
+              value={parseInt(item.number)}
+              duration={1000}
+            />
+          {/if}
         </span>
         <span class="descricao" data-key="list[{i}].item.descricao"
           >{@html item.descricao}</span

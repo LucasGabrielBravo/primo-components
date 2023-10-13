@@ -1,4 +1,6 @@
-<script>import ContainerPage from "../../ContainerPage.svelte";
+<script>import { browser } from "$app/environment";
+import ContainerPage from "../../ContainerPage.svelte";
+import { onMount } from "svelte";
 import Countup from "svelte-countup";
 export let list;
 </script>
@@ -15,11 +17,9 @@ export let list;
             class="img-card"
           />
           <span class="number" data-key="list[{i}].item.number">
-            <Countup
-              initial={0}
-              value={parseInt(item.number)}
-              duration={1000}
-            />
+            {#if browser}
+              <slot />
+            {/if}
             <!-- {@html item.number} -->
           </span>
           <span class="descricao" data-key="list[{i}].item.descricao"

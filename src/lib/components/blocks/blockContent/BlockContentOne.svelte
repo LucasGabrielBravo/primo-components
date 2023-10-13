@@ -126,7 +126,7 @@
     @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-sm;
   }
   .chamda-text {
-    @apply text-primary-500 text-base md:text-lg font-medium max-w-lg;
+    @apply text-primary-500 text-base md:text-lg font-medium max-w-xl;
   }
   .cuidados {
     @apply flex flex-col gap-2;

@@ -2,7 +2,9 @@
   import Button from "$lib/components/Button.svelte";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
   import type { IOptions } from "$lib/utils/inview";
+  import { onMount } from "svelte";
   import type { IBotao, IImage } from "../../../../types/fields";
+  import { setupAnimations } from "$lib/utils/setupAnimation";
 
   interface IConteudo {
     image: IImage;
@@ -30,100 +32,22 @@
     sizeView = window.innerWidth;
   };
 
-  // let intersectionObserver: IntersectionObserver | undefined;
-
-  // function ensureIntersectionObserver(threshold: number) {
-  //     if (intersectionObserver) return;
-
-  //     intersectionObserver = new IntersectionObserver(
-  //         (entries) => {
-  //             entries.forEach((entry) => {
-  //                 //const eventName = entry.isIntersecting ? 'enterViewport' : 'exitViewport'
-  //                 //entry.target.dispatchEvent(new CustomEvent(eventName))
-
-  //                 if (entry.isIntersecting) {
-  //                     const element = entry.target as HTMLElement;
-  //                     element.style.opacity = "1";
-  //                     element.style.transform = "";
-  //                 }
-  //             });
-  //         },
-  //         { threshold: threshold }
-  //     );
-  // }
-
-  // function inview(element: HTMLElement, options?: Partial<IOptions>) {
-  //     let { direction, distance, opacity, threshold, transition }: IOptions =
-  //         {
-  //             direction: "up",
-  //             opacity: "0",
-  //             threshold: 0,
-  //             transition: 0.5,
-  //             distance: 20,
-  //         };
-
-  //     if (options) {
-  //         if (options.direction) {
-  //             direction = options.direction;
-  //         }
-
-  //         if (options.distance) {
-  //             distance = options.distance;
-  //         }
-
-  //         if (options.opacity) {
-  //             opacity = options.opacity;
-  //         }
-
-  //         if (options.threshold) {
-  //             threshold = options.threshold;
-  //         }
-
-  //         if (options.transition) {
-  //             transition = options.transition;
-  //         }
-  //     }
-
-  //     const directions = ((distance: number) => {
-  //         return {
-  //             up: `translateY(${distance}px)`,
-  //             down: `translateY(-${distance}px)`,
-  //             left: `translateX(${distance}px)`,
-  //             right: `translateX(-${distance}px)`,
-  //         };
-  //     })(distance);
-
-  //     ensureIntersectionObserver(threshold);
-
-  //     if (intersectionObserver) {
-  //         intersectionObserver.observe(element);
-
-  //         element.style.opacity = opacity;
-  //         element.style.transform = directions[direction];
-  //         element.style.transition = `${transition}s`;
-  //     }
-
-  //     return {
-  //         destroy() {
-  //             if (intersectionObserver) {
-  //                 intersectionObserver.unobserve(element);
-  //             }
-  //         },
-  //     };
-  // }
+  onMount(() => {
+    setupAnimations();
+  });
 </script>
 
 <ContainerPage>
   {#if toptitulo || titulo || subtitulo}
     <header class="heading-group">
       {#if toptitulo}
-        <span class="toptitulo">{toptitulo}</span>
+        <span class="toptitulo" id="to-up">{toptitulo}</span>
       {/if}
       {#if titulo}
-        <h2 class="titulo">{titulo}</h2>
+        <h2 class="titulo" id="to-up-delay">{titulo}</h2>
       {/if}
       {#if subtitulo}
-        <span class="subtitulo">{subtitulo}</span>
+        <span class="subtitulo" id="to-up-delay">{subtitulo}</span>
       {/if}
     </header>
   {/if}
@@ -131,21 +55,16 @@
     {#if !isMobile}
       {#each conteudos as conteudo, i}
         {#if i % 2 !== 0}
-          <!-- use:inview={{
-              distance: 10,
-              direction: "left",
-              transition: 2,
-              threshold: 1,
-            }} -->
           <div class="conteudo">
             {#if conteudo.image.url}
               <img
+                id="to-left"
                 class="image-conteudo"
                 src={conteudo.image.url}
                 alt={conteudo.image.alt}
               />
             {/if}
-            <div class="body">
+            <div class="body" id="to-left-delay">
               <h2 class="title">{conteudo.titulo}</h2>
               <span class="content">{@html conteudo.texto}</span>
               {#if conteudo.botao.url}
@@ -156,14 +75,8 @@
             </div>
           </div>
         {:else}
-          <!-- use:inview={{
-              distance: -10,
-              direction: "left",
-              transition: 2,
-              threshold: 1,
-            }} -->
           <div class="conteudo">
-            <div class="body">
+            <div class="body" id="to-right">
               <h2 class="title">{conteudo.titulo}</h2>
               <span class="content">{@html conteudo.texto}</span>
               {#if conteudo.botao.url}
@@ -174,6 +87,7 @@
             </div>
             {#if conteudo.image.url}
               <img
+                id="to-right-delay"
                 class="image-conteudo"
                 src={conteudo.image.url}
                 alt={conteudo.image.alt}
@@ -185,7 +99,7 @@
     {:else}
       {#each conteudos as conteudo, i}
         <div class="conteudo">
-          <div class="body">
+          <div class="body" id="to-up">
             <h2 class="title">{conteudo.titulo}</h2>
             <span class="content">{@html conteudo.texto}</span>
             {#if conteudo.botao.url}
@@ -196,6 +110,7 @@
           </div>
           {#if conteudo.image.url}
             <img
+              id="to-up-delay"
               class="image-conteudo"
               src={conteudo.image.url}
               alt={conteudo.image.alt}
@@ -218,7 +133,7 @@
     @apply text-4xl font-medium text-[#000];
   }
   .conteudos {
-    @apply grid gap-24;
+    @apply grid gap-24 overflow-hidden;
   }
   .conteudo {
     @apply grid  md:grid-cols-2 md:place-items-center gap-6 h-max;

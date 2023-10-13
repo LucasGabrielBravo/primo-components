@@ -2,7 +2,11 @@
 import { onMount } from "svelte";
 import Countup from "svelte-countup";
 export let list;
-let isIos = false;
+let navigator = false;
+onMount(() => {
+  if (window != void 0)
+    navigator = true;
+});
 </script>
 
 <div class="ajust">
@@ -16,11 +20,13 @@ let isIos = false;
           class="img-card"
         />
         <span class="number" data-key="list[{i}].item.number">
-          <!-- {#if isIos}
-            {@html item.number}
-          {:else} -->
-          <Countup initial={0} value={parseInt(item.number)} duration={1000} />
-          <!-- {/if} -->
+          {#if navigator}
+            <Countup
+              initial={0}
+              value={parseInt(item.number)}
+              duration={1000}
+            />
+          {/if}
         </span>
         <span class="descricao" data-key="list[{i}].item.descricao"
           >{@html item.descricao}</span

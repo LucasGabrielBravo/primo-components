@@ -41,7 +41,7 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.0.0",
 		"daisyui": "^3.5.1",
-		"gsap": "^3.12.2",
+		
 		"histoire": "^0.16.5",
 		"motion": "^10.16.4",
 		"postcss": "^8.4.28",

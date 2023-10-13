@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
+  import { onMount } from "svelte";
   import Countup from "svelte-countup";
 
   interface IImage {
@@ -28,12 +30,13 @@
             class="img-card"
           />
           <span class="number" data-key="list[{i}].item.number">
-            <Countup
-              initial={0}
-              value={parseInt(item.number)}
-              duration={1000}
-            />
-            <!-- {@html item.number} -->
+            {#if browser}
+              <Countup
+                initial={0}
+                value={parseInt(item.number)}
+                duration={1000}
+              />
+            {/if}
           </span>
           <span class="descricao" data-key="list[{i}].item.descricao"
             >{@html item.descricao}</span

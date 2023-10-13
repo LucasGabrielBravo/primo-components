@@ -1,4 +1,3 @@
-import { afterNavigate } from "$app/navigation";
 import { animate, inView, stagger } from "motion";
 export function setupAnimations() {
     document.querySelectorAll("#to-up").forEach((element) => {

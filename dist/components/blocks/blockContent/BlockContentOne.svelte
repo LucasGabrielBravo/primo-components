@@ -149,7 +149,7 @@ onMount(() => {
     }
 }
   .chamda-text {
-    max-width: 32rem;
+    max-width: 36rem;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 500;

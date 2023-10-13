@@ -14,7 +14,7 @@
 
   export let logo: IImage;
   export let ligueChamada: string;
-  export let telefone: IBotao;
+  export let telefone: ILink;
   export let botaoOrcamento: IBotao;
   export let links: ILink[];
   export let politica: ILink;
@@ -80,12 +80,16 @@
                 />
               </svg>
             </div>
-            <a href="tel:{telefone.url}" class="ligue-text">
+            <a
+              href="tel:{telefone.url}"
+              class="ligue-text"
+              data-key="telefone.url"
+            >
               <span class="ligue-chamada" data-key="liguechamada">
-                {@html ligueChamada}
+                {ligueChamada}
               </span>
-              <span class="ligue-numero" data-key="telefone">
-                {@html telefone.label}
+              <span class="ligue-numero" data-key="telefone.label">
+                {telefone.label}
               </span>
             </a>
           </div>

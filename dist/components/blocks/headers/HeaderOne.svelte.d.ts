@@ -8,7 +8,7 @@ declare const __propDef: {
         }[];
         logo: IImage;
         ligueChamada: string;
-        telefone: IBotao;
+        telefone: ILink;
         botaoOrcamento: IBotao;
         links: ILink[];
         politica: ILink;

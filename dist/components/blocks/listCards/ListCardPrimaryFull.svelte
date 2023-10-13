@@ -1,29 +1,37 @@
-<script>export let list;
+<script>import { animate, inView } from "motion";
+import { onMount } from "svelte";
+import Countup from "svelte-countup";
+export let list;
+let isIos = false;
 </script>
 
 <div class="ajust">
-    <div class="fundo-cards">
-        {#each list as item, i}
-            <div class="card">
-                <img
-                    src={item.icon.url}
-                    alt={item.icon.alt}
-                    data-key="list[{i}].item.icon"
-                    class="img-card"
-                />
-                <span class="number" data-key="list[{i}].item.number"
-                    >{@html item.number}</span
-                >
-                <span class="descricao" data-key="list[{i}].item.descricao"
-                    >{@html item.descricao}</span
-                >
-            </div>
-        {/each}
-    </div>
+  <div class="fundo-cards">
+    {#each list as item, i}
+      <div class="card">
+        <img
+          src={item.icon.url}
+          alt={item.icon.alt}
+          data-key="list[{i}].item.icon"
+          class="img-card"
+        />
+        <span class="number" data-key="list[{i}].item.number">
+          <!-- {#if isIos}
+            {@html item.number}
+          {:else} -->
+          <Countup initial={0} value={parseInt(item.number)} duration={1000} />
+          <!-- {/if} -->
+        </span>
+        <span class="descricao" data-key="list[{i}].item.descricao"
+          >{@html item.descricao}</span
+        >
+      </div>
+    {/each}
+  </div>
 </div>
 
 <style>
-    .fundo-cards {
+  .fundo-cards {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -38,7 +46,7 @@
         flex-direction: row
     }
 }
-    .card {
+  .card {
     display: flex;
     flex: 1 1 0%;
     flex-direction: column;
@@ -50,32 +58,32 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem
 }
-    .img-card {
+  .img-card {
     height: 1.5rem;
     width: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-100, 243 244 244) / var(--tw-text-opacity))
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .img-card {
         height: 2rem;
         width: 2rem
     }
 }
-    .number {
+  .number {
     font-size: 2.25rem;
     line-height: 2.5rem;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
 }
-    .descricao {
+  .descricao {
     font-size: 12px;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-100, 243 244 244) / var(--tw-text-opacity))
 }
-    .ajust {
+  .ajust {
     padding-top: 2rem;
     padding-bottom: 2rem
 }

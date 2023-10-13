@@ -1,12 +1,17 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
 import clsx from "clsx";
+import { onMount } from "svelte";
+import { setupAnimations } from "../../../utils/setupAnimation";
 export let titulo;
 export let paragrafo;
 export let botao1;
 export let botao2;
 export let diferenciais;
 export let backgroundimage;
+onMount(() => {
+  setupAnimations();
+});
 </script>
 
 <div class="box">
@@ -23,13 +28,13 @@ export let backgroundimage;
       <div class="conteudo-text">
         <div class="chamada">
           <div class="box-chamada-text">
-            <span class="chamada-title" data-key="titulo">
+            <span class="chamada-title" data-key="titulo" id="to-right">
               {@html titulo}
             </span>
-            <span class="chamda-text">
+            <span class="chamda-text" id="to-right-delay">
               {@html paragrafo}
             </span>
-            <div class="chamada-botoes" data-key="botao1">
+            <div class="chamada-botoes" data-key="botao1" id="to-up">
               <Button color="secondary" size="md" href={botao1.url}>
                 {@html botao1.label}
               </Button>
@@ -40,7 +45,7 @@ export let backgroundimage;
           </div>
           <span class="aria-vazia" />
         </div>
-        <div class="box-botoes">
+        <div class="box-botoes" id="to-up-delay">
           {#each diferenciais as diferencial, i}
             <div class={clsx("", i % 2 === 0 ? "botao-1" : "botao-2")}>
               <img
@@ -69,7 +74,7 @@ export let backgroundimage;
       </div>
     </ContainerPage>
   </div>
-  <div class="box-botoes-two">
+  <div class="box-botoes-two" id="to-up">
     {#each diferenciais as diferencial, i}
       <div class={clsx("", i % 2 === 0 ? "botao-1" : "botao-2")}>
         <img
@@ -103,6 +108,7 @@ export let backgroundimage;
     min-height: -moz-max-content;
     min-height: max-content;
     align-items: center;
+    overflow: hidden;
 }
 @media (min-width: 768px) {
     .box {

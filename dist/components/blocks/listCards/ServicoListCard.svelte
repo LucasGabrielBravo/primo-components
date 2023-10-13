@@ -1,76 +1,76 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
+import { onMount } from "svelte";
+import { setupAnimations } from "../../../utils/setupAnimation";
 export let titulo;
 export let paragrafos;
 export let listservicos;
 export let botao1;
+onMount(() => {
+  setupAnimations();
+});
 </script>
 
 <div class="ajust">
-    <ContainerPage>
-        <div class="conteudo">
-            {#if titulo}
-                <span class="titulo">{titulo}</span>
-            {/if}
-            {#if paragrafos}
-                {#each paragrafos as paragrafo}
-                    <span class="paragrafo">{paragrafo.text}</span>
-                {/each}
-            {/if}
-            <div class="table">
-                {#each listservicos as servico}
-                    <div class="servico-card">
-                        <img
-                            src={servico.image.url}
-                            alt={servico.image.alt}
-                            class="image-servico"
-                        />
+  <ContainerPage>
+    <div class="conteudo">
+      {#if titulo}
+        <span class="titulo" id="to-up">{titulo}</span>
+      {/if}
+      {#if paragrafos}
+        {#each paragrafos as paragrafo}
+          <span id="to-up-delay" class="paragrafo">{paragrafo.text}</span>
+        {/each}
+      {/if}
+      <div class="table">
+        {#each listservicos as servico, i}
+          <div id="to-up-delay" class="servico-card">
+            <img
+              src={servico.image.url}
+              alt={servico.image.alt}
+              class="image-servico"
+            />
 
-                        <div class="servico-card-text-balao">
-                            <span class="text-balao">{servico.servico}</span>
-                        </div>
-                    </div>
-                {/each}
+            <div class="servico-card-text-balao">
+              <span class="text-balao">{servico.servico}</span>
             </div>
+          </div>
+        {/each}
+      </div>
 
-            <Button
-                color="primary"
-                size="md"
-                href={botao1.url}
-                shaddow="shaddow-lg"
-            >
-                {@html botao1.label}
-            </Button>
-        </div>
-    </ContainerPage>
+      <Button color="primary" size="md" href={botao1.url} shaddow="shaddow-lg">
+        {@html botao1.label}
+      </Button>
+    </div>
+  </ContainerPage>
 </div>
 
 <style>
-    .conteudo {
+  .conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3rem
 }
-    .table {
+  .table {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     align-items: center;
     justify-content: center;
     gap: 1rem
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .table {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
 }
-    @media (min-width: 1024px) {
+  @media (min-width: 1024px) {
     .table {
         grid-template-columns: repeat(4, minmax(0, 1fr))
     }
 }
-    .titulo {
+  .titulo {
     text-align: center;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -78,13 +78,13 @@ export let botao1;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .titulo {
         font-size: 1.875rem;
         line-height: 2.25rem
     }
 }
-    .paragrafo {
+  .paragrafo {
     max-width: 56rem;
     text-align: center;
     font-size: 1rem;
@@ -92,13 +92,13 @@ export let botao1;
     --tw-text-opacity: 1;
     color: rgb(var(--color-surface-700, 113 122 127) / var(--tw-text-opacity))
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .paragrafo {
         font-size: 1.125rem;
         line-height: 1.75rem
     }
 }
-    .servico-card {
+  .servico-card {
     position: relative;
     height: 24rem;
     overflow: hidden;
@@ -109,18 +109,18 @@ export let botao1;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
 }
-    .servico-card:hover {
+  .servico-card:hover {
     --tw-scale-x: 1.05;
     --tw-scale-y: 1.05;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
-    .image-servico {
+  .image-servico {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover
 }
-    .servico-card-text-balao {
+  .servico-card-text-balao {
     position: absolute;
     bottom: 0.5rem;
     display: flex;
@@ -128,7 +128,7 @@ export let botao1;
     align-items: center;
     justify-content: center
 }
-    .text-balao {
+  .text-balao {
     width: 100%;
     max-width: 90%;
     background-color: rgb(var(--color-surface-50, 250 250 250) / 0.8);
@@ -143,7 +143,7 @@ export let botao1;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
-    .ajust {
+  .ajust {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem
 }

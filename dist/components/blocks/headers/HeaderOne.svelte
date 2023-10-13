@@ -379,9 +379,16 @@ function drawerclose() {
     top: 2.5rem;
     display: flex;
     border-radius: 9999px;
-    background-color: rgb(55 65 81 / 0.2);
+    background-color: rgb(var(--color-surface-50, 250 250 250) / 0.7);
     padding: 0.25rem;
-    opacity: 0.1
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+  .drawer-close:hover {
+    background-color: rgb(var(--color-surface-50, 250 250 250) / 0.8)
 }
   .drawer-close-svg {
     height: 1.5rem;

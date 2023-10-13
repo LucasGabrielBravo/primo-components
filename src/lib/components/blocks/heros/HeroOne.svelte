@@ -8,6 +8,8 @@
   import clsx from "clsx";
   // import { onMount } from "svelte";
   import type { IBotao, IImage } from "../../../../types/fields";
+  import { onMount } from "svelte";
+  import { setupAnimations } from "$lib/utils/setupAnimation";
 
   interface IDiferencial {
     titulo: string;
@@ -21,6 +23,10 @@
   export let botao2: IBotao;
   export let diferenciais: IDiferencial[];
   export let backgroundimage: IImage;
+
+  onMount(() => {
+    setupAnimations();
+  });
 </script>
 
 <div class="box">
@@ -37,13 +43,13 @@
       <div class="conteudo-text">
         <div class="chamada">
           <div class="box-chamada-text">
-            <span class="chamada-title" data-key="titulo">
+            <span class="chamada-title" data-key="titulo" id="to-right">
               {@html titulo}
             </span>
-            <span class="chamda-text">
+            <span class="chamda-text" id="to-right-delay">
               {@html paragrafo}
             </span>
-            <div class="chamada-botoes" data-key="botao1">
+            <div class="chamada-botoes" data-key="botao1" id="to-up">
               <Button color="secondary" size="md" href={botao1.url}>
                 {@html botao1.label}
               </Button>
@@ -54,7 +60,7 @@
           </div>
           <span class="aria-vazia" />
         </div>
-        <div class="box-botoes">
+        <div class="box-botoes" id="to-up-delay">
           {#each diferenciais as diferencial, i}
             <div class={clsx("", i % 2 === 0 ? "botao-1" : "botao-2")}>
               <img
@@ -83,7 +89,7 @@
       </div>
     </ContainerPage>
   </div>
-  <div class="box-botoes-two">
+  <div class="box-botoes-two" id="to-up">
     {#each diferenciais as diferencial, i}
       <div class={clsx("", i % 2 === 0 ? "botao-1" : "botao-2")}>
         <img
@@ -113,7 +119,7 @@
 
 <style lang="postcss">
   .box {
-    @apply relative  min-h-max md:h-[80vh] items-center;
+    @apply relative  min-h-max md:h-[80vh] items-center overflow-hidden;
   }
   .img-fundo {
     @apply absolute h-full w-full object-cover object-[65%] sm:object-center lg:object-top;

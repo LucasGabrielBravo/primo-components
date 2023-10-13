@@ -13,7 +13,9 @@ declare const __propDef: {
     events: {
         [evt: string]: CustomEvent<any>;
     };
-    slots: {};
+    slots: {
+        default: {};
+    };
 };
 export type ListCardSurfaceProps = typeof __propDef.props;
 export type ListCardSurfaceEvents = typeof __propDef.events;

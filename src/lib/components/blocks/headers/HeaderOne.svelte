@@ -250,7 +250,7 @@
     @apply h-12 w-auto drop-shadow-sm;
   }
   .drawer-close {
-    @apply flex rounded-full p-1 opacity-10 bg-gray-700/20 absolute right-4 top-10;
+    @apply flex rounded-full p-1 bg-surface-50/70 absolute right-4 top-10 text-primary-500 hover:bg-surface-50/80 transition-all;
   }
   .drawer-close-svg {
     @apply h-6 w-6;

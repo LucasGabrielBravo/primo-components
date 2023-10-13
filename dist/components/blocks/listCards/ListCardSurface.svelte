@@ -1,32 +1,38 @@
-<script>import ContainerPage from "../../ContainerPage.svelte";
+<script>import { browser } from "$app/environment";
+import ContainerPage from "../../ContainerPage.svelte";
+import { onMount } from "svelte";
+import Countup from "svelte-countup";
 export let list;
 </script>
 
 <div class="ajust">
-    <ContainerPage>
-        <div class="fundo-cards">
-            {#each list as item, i}
-                <div class="card">
-                    <img
-                        src={item.icon.url}
-                        alt={item.icon.alt}
-                        data-key="list[{i}].item.icon"
-                        class="img-card"
-                    />
-                    <span class="number" data-key="list[{i}].item.number"
-                        >{@html item.number}</span
-                    >
-                    <span class="descricao" data-key="list[{i}].item.descricao"
-                        >{@html item.descricao}</span
-                    >
-                </div>
-            {/each}
+  <ContainerPage>
+    <div class="fundo-cards">
+      {#each list as item, i}
+        <div class="card">
+          <img
+            src={item.icon.url}
+            alt={item.icon.alt}
+            data-key="list[{i}].item.icon"
+            class="img-card"
+          />
+          <span class="number" data-key="list[{i}].item.number">
+            {#if browser}
+              <slot />
+            {/if}
+            <!-- {@html item.number} -->
+          </span>
+          <span class="descricao" data-key="list[{i}].item.descricao"
+            >{@html item.descricao}</span
+          >
         </div>
-    </ContainerPage>
+      {/each}
+    </div>
+  </ContainerPage>
 </div>
 
 <style>
-    .fundo-cards {
+  .fundo-cards {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -40,7 +46,7 @@ export let list;
         flex-direction: row
     }
 }
-    .card {
+  .card {
     display: flex;
     flex: 1 1 0%;
     flex-direction: column;
@@ -52,32 +58,32 @@ export let list;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem
 }
-    .img-card {
+  .img-card {
     height: 1.5rem;
     width: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .img-card {
         height: 2rem;
         width: 2rem
     }
 }
-    .number {
+  .number {
     font-size: 2.25rem;
     line-height: 2.5rem;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
-    .descricao {
+  .descricao {
     font-size: 12px;
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity))
 }
-    .ajust {
+  .ajust {
     padding-top: 2rem;
     padding-bottom: 2rem
 }

@@ -6,7 +6,7 @@ let list = [
       alt: "icon",
       url: "https://cdn-icons-png.flaticon.com/512/5987/5987462.png"
     },
-    number: "100",
+    number: "200",
     descricao: "Teste"
   },
   {
@@ -14,7 +14,7 @@ let list = [
       alt: "icon",
       url: "https://cdn-icons-png.flaticon.com/512/5987/5987462.png"
     },
-    number: "100",
+    number: "50",
     descricao: "Teste"
   },
   {
@@ -22,14 +22,14 @@ let list = [
       alt: "icon",
       url: "https://cdn-icons-png.flaticon.com/512/5987/5987462.png"
     },
-    number: "100",
+    number: "800",
     descricao: "Teste"
   }
 ];
 </script>
 
 <Hst.Story title="ListCardSurface">
-    <ListCardSurface {list} />
+  <ListCardSurface {list} />
 
-    <svelte:fragment slot="controls" />
+  <svelte:fragment slot="controls" />
 </Hst.Story>

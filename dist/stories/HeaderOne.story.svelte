@@ -37,7 +37,10 @@ let redessocias = [
     }
   }
 ];
-let telefone = "+55 21 99369-6648";
+let telefone = {
+  label: "+55 21 993696648",
+  url: "+5521993696648"
+};
 let botaoOrcamento = {
   label: "Pedir or\xE7amento",
   url: "/"

@@ -1,7 +1,6 @@
 <script lang="ts">
   import Button from "$lib/components/Button.svelte";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
-  import type { IOptions } from "$lib/utils/inview";
   import { onMount } from "svelte";
   import type { IBotao, IImage } from "../../../../types/fields";
   import { setupAnimations } from "$lib/utils/setupAnimation";

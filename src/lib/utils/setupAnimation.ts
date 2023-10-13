@@ -2,6 +2,11 @@ import { animate, inView, stagger } from "motion";
 
 
   export function setupAnimations() {
+    
+    if(window === undefined){
+      return console.log("not windows")
+    }
+
     document.querySelectorAll("#to-up").forEach((element) => {
       inView(element, () => {
         animate(

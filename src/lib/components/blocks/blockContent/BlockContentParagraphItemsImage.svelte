@@ -2,8 +2,8 @@
   import ContainerPage from "$lib/components/ContainerPage.svelte";
   import { onMount } from "svelte";
 
-  import type { IImage, IParagrafo } from "../../../../types/fields";
   import { setupAnimations } from "$lib/utils/setupAnimation";
+  import type { IImage, IParagrafo } from "../../../../types/fields";
 
   export let titulo: string;
   export let image: IImage;
@@ -33,7 +33,7 @@
           <ul class="lista-items">
             <span class="titulo-lista" id="to-up">{titulolista}</span>
             {#each items as item, i}
-              <li class="" id="to-up-delay">
+              <li class="to-up-delay">
                 <span class="item-dot">•</span>
                 <span class="item-text">{item.text}</span>
               </li>

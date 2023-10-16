@@ -1,8 +1,8 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
 import Check from "../../icons/Check.svelte";
-import { onMount } from "svelte";
 import { setupAnimations } from "../../../utils/setupAnimation";
+import { onMount } from "svelte";
 export let listCuidados;
 export let titulo;
 export let paragrafo;
@@ -75,7 +75,7 @@ onMount(() => {
             </div>
           </div>
         </div>
-        <div class="image-pequena" id="to-up-delay">
+        <div class="image-pequena to-up-delay">
           <div class="circle" />
           <div class="svg-pequeno">
             <svg

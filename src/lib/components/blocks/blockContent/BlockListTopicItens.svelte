@@ -1,8 +1,8 @@
 <script lang="ts">
   import ContainerPage from "$lib/components/ContainerPage.svelte";
+  import { setupAnimations } from "$lib/utils/setupAnimation";
   import { onMount } from "svelte";
   import type { IParagrafo } from "../../../../types/fields";
-  import { setupAnimations } from "$lib/utils/setupAnimation";
 
   export let items: IParagrafo[];
 
@@ -15,7 +15,7 @@
   <ContainerPage>
     <ul class="lista-items">
       {#each items as item, i}
-        <li class="" id="to-up-delay">
+        <li class="to-up-delay">
           <span class="item-dot">•</span>
           <span class="item-text">{item.text}</span>
         </li>

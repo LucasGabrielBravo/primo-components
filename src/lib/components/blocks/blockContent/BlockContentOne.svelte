@@ -2,9 +2,9 @@
   import Button from "$lib/components/Button.svelte";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
   import Check from "$lib/components/icons/Check.svelte";
+  import { setupAnimations } from "$lib/utils/setupAnimation";
   import { onMount } from "svelte";
   import type { IBotao, IImage, IParagrafo } from "../../../../types/fields";
-  import { setupAnimations } from "$lib/utils/setupAnimation";
 
   export let listCuidados: IParagrafo[];
   export let titulo: string;
@@ -79,7 +79,7 @@
             </div>
           </div>
         </div>
-        <div class="image-pequena" id="to-up-delay">
+        <div class="image-pequena to-up-delay">
           <div class="circle" />
           <div class="svg-pequeno">
             <svg

@@ -7,16 +7,16 @@ export function setupAnimations() {
         inView(element, () => {
             animate(element, { y: [50, 0], opacity: [0, 0.5, 1] }, {
                 delay: stagger(0.1),
-                duration: 2,
+                duration: 1.5,
                 easing: [0.22, 0.03, 0.28, 1],
             });
         });
     });
-    document.querySelectorAll("#to-up-delay").forEach((element) => {
+    document.querySelectorAll(".to-up-delay").forEach((element) => {
         inView(element, () => {
             animate(element, { y: [70, 0], opacity: [0, 0.5, 1] }, {
                 delay: stagger(1),
-                duration: 3.5,
+                duration: 2,
                 easing: [0.22, 0.03, 0.28, 1],
             });
         });
@@ -25,7 +25,7 @@ export function setupAnimations() {
         inView(element, () => {
             animate(element, { x: [200, 0], opacity: [0, 0.5, 1] }, {
                 delay: stagger(0.1),
-                duration: 3,
+                duration: 1.5,
                 easing: [0.22, 0.03, 0.26, 1],
             });
         }, { margin: "0px 0px -150px 0px" });
@@ -34,7 +34,7 @@ export function setupAnimations() {
         inView(element, () => {
             animate(element, { x: [200, 0], opacity: [0, 0.5, 1] }, {
                 delay: stagger(0.1),
-                duration: 3.5,
+                duration: 2,
                 easing: [0.22, 0.03, 0.26, 1],
             });
         }, { margin: "0px 0px -150px 0px" });
@@ -43,7 +43,7 @@ export function setupAnimations() {
         inView(element, () => {
             animate(element, { x: [-200, 0], opacity: [0, 0.5, 1] }, {
                 delay: stagger(0.1),
-                duration: 3,
+                duration: 1.5,
                 easing: [0.22, 0.15, 0.28, 1],
             });
         }, { margin: "0px 0px -150px 0px" });
@@ -52,14 +52,14 @@ export function setupAnimations() {
         inView(element, () => {
             animate(element, { x: [-250, 0], opacity: [0, 0.5, 1] }, {
                 delay: stagger(0.1),
-                duration: 3.5,
+                duration: 2,
                 easing: [0.22, 0.15, 0.28, 1],
             });
         }, { margin: "0px 0px -150px 0px" });
     });
     document.querySelectorAll("#from-bot").forEach((element) => {
         inView(element, () => {
-            animate(element, { transform: "none", opacity: [0, 0.5, 1] }, { duration: 3.5 });
+            animate(element, { transform: "none", opacity: [0, 0.5, 1] }, { duration: 2 });
         }, { margin: "0px 100px 0px 0px" });
     });
 }

@@ -1,9 +1,9 @@
 <script lang="ts">
   import Button from "$lib/components/Button.svelte";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
+  import { setupAnimations } from "$lib/utils/setupAnimation";
   import { onMount } from "svelte";
   import type { IBotao, IParagrafo } from "../../../../types/fields";
-  import { setupAnimations } from "$lib/utils/setupAnimation";
   // import gsap from "gsap";
   // import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -55,12 +55,12 @@
       {/if}
       {#if paragrafos}
         {#each paragrafos as paragrafo}
-          <span id="to-up-delay" class="paragrafo">{paragrafo.text}</span>
+          <span class="paragrafo to-up-delay">{paragrafo.text}</span>
         {/each}
       {/if}
       <div class="table">
         {#each listservicos as servico, i}
-          <div id="to-up-delay" class="servico-card">
+          <div class="servico-card">
             <img
               src={servico.image.url}
               alt={servico.image.alt}
@@ -95,7 +95,8 @@
     @apply text-base md:text-lg text-surface-700 text-center max-w-4xl;
   }
   .servico-card {
-    @apply relative overflow-hidden rounded-sm drop-shadow-sm h-96 transition-all hover:scale-105;
+    @apply relative overflow-hidden rounded-sm drop-shadow-sm h-96 transition-all;
+    @apply hover:drop-shadow-md hover:scale-105;
   }
   .image-servico {
     @apply object-cover w-full h-full;

@@ -28,7 +28,7 @@ onMount(() => {
           <ul class="lista-items">
             <span class="titulo-lista" id="to-up">{titulolista}</span>
             {#each items as item, i}
-              <li class="" id="to-up-delay">
+              <li class="to-up-delay">
                 <span class="item-dot">•</span>
                 <span class="item-text">{item.text}</span>
               </li>

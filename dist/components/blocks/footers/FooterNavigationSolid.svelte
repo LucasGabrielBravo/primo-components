@@ -110,6 +110,7 @@ const ano = data.getFullYear();
        object-fit: contain
 }
     .copyright {
+    text-align: center;
     font-size: 0.875rem;
     line-height: 1.25rem;
     --tw-text-opacity: 1;

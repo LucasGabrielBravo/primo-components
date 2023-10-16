@@ -79,7 +79,7 @@
         @apply object-contain h-full w-full;
     }
     .copyright {
-        @apply text-surface-50 text-sm;
+        @apply text-surface-50 text-sm text-center;
     }
     .politica {
         @apply w-full justify-center flex py-4 text-xs transition-all text-surface-50/80 hover:text-surface-50/80;

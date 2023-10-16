@@ -38,7 +38,7 @@ let diferenciais = [
 ];
 let backgroundimage = {
   alt: "bgImage",
-  url: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true"
+  url: "https://pbahuevfmdmrbsapdggm.supabase.co/storage/v1/object/public/images/c4c2b75b-4667-45e0-861f-a0225cd8986c/1696517319675Inicio%20(6).jpg"
 };
 </script>
 

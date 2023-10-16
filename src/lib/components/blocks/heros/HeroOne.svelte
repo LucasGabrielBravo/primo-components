@@ -1,15 +1,11 @@
 <script lang="ts">
   import Button from "$lib/components/Button.svelte";
   import ContainerPage from "$lib/components/ContainerPage.svelte";
-  // import { inview as inviewFunction } from "$lib/utils";
-  // import type { IOptions } from "$lib/utils/inview";
-  // import { inview } from "$lib/utils";
-  // import { createInview, type IOptions } from "$lib/utils/inview";
   import clsx from "clsx";
-  // import { onMount } from "svelte";
-  import type { IBotao, IImage } from "../../../../types/fields";
-  import { onMount } from "svelte";
+
   import { setupAnimations } from "$lib/utils/setupAnimation";
+  import { onMount } from "svelte";
+  import type { IBotao, IImage } from "../../../../types/fields";
 
   interface IDiferencial {
     titulo: string;
@@ -36,7 +32,7 @@
     src={backgroundimage.url}
     alt=""
   />
-  <!-- <div class="pelicula" /> -->
+  <div class="pelicula" />
 
   <div class="conteudo">
     <ContainerPage>
@@ -180,5 +176,10 @@
   .pelicula {
     @apply flex w-full h-full  absolute;
     background-image: linear-gradient(180deg, transparent, #ffffff73);
+  }
+  @media (min-width: 768px) {
+    .pelicula {
+      background-image: linear-gradient(-90deg, transparent, #ffffff73);
+    }
   }
 </style>

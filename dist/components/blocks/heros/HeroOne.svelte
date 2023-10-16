@@ -1,8 +1,8 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
 import clsx from "clsx";
-import { onMount } from "svelte";
 import { setupAnimations } from "../../../utils/setupAnimation";
+import { onMount } from "svelte";
 export let titulo;
 export let paragrafo;
 export let botao1;
@@ -21,7 +21,7 @@ onMount(() => {
     src={backgroundimage.url}
     alt=""
   />
-  <!-- <div class="pelicula" /> -->
+  <div class="pelicula" />
 
   <div class="conteudo">
     <ContainerPage>
@@ -370,4 +370,9 @@ onMount(() => {
     width: 100%;
     background-image: linear-gradient(180deg, transparent, #ffffff73);
 }
+  @media (min-width: 768px) {
+    .pelicula {
+      background-image: linear-gradient(-90deg, transparent, #ffffff73);
+    }
+  }
 </style>

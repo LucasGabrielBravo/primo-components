@@ -70,13 +70,6 @@
             },
             servico: "Teste",
         },
-        {
-            image: {
-                url: "https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg",
-                alt: "teste",
-            },
-            servico: "Teste",
-        },
     ];
 </script>
 

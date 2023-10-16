@@ -1,7 +1,7 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
-import { onMount } from "svelte";
 import { setupAnimations } from "../../../utils/setupAnimation";
+import { onMount } from "svelte";
 export let titulo;
 export let paragrafos;
 export let listservicos;
@@ -19,12 +19,12 @@ onMount(() => {
       {/if}
       {#if paragrafos}
         {#each paragrafos as paragrafo}
-          <span id="to-up-delay" class="paragrafo">{paragrafo.text}</span>
+          <span class="paragrafo to-up-delay">{paragrafo.text}</span>
         {/each}
       {/if}
       <div class="table">
         {#each listservicos as servico, i}
-          <div id="to-up-delay" class="servico-card">
+          <div class="servico-card">
             <img
               src={servico.image.url}
               alt={servico.image.alt}
@@ -112,7 +112,9 @@ onMount(() => {
   .servico-card:hover {
     --tw-scale-x: 1.05;
     --tw-scale-y: 1.05;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
 }
   .image-servico {
     height: 100%;

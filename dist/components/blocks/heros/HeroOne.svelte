@@ -45,7 +45,7 @@ onMount(() => {
           </div>
           <span class="aria-vazia" />
         </div>
-        <div class="box-botoes" id="to-up-delay">
+        <div class="box-botoes to-up-delay">
           {#each diferenciais as diferencial, i}
             <div class={clsx("", i % 2 === 0 ? "botao-1" : "botao-2")}>
               <img

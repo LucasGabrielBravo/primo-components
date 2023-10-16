@@ -1,6 +1,6 @@
 <script>import ContainerPage from "../../ContainerPage.svelte";
-import { onMount } from "svelte";
 import { setupAnimations } from "../../../utils/setupAnimation";
+import { onMount } from "svelte";
 export let items;
 onMount(() => {
   setupAnimations();
@@ -11,7 +11,7 @@ onMount(() => {
   <ContainerPage>
     <ul class="lista-items">
       {#each items as item, i}
-        <li class="" id="to-up-delay">
+        <li class="to-up-delay">
           <span class="item-dot">•</span>
           <span class="item-text">{item.text}</span>
         </li>

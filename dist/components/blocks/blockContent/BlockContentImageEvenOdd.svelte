@@ -1,7 +1,7 @@
 <script>import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
-import { onMount } from "svelte";
 import { setupAnimations } from "../../../utils/setupAnimation";
+import { onMount } from "svelte";
 export let toptitulo;
 export let titulo;
 export let subtitulo;
@@ -29,10 +29,10 @@ onMount(() => {
         <span class="toptitulo" id="to-up">{toptitulo}</span>
       {/if}
       {#if titulo}
-        <h2 class="titulo" id="to-up-delay">{titulo}</h2>
+        <h2 class="titulo to-up-delay">{titulo}</h2>
       {/if}
       {#if subtitulo}
-        <span class="subtitulo" id="to-up-delay">{subtitulo}</span>
+        <span class="subtitulo to-up-delay">{subtitulo}</span>
       {/if}
     </header>
   {/if}
@@ -95,8 +95,7 @@ onMount(() => {
           </div>
           {#if conteudo.image.url}
             <img
-              id="to-up-delay"
-              class="image-conteudo"
+              class="image-conteudo to-up-delay"
               src={conteudo.image.url}
               alt={conteudo.image.alt}
             />

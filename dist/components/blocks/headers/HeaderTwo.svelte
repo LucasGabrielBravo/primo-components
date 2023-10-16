@@ -261,19 +261,19 @@ function drawerclose() {
 }
   .logo {
     display: flex;
-    height: 2.5rem;
+    height: auto;
     align-items: center;
     justify-content: flex-start
 }
   .logo-img {
     height: 100%;
-    width: 5rem;
+    width: auto;
     -o-object-fit: contain;
        object-fit: contain
 }
   @media (min-width: 768px) {
     .logo-img {
-        width: 12rem
+        width: 7rem
     }
 }
   .contato {

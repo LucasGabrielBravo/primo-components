@@ -16,6 +16,7 @@ export { default as BlockWithBlobsCarouselDepoiments } from "$lib/components/blo
 export { default as FooterNavigationSolid } from '$lib/components/blocks/footers/FooterNavigationSolid.svelte';
 export { default as FormContact } from '$lib/components/blocks/forms/FormContact.svelte';
 export { default as HeaderOne } from '$lib/components/blocks/headers/HeaderOne.svelte';
+export { default as HeaderTwo } from '$lib/components/blocks/headers/HeaderTwo.svelte';
 export { default as HeroImageGradientWithLogo } from "$lib/components/blocks/heros/HeroImageGradientWithLogo.svelte";
 export { default as HeroImageWithLogoBottom } from "$lib/components/blocks/heros/HeroImageWithLogoBottom.svelte";
 export { default as HeroOne } from "$lib/components/blocks/heros/HeroOne.svelte";

@@ -86,7 +86,7 @@
     @apply flex flex-col items-center justify-center gap-12;
   }
   .table {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-4;
+    @apply grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-wrap items-center justify-center gap-4;
   }
   .titulo {
     @apply text-primary-500 text-2xl md:text-3xl font-bold text-center;
@@ -95,7 +95,7 @@
     @apply text-base md:text-lg text-surface-700 text-center max-w-4xl;
   }
   .servico-card {
-    @apply relative overflow-hidden rounded-sm drop-shadow-sm h-96 transition-all;
+    @apply relative overflow-hidden rounded-sm drop-shadow-sm h-96 transition-all xl:w-72;
     @apply hover:drop-shadow-md hover:scale-105;
   }
   .image-servico {

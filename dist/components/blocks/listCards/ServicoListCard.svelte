@@ -65,9 +65,10 @@ onMount(() => {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
 }
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     .table {
-        grid-template-columns: repeat(4, minmax(0, 1fr))
+        display: flex;
+        flex-wrap: wrap
     }
 }
   .titulo {
@@ -108,6 +109,11 @@ onMount(() => {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
+}
+  @media (min-width: 1280px) {
+    .servico-card {
+        width: 18rem
+    }
 }
   .servico-card:hover {
     --tw-scale-x: 1.05;

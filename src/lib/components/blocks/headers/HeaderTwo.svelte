@@ -2,7 +2,6 @@
   import { quintOut } from "svelte/easing";
   import { fade, slide } from "svelte/transition";
   import type { IBotao, IImage, ILink } from "../../../../types/fields";
-  import Button from "../../Button.svelte";
   import ContainerPage from "../../ContainerPage.svelte";
 
   interface IRedessocias {
@@ -63,26 +62,19 @@
 
         <div class="nav-buttons">
           {#each links as link}
-            <div class="pipe">
-              <a href={link.url} class="nav-button">
-                {link.label}
-              </a>
-            </div>
+            <a href={link.url} class="nav-button">
+              {link.label}
+            </a>
           {/each}
         </div>
       </div>
 
       <div class="contato">
         <div class="botoes">
-          <div data-key="botaoorcamento">
-            <Button
-              class="botao-orcamento"
-              color="primary"
-              shaddow="shaddow-lg"
-              href={botao.url}
-            >
+          <div data-key="botao">
+            <a class="botao-orcamento" href={botao.url}>
               {@html botao.label}
-            </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -181,7 +173,7 @@
 
 <style lang="postcss">
   .fundo {
-    @apply fixed top-0 flex  py-2 justify-center  backdrop-blur-[8px] border-b-[1px] border-surface-50  w-full z-10 bg-[rgba(185,188,195,0.5)];
+    @apply fixed top-0 flex  py-1 justify-center  backdrop-blur-[8px] border-b-[1px] border-surface-50  w-full z-10 bg-[rgba(185,188,195,0.5)];
   }
   .table {
     @apply flex flex-row w-full h-full bg-transparent rounded-none justify-between;
@@ -190,14 +182,14 @@
     @apply mr-0 flex flex-row items-center md:w-full h-full font-normal  text-primary-600 text-base justify-center;
   }
   .button-menu {
-    @apply flex  md:hidden items-center h-full;
+    @apply flex text-sm md:hidden items-center h-full;
   }
   .nav-buttons {
     @apply md:flex flex-1 flex-row hidden justify-end;
   }
   .nav-button {
-    @apply px-4 flex items-center transition-all  text-primary-500 p-2 rounded-md;
-    @apply hover:bg-primary-600 hover:text-surface-50;
+    @apply text-sm px-4 flex items-center transition-all  text-primary-500 p-2 rounded-md;
+    @apply hover:scale-105 hover:text-primary-600 hover:font-semibold;
   }
   .button-menu-text {
     @apply hidden md:block font-medium;
@@ -206,13 +198,21 @@
     @apply flex  h-auto justify-start items-center;
   }
   .logo-img {
-    @apply object-contain h-full w-auto md:w-28;
+    @apply h-full w-auto md:w-32;
   }
   .contato {
     @apply md:flex min-w-max items-center px-2 hidden justify-end;
   }
   .botoes {
     @apply flex sm:gap-2 md:gap-3 lg:gap-6 justify-end items-center;
+  }
+  .botao-orcamento {
+    @apply px-4 py-2 flex flex-row items-center justify-center rounded-[4px] w-full sm:max-w-max bg-primary-500 text-surface-50;
+    @apply hover:bg-primary-600;
+    @apply active:scale-95 transition-all;
+    @apply !text-sm;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
   .telefone {
     @apply flex items-center gap-2;

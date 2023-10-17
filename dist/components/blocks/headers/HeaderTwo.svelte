@@ -1,6 +1,5 @@
 <script>import { quintOut } from "svelte/easing";
 import { fade, slide } from "svelte/transition";
-import Button from "../../Button.svelte";
 import ContainerPage from "../../ContainerPage.svelte";
 export let redessocias;
 export let logo;
@@ -49,26 +48,19 @@ function drawerclose() {
 
         <div class="nav-buttons">
           {#each links as link}
-            <div class="pipe">
-              <a href={link.url} class="nav-button">
-                {link.label}
-              </a>
-            </div>
+            <a href={link.url} class="nav-button">
+              {link.label}
+            </a>
           {/each}
         </div>
       </div>
 
       <div class="contato">
         <div class="botoes">
-          <div data-key="botaoorcamento">
-            <Button
-              class="botao-orcamento"
-              color="primary"
-              shaddow="shaddow-lg"
-              href={botao.url}
-            >
+          <div data-key="botao">
+            <a class="botao-orcamento" href={botao.url}>
               {@html botao.label}
-            </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -177,8 +169,8 @@ function drawerclose() {
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-border-opacity));
     background-color: rgba(185,188,195,0.5);
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
     --tw-backdrop-blur: blur(8px);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
             backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
@@ -213,7 +205,9 @@ function drawerclose() {
   .button-menu {
     display: flex;
     height: 100%;
-    align-items: center
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem
 }
   @media (min-width: 768px) {
     .button-menu {
@@ -238,6 +232,8 @@ function drawerclose() {
     padding: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     --tw-text-opacity: 1;
     color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-text-opacity));
     transition-property: all;
@@ -245,10 +241,12 @@ function drawerclose() {
     transition-duration: 150ms
 }
   .nav-button:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-primary-600, 37 99 235) / var(--tw-bg-opacity));
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    font-weight: 600;
     --tw-text-opacity: 1;
-    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
+    color: rgb(var(--color-primary-600, 37 99 235) / var(--tw-text-opacity))
 }
   .button-menu-text {
     display: none;
@@ -267,13 +265,13 @@ function drawerclose() {
 }
   .logo-img {
     height: 100%;
-    width: auto;
-    -o-object-fit: contain;
-       object-fit: contain
+
+    width: auto
 }
   @media (min-width: 768px) {
     .logo-img {
-        width: 7rem
+        width: 8rem
+
     }
 }
   .contato {
@@ -309,6 +307,48 @@ function drawerclose() {
     .botoes {
         gap: 1.5rem
     }
+}
+  .botao-orcamento {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary-500, 59 130 246) / var(--tw-bg-opacity));
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-surface-50, 250 250 250) / var(--tw-text-opacity))
+}
+  @media (min-width: 640px) {
+    .botao-orcamento {
+        max-width: -moz-max-content;
+        max-width: max-content
+    }
+}
+  .botao-orcamento:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary-600, 37 99 235) / var(--tw-bg-opacity))
+}
+  .botao-orcamento {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+  .botao-orcamento:active {
+    --tw-scale-x: .95;
+    --tw-scale-y: .95;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+  .botao-orcamento {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1)
 }
   .telefone {
     display: flex;

@@ -265,13 +265,11 @@ function drawerclose() {
 }
   .logo-img {
     height: 100%;
-
     width: auto
 }
   @media (min-width: 768px) {
     .logo-img {
         width: 8rem
-
     }
 }
   .contato {

@@ -123,7 +123,7 @@
     @apply flex flex-col w-full gap-8;
   }
   .chamada-title {
-    @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl  max-w-sm;
+    @apply border-l-4 border-secondary-500 pl-6 font-bold text-primary-500 text-2xl md:text-3xl;
   }
   .chamda-text {
     @apply text-primary-500 text-base md:text-lg font-medium max-w-xl;

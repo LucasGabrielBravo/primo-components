@@ -131,7 +131,6 @@ onMount(() => {
     gap: 2rem
 }
   .chamada-title {
-    max-width: 24rem;
     border-left-width: 4px;
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-secondary-500, 246 49 128) / var(--tw-border-opacity));
